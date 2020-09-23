@@ -1,0 +1,43 @@
+<view class="r_01">
+	<view class="r_02">
+		<view class="r_03">所属公司：</view>
+		<view class="r_04"><input placeholder="请输入您的姓名" data-value="{{vulue}}" data-ty="1" bindblur="blur" value="{{com_value}}" /></view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">项目名称：</view>
+		<view class="r_04"><input placeholder="请输入您的姓名" data-value="{{vulue}}" data-ty="2" bindblur="blur" value="{{name_value}}" /></view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">项目的起止时间：</view>
+		<view class="t_01">
+			<view class="t_02 fl">
+				<view class="section" bindtap="bindDateChange" data-de="1">
+						<view class="picker">{{date}}</view>
+				</view>
+			</view>
+				<!-- 时间弹框 -->
+			<date-picker id="star-date" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+			<view class="t_03 fl">———</view>
+			<view class="t_04 fr">
+				<view class="section" bindtap="bindDateChange1" data-de="2">
+						<view class="picker">{{date1}}</view>
+				</view>
+			</view>
+				<date-picker id="end-date" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+			<view class="w-clear"></view>
+		</view>
+	</view>
+
+	<view class="r_02">
+		<view class="r_03">项目简介：</view>
+		<view class="t_05"><textarea placeholder="请输入" data-value="{{vulue}}" data-ty="3" bindinput="blur" value="{{int_value}}"></textarea></view>
+	</view>
+</view>
+
+<view class="r_05" wx:if="{{!isToggle}}" bindtap="submit">提交</view>
+
+<view class="bot_05" wx:if="{{isToggle}}">
+	<view class="del fl" bindtap="dele">删除</view>
+	<view class="sub fr" bindtap="submit">提交</view>
+</view>
+

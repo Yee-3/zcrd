@@ -1,0 +1,134 @@
+<view class="r_01">
+	<view class="r_02">
+		<view class="r_03">公司名字：</view>
+		<view class="r_04"><input data-ty="1" bindblur="blur" placeholder="请输入" data-value="{{value}}" value="{{com_Type}}" /></view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">工作的起止时间：</view>
+		<view class="t_01">
+			<view class="t_02 fl">
+				<view class="section" bindtap="bindDateChange" data-de="1">
+					<view class="picker">{{date}}</view>
+				</view>
+			</view>
+			<!-- 时间弹框 -->
+			<date-picker id="star-date" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+
+			<view class="t_03 fl">———</view>
+			<view class="t_04 fr">
+				<view class="section" bindtap="bindDateChange1" data-de="2">
+					<view class="picker">{{date1}}</view>
+				</view>
+			</view>
+			<date-picker id="end-date" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+			<view class="w-clear"></view>
+		</view>
+	</view>
+
+	<view class="r_02">
+		<view class="r_03">您在公司担任的职位：</view>
+		<view class="r_04" bindtap="position">{{value_Zhi}}</view>
+	</view>
+	<!-- 职位弹框 -->
+	<view class="mask" wx:if="{{isAdd}}"></view>
+	<view class="mask1" wx:if="{{isAdd}}">
+		<view class="m_top">
+			<view class="title">职位</view>
+			<!-- 遮罩层2 -->
+			<!-- 二级 -->
+			<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
+			<view class="mask_02_01" wx:if="{{isTwo}}">
+				<scroll-view class="mask_left" scroll-y="true">
+					<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS}}' style="" data-index='{{index}}' bindtap="toggle1" style="width:220rpx">
+						<image class="img" wx:if="{{index==ind1}}" src="../img/icon_02.png"></image>
+						{{item.name}}
+						<image class="img1" wx:if="{{index==ind1}}" src="../img/icon_01.png"></image>
+					</view>
+				</scroll-view>
+				<!-- 三级 -->
+				<scroll-view class="mask_right" scroll-y="true">
+					<view class="{{index==ind2?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS[ind1].treeDTOS}}' data-index='{{index}}' data-value="{{item.name}}" bindtap="toggle2">
+						{{item.name}}
+						<image class="img2" wx:if="{{index==ind2}}" src="../img/icon_01.png"></image>
+					</view>
+				</scroll-view>
+
+			</view>
+			<!-- —————— -->
+			<!-- 一级 -->
+			<scroll-view class="top_top" scroll-y="true">
+				<view class="{{index==ind?'no':'bot'}}" wx:for='{{zhiList}}' data-index='{{index}}' bindtap="toggle">
+					<image class="img" wx:if="{{index==ind}}" src="../img/icon_02.png"></image>
+					{{item.name}}
+				</view>
+			</scroll-view>
+		</view>
+		<view class="m_bottom">
+			<button class="b_left" bindtap="confirm">取消</button>
+			<button class="b_right" bindtap="queren">确认</button>
+		</view>
+	</view>
+	<!-- ---end-- -->
+	<view class="r_02">
+		<view class="r_03">工作类型：</view>
+		<view class="r_04" bindtap="tanchuang_2" style="line-height:80rpx;font-size: 28rpx;padding: 0 25rpx;box-sizing: border-box;">{{value}}</view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">行业：</view>
+		<view class="r_04" bindtap="industry">{{com_value}}</view>
+	</view>
+	<!-- 行业弹框 -->
+	<view class="mask" wx:if="{{isInd}}" bindtap="industry"></view>
+	<view class="mask_ind" wx:if="{{isInd}}">
+		<view class="ind_top">
+			<view class="ind_title">行业</view>
+			<view class="ind_bot">
+				<button class="{{item.value==ind3?'tt1':'ind_bot_tt'}}" size="mini" data-index="{{item.value}}" data-id="{{index}}" wx:for="{{comTypeList}}" wx:key="index" bindtap="toggle3" style="font-size:25rpx">{{item.label}} </button>
+			</view>
+		</view>
+		<view class="m_bottom">
+			<button class="b_left" bindtap="industry">取消</button>
+			<button class="b_right" bindtap="com_confirm">确认</button>
+		</view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">薪资：</view>
+		<view class="r_04"><input data-ty="4" type="number" bindblur="blur" data-value="{{value}}" placeholder="请输入 （元）" value="{{money_Type}}" /></view>
+	</view>
+	<!-- --end-- -->
+	<view class="r_02">
+		<view class="r_03">部门：</view>
+		<view class="r_04"><input data-ty="2" bindblur="blur" data-value="{{value}}" placeholder="请输入" value="{{dep_Type}}" /></view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">工作描述：</view>
+		<view class="t_05"><textarea data-ty="3" bindinput="blur" data-value="{{value}}" placeholder="请输入" value="{{des_Type}}"></textarea></view>
+	</view>
+</view>
+
+<view class="r_05" bindtap="refer" wx:if="{{!isToggle}}">提交</view>
+
+<view class="bot_05" wx:if="{{isToggle}}">
+	<view class="del fl" bindtap="dele">删除</view>
+	<view class="sub fr" bindtap="refer">提交</view>
+</view>
+
+
+
+<view class="f_08" style="{{dianhua}}">
+	<view class="f_07">
+		<view class="f_14">
+			<p>类型</p>
+		</view>
+		<view class="t_06">
+			<ul>
+				<li class="{{item.value==types?'on':''}}" data-index="{{item.value}}" data-value="{{item.label}}" wx:for="{{type_cont}}" bindtap="type">{{item.label}}</li>
+			</ul>
+		</view>
+		<view class="f_11">
+			<!-- <view class="f_12 fl" bindtap="quxiao2">取消</view> -->
+			<view class="f_13" bindtap="submit">提交</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>

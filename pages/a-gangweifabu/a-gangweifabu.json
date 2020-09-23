@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "spring-box":"../components/spring-box/spring-box",
+    "checkbox":"../components/checkbox/check",
+    "name":"../components/zhi-name/index"
+  },
+  "navigationBarTitleText": "职位发布"
+}

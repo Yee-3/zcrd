@@ -1,0 +1,15 @@
+<!--pages/components/toggle.wxml-->
+
+<view class="mask" wx:if="{{isShow}}" bindtap='show'></view>
+<view class="maskCom" wx:if="{{isShow}}">
+	<view class="Con" style="{{padding}}">
+		<view class="conTitle">{{title}}</view>
+		<view class="conCont">
+			{{content}}
+		</view>
+		<view class="conButt">
+			<view class="cancel" bindtap="_cancel">{{cancelText}}</view>
+			<view class="confirm" bindtap="_confirm">{{confirmText}}</view>
+		</view>
+	</view>
+</view>

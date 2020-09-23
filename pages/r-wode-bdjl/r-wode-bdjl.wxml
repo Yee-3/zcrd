@@ -1,0 +1,19 @@
+<view class="r_01">
+	<view class="r_02">
+		<view class="r_03">姓名：</view>
+		<view class="r_04"><input placeholder="请输入您的姓名" value="{{name}}" /></view>
+	</view>
+	<view class="r_02">
+		<view class="r_03">电话：</view>
+		<view class="r_04"><input type="Number" data-value="valueCon" value='{{valueCon}}' bindblur="change" data-value="{{value}}" placeholder="请输入您的电话" /></view>
+	</view>
+</view>
+
+<view class="r_05" bindtap="submit">{{title}}</view>
+
+
+
+
+
+
+

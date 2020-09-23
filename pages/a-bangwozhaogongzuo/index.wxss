@@ -1,0 +1,441 @@
+/**index.wxss**/
+.a_01 {
+	width: 690rpx;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+	padding: 40rpx 30rpx 14rpx 30rpx;
+	box-sizing: border-box;
+	border-radius: 6rpx;
+	margin: 0 auto;
+	margin-top: 30rpx;
+}
+
+.a_02 {
+	font-size: 34rpx;
+	font-weight:550rpx;
+}
+
+.a_03 {
+	margin-top: 30rpx;
+}
+
+.a_03 ul {}
+
+.a_03 ul li {
+	width: 182rpx;
+	height: 60rpx;
+	border-radius: 8rpx;
+	background: #f5f5f5;
+	display: block;
+	float: left;
+	text-align: center;
+	margin-left: 45rpx;
+	margin-bottom: 26rpx;
+}
+
+.a_03 ul li p {
+	font-size: 28rpx;
+	line-height: 60rpx;
+}
+
+/* .a_03 ul li:nth-child(3n+1) {
+	margin-left: 0;
+} */
+
+.a_03 ul li.on {
+	background: #0286ff;
+}
+
+.a_03 ul li.on p {
+	color: #fff;
+}
+
+.a_04 {
+	width: 690rpx;
+	margin: 0 auto;
+	margin-top: 50rpx;
+}
+
+.a_05 {
+	margin-top: 30rpx;
+}
+
+.a_05 ul li {
+	width: 150rpx;
+	height: 60rpx;
+	border-radius: 8rpx;
+	background: #f5f5f5;
+	display: block;
+	float: left;
+	text-align: center;
+	margin-left: 30rpx;
+}
+
+.a_05 ul li p {
+	font-size: 28rpx;
+	line-height: 60rpx;
+}
+
+.a_05 ul li:first-child {
+	margin-left: 0;
+}
+
+.a_05 ul li.on {
+	background: #0286ff;
+}
+
+.a_05 ul li.on p {
+	color: #fff;
+}
+
+.a_06 {
+	width: 690rpx;
+	height: 70rpx;
+	margin-top: 30rpx;
+}
+
+.section {
+	width: 690rpx;
+	height: 70rpx;
+	background: #f5f5f5;
+	font-size: 28rpx;
+	line-height: 100rpx;
+	border-radius: 8rpx;
+}
+
+.picker {
+	width: 690rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	padding-left: 30rpx;
+	box-sizing: border-box;
+}
+
+.a_07 {
+	margin-top: 30rpx;
+}
+
+.a_07 ul li {
+	height: 60rpx;
+	border-radius: 8rpx;
+	padding: 0 20px;
+	background: #f5f5f5;
+	display: block;
+	float: left;
+	text-align: center;
+	margin-right: 20rpx;
+	margin-bottom: 26rpx;
+}
+
+.a_07 ul li p {
+	font-size: 28rpx;
+	line-height: 60rpx;
+}
+
+.a_07 ul li:first-child {
+	margin-left: 0;
+}
+
+.a_07 ul li.on {
+	background: #0286ff;
+}
+
+.a_07 ul li.on p {
+	color: #fff;
+}
+
+.a_08 {
+	width: 690rpx;
+	margin: 0 auto;
+	height: 70rpx;
+	border-bottom: 1rpx solid #e5e5e5;
+	margin-top: 30rpx;
+}
+
+.a_08 input {
+	font-size: 28rpx;
+	height: 70rpx;
+}
+
+.a_09 {
+	width: 690rpx;
+	margin: 0 auto;
+}
+
+.a_10 {
+	width: 690rpx;
+	margin: 0 auto;
+	margin-top: 30rpx;
+	overflow: hidden;
+}
+
+.a_12 {
+	float: left;
+	margin-top: 5rpx;
+}
+
+.a_12 image {
+	width: 30rpx;
+	height: 30rpx;
+	display: inline-block;
+}
+
+.a_13 p {
+	font-size: 26rpx;
+	padding-left: 8rpx;
+}
+
+.a_11 {
+	
+}
+
+.a_11 p {
+	font-size: 26rpx;
+}
+
+.a_14 {
+	width: 690rpx;
+	height: 86rpx;
+	background: #0286ff;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 8rpx;
+	margin-top: 40rpx;
+}
+
+.a_14 p {
+	line-height: 86rpx;
+	font-size: 32rpx;
+	color: #fff;
+}
+
+.a_00 {
+	padding-bottom: 40rpx;
+}
+
+.w-clear {
+	clear: both;
+}
+
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 99;
+}
+
+.mask1 {
+	position: fixed;
+	left: 30rpx;
+	right: 30rpx;
+	bottom: 10%;
+	width: 690rpx;
+	height: 920rpx;
+	box-sizing: border-box;
+	/* background-color: red; */
+	color: #909090;
+	z-index: 999;
+
+	overflow: hidden;
+}
+
+.m_top {
+	width: 100%;
+	height: 800rpx;
+	margin-bottom: 20rpx;
+	background-color: #fff;
+	border-radius: 15rpx;
+	/* overflow: hidden; */
+}
+
+.mask_02 {
+	position: fixed;
+	width: 690rpx;
+	height: 710rpx;
+	background: #ff4949;
+	border-bottom-left-radius: 15rpx;
+	border-bottom-right-radius: 15rpx;
+	background: rgba(0, 0, 0, 0.6);
+	/* border: 1px sol; */
+	z-index: 9998;
+	box-sizing: border-box;
+
+}
+
+.mask_02_01 {
+	position: absolute;
+	width: 560rpx;
+	right: 0;
+	height: 710rpx;
+	background: #ff4949;
+	/* border-bottom-left-radius: 20rpx; */
+	border-bottom-right-radius: 15rpx;
+	background: #fff;
+	box-sizing: border-box;
+	z-index: 9999;
+	display: flex;
+	overflow: hidden;
+}
+
+.mask_left {
+	width: 230rpx;
+	height: 100%;
+	padding-top: 25rpx;
+	box-sizing: border-box;
+	/* background: red; */
+}
+
+.mask_right {
+	background: #f6f6f6;
+	padding-top: 25rpx;
+	border-bottom-right-radius: 15rpx;
+	width: 330rpx;
+	box-sizing: border-box;
+
+}
+
+.img1 {
+	height: 20rpx;
+	width: 24rpx;
+	position: absolute;
+	right: 15rpx;
+	margin-top: 30rpx;
+}
+
+.img2 {
+	height: 20rpx;
+	width: 24rpx;
+	position: absolute;
+	right: 30rpx;
+	margin-top: 30rpx;
+}
+
+.title {
+	height: 90rpx;
+	border-bottom: 1rpx solid #f3f3f3;
+	display: block;
+	font-size: 30rpx;
+	padding-left: 40rpx;
+	line-height: 90rpx;
+	font-weight: bold;
+	color: #333;
+}
+
+.bot {
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size: 25rpx;
+	line-height: 84rpx;
+	padding-left: 30rpx;
+	overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+.top_top {
+	height: 710rpx;
+	padding-top: 25rpx;
+}
+
+.img {
+	width: 5rpx;
+	height: 18rpx;
+	background-color: #19a0ff;
+}
+
+.bott {
+	min-width: 160rpx;
+	height: 58rpx;
+	margin-top: 30rpx;
+	margin-left: 40rpx;
+	background-color: #f0f0f0;
+	color: #909090;
+	font-weight: normal;
+	font-size: 22rpx;
+}
+
+.m_bottom {
+	height: 100rpx;
+	/* display: flex;
+	justify-content: space-around; */
+}
+
+.no {
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size: 25rpx;
+	line-height: 84rpx;
+	padding-left: 30rpx;
+	color: #0385ff;
+	overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+.b_left {
+	/* box-sizing: border-box; */
+	position: absolute;
+	left: 0;
+	max-width: 335rpx;
+	padding: 0;
+	line-height: 100rpx;
+	margin-right: 20rpx;
+	font-size: 30rpx;
+	color: #aaaaaa;
+
+}
+
+.b_right {
+	position: absolute;
+	right: 0;
+	max-width: 335rpx;
+	padding: 0;
+	line-height: 100rpx;
+	background-color: #0385ff;
+	margin-right: 20rpx;
+	font-size: 30rpx;
+	color: #fff;
+}
+.bott {
+	min-width: 160rpx;
+	height: 58rpx;
+	margin-top: 30rpx;
+	margin-left: 40rpx;
+	background-color: #f0f0f0;
+	color: #909090;
+	font-weight: normal;
+	font-size: 22rpx;
+}
+
+.m_bottom {
+	height: 100rpx;
+	/* display: flex;
+	justify-content: space-around; */
+}
+
+.no {
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size: 25rpx;
+	line-height: 84rpx;
+	padding-left: 30rpx;
+	color: #0385ff;
+	overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+.b_left {
+	/* box-sizing: border-box; */
+	position: absolute;
+	left: 0;
+	max-width: 335rpx;
+	padding: 0;
+	line-height: 100rpx;
+	margin-right: 20rpx;
+	font-size: 30rpx;
+	color: #aaaaaa;
+
+}

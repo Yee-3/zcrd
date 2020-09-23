@@ -1,0 +1,188 @@
+<view class="a_01">
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>标题</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section">
+				<input placeholder="请输入" value="{{titleValue}}" data-value="{{value}}" bindblur="blur" data-ty="1" />
+			</view>
+		</view>
+	</view>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>职位名称</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="zhiName">
+				<!-- <picker value="{{index}}" range="{{array}}"> -->
+				<view class="picker">{{nameValue}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+	</view>
+	<name id="name" confirmText="确定" cancelText="取消" content="{{nameContent}}" bind:cancel="cancel" bind:confirm="confirm"></name>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>招聘人数</p>
+		</view>
+		<view class="fr a_04">
+			<input placeholder="请输入" value="{{numValue}}" data-value="{{value}}" bindblur="blur" data-ty="2" />
+		</view>
+	</view>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>职位性质</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="zhiwei" data-type="1">
+				<view class="picker">{{zhiValue}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 职位性质 -->
+	<spring-box id="spring" title="职位性质" style="position: relative;z-index:9999" confirmText="确定" cancelText="取消" style="{{style}}" content="{{natureContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring-box>
+	<!-- end -->
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>工作经验</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="exper" data-type="2">
+				<view class="picker">{{expValue}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 工作经验 -->
+	<spring-box id="exp" title="工作经验" confirmText="确定" cancelText="取消" content="{{experContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring-box>
+	<!-- end -->
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>学历要求</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="educat" data-type="3">
+				<view class="picker">{{eduValue}}</view>
+			</view>
+		</view>
+	</view>
+	<spring-box id="edu" title="学历要求" confirmText="确定" cancelText="取消" content="{{educatContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring-box>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>薪资详情</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="salary" data-type="4">
+				<!-- <picker value="{{index}}" range="{{array}}"> -->
+				<view class="picker">{{salaValue}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+	</view>
+	<spring-box id="sala" title="薪资详情" confirmText="确定" cancelText="取消" content="{{salaContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring-box>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>工作地点</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="city">
+				<!-- <picker value="{{index}}" range="{{array}}"> -->
+				<view class="picker">{{cityValue}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+	</view>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>详细地址</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section">
+				<input placeholder="请输入" value="{{mapValue}}" data-value="{{value}}" bindblur="blur" data-ty="3" />
+			</view>
+		</view>
+	</view>
+	<view class="a_06">
+		<view class="a_03"><em>*</em>
+			<p>工作职责</p>
+		</view>
+		<view class="a_05">
+			<textarea placeholder="请输入" style="height:200rpx;overflow-y:auto" wx:if="{{isHidden}}" value="{{workValue}}" data-value="{{value}}" bindblur="blur" data-ty="4"></textarea>
+		</view>
+	</view>
+	<view class="a_06">
+		<view class="a_03">
+			<p>任职要求</p>
+		</view>
+		<view class="a_05">
+			<textarea style="height:200rpx;overflow-y:auto"  wx:if="{{isHidden}}" placeholder="请输入" value="{{yqValue}}" data-value="{{value}}" bindblur="blur" data-ty="5"></textarea>
+		</view>
+	</view>
+	<view class="a_07">
+		<view class="">
+			<view class="fl a_03">
+				<p>职位福利</p>
+			</view>
+			<view class="fr a_04">
+				<view class="section">
+					<view class="picker" bindtap="welfare" data-type="5">{{wel_Value}}</view>
+				</view>
+			</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="a_08">
+			<ul>
+				<li wx:for="{{welValue}}">{{item.label}}</li>
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<checkbox id="wel" title="职位福利" confirmText="确定" cancelText="取消" content="{{welContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</checkbox>
+	<view class="a_06">
+		<view class="a_03">
+			<p>薪资结构</p>
+		</view>
+		<view class="a_05">
+			<textarea placeholder="请输入" style="height:200rpx;overflow-y:auto"  wx:if="{{isHidden}}" value="{{moneyValue}}" data-value="{{value}}" bindblur="blur" data-ty="6"></textarea>
+		</view>
+	</view>
+	<view class="a_09">
+		<view class="g_13">
+			<view class="g_14 fl"></view>
+			<view class="g_15 fl">
+				<p>职位设置</p>
+			</view>
+		</view>
+		<view class="a_10">
+			<view class="fl a_03"><em>*</em>
+				<p>服务类型</p>
+			</view>
+			<view class="fr a_11">
+				<ul>
+					<li class="{{ty==1?'on':''}}" bindtap="types" data-index="1">到面式</li>
+					<li class="{{ty==2?'on':''}}" bindtap="types" data-index='2'>到岗式</li>
+					<li class="{{ty==3?'on':''}}" bindtap="types" data-index='3'>管家式</li>
+				</ul>
+			</view>
+			<view class="w-clear"></view>
+		</view>
+		<!-- <view class="a_10">
+			<view class="fl a_03"><em>*</em>
+				<p>是否初面</p>
+			</view>
+			<view class="fr a_12">
+				<view class="page-section page-section-gap">
+					<view class="page-section-title"></view>
+					<switch name="switch" bindchange="switch1Change" />
+				</view>
+			</view>
+			<view class="w-clear"></view>
+		</view> -->
+	</view>
+	<view class="a_13" bindtap="submit">发布</view>
+</view>

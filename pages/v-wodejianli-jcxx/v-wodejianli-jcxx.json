@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "spring": "../components/spring/index",
+      "date-picker": "../components/date-picker1/date-picker"
+    },
+  "navigationBarTitleText": "基本信息"
+}

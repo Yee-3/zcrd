@@ -1,0 +1,113 @@
+.r_01 {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+.r_02 {
+  margin-top: 35rpx;
+}
+
+.r_03 {
+  width: 690rpx;
+  height: 40rpx;
+}
+
+.r_04 {
+  width: 690rpx;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  margin-top: 25rpx;
+}
+
+.r_04 input {
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+  height: 80rpx;
+  font-size: 28rpx;
+}
+
+.r_05 {
+  position: fixed;
+  width: 690rpx;
+  height: 80rpx;
+  background: #0286ff;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  border-radius: 15rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  left: 30rpx;
+  bottom: 60rpx;
+}
+.bot_05 {
+  position: fixed;
+  width: 690rpx;
+  height: 80rpx;
+  left: 30rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  bottom: 60rpx;
+}
+
+.del {
+  background-color: #e5e5e5;
+  color: #909090;
+  width: 220rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  text-align: center;
+
+}
+
+.sub {
+  background-color: #0286ff;
+  border-radius: 10rpx;
+  color: #fff;
+  width: 460rpx;
+  line-height: 80rpx;
+  text-align: center;
+
+}
+.section {
+  width: 690rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+
+.picker {
+  width: 690rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+
+.t_05 {
+  width: 690rpx;
+  height: 180rpx;
+  background: #f5f5f5;
+  border-radius: 10rpx;
+  margin-top: 25rpx;
+}
+
+.t_05 textarea {
+  width: 690rpx;
+  padding: 25rpx;
+  box-sizing: border-box;
+  height: 180rpx;
+  font-size: 28rpx;
+}
+
+.u_01 {
+  margin-top: 25rpx;
+}
+
+.u_01 image {
+  width: 220rpx;
+  height: 220rpx;
+}

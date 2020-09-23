@@ -1,0 +1,192 @@
+<view class="h_01">
+	<view class="h_02">
+		<ul>
+			<li>
+				<view class="h_04">面试进程</view>
+				<view class="h_05"></view>
+				
+			</li>
+			<li>
+				<view class="h_03">入职进程</view>
+				<view class=""></view>
+			</li>
+			<li>
+				<view class="h_03">成功招聘</view>
+				<view class=""></view>
+			</li>
+		</ul>
+	</view>
+	<view class="h_10">
+		<ul>
+			<li><view class="h_07"><image src="../img/f026.png"></image></view></li>
+			<li><view class="h_07"></view></li>
+			<li><view class="h_07"></view></li>
+		</ul>
+	</view>
+	<view class="h_06">
+		<ul>
+			<li class="on">
+				<view class="h_08">邀面试</view>
+			</li>
+			<li>
+				
+				<view class="h_08">已同意</view>
+			</li>
+			<li>
+				
+				<view class="h_08">已拒绝</view>
+			</li>
+			
+		</ul>
+	</view>
+</view>
+
+
+<view class="h_11">
+	<view class="h_12">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15"><image src="../img/f004.png"></image></view>
+				<view class="fl h_16">
+					<view class="h_17">李先生</view>
+					<view class="h_18"><p>10年</p><span>|</span><p>本科</p><span>|</span><p>北京</p><span>|</span><p>15k~30k</p></view>
+				</view>
+			</view>
+			<view class="fr h_19">
+				<view class="h_20">待回复</view>
+				<view class="h_21">22小时前活跃</view>
+			</view>
+		</view>
+		<view class="h_22">
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>业务部经理</span>
+			</view>
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>业务部经理</span>
+			</view>
+		</view>
+	</view>
+	<view class="h_25">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15"><image src="../img/f004.png"></image></view>
+				<view class="fl h_16">
+					<view class="h_17">李先生</view>
+					<view class="h_18"><p>10年</p><span>|</span><p>本科</p><span>|</span><p>北京</p><span>|</span><p>15k~30k</p></view>
+				</view>
+			</view>
+			<view class="fr h_19">
+				<view class="h_20">待回复</view>
+				<view class="h_21">22小时前活跃</view>
+			</view>
+		</view>
+		<view class="h_22">
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>业务部经理</span>
+			</view>
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>业务部经理</span>
+			</view>
+		</view>
+		<view class="h_24">
+			<ul>
+				<li>未面试</li>
+				<li>已面试</li>
+			</ul>
+		</view>
+	</view>
+	<view class="h_12">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15"><image src="../img/f004.png"></image></view>
+				<view class="fl h_16">
+					<view class="h_17">李先生</view>
+					<view class="h_18"><p>10年</p><span>|</span><p>本科</p><span>|</span><p>北京</p><span>|</span><p>15k~30k</p></view>
+				</view>
+			</view>
+			<view class="fr h_19">
+				<view class="h_20">待回复</view>
+				<view class="h_21">22小时前活跃</view>
+			</view>
+		</view>
+		<view class="h_22">
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>业务部经理</span>
+			</view>
+			<view class="h_23">
+				<p>面试时间：</p>
+				<span>2020年03月24日</span>
+			</view>
+			<view class="h_23">
+				<p>拒绝原因：</p>
+				<span>面试时间不合适
+				2020.05.14 周四    2020.05.18 周一2020.05.19 周二</span>
+			</view>
+		</view>
+	</view>
+	
+	<view class="h_25">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15"><image src="../img/f004.png"></image></view>
+				<view class="fl h_16">
+					<view class="h_17">李先生</view>
+					<view class="h_18"><p>10年</p><span>|</span><p>本科</p><span>|</span><p>北京</p><span>|</span><p>15k~30k</p></view>
+				</view>
+			</view>
+			<view class="fr h_19">
+				<view class="h_20">待回复</view>
+				<view class="h_21">22小时前活跃</view>
+			</view>
+		</view>
+		<view class="h_22">
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>业务部经理</span>
+			</view>
+			<view class="h_23">
+				<p>面试时间：</p>
+				<span>2020年03月24日</span>
+			</view>
+			<view class="h_23">
+				<p>拒绝原因：</p>
+				<span>面试时间不合适
+				2020.05.14 周四    2020.05.18 周一2020.05.19 周二</span>
+			</view>
+		</view>
+		<view class="h_26">再邀请</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,376 @@
+.v_01 {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+.v_02 {
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.v_02 image {
+  width: 140rpx;
+  height: 140rpx;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+
+.v_02 p {
+  font-size: 28rpx;
+  color: #333;
+  padding-top: 20rpx;
+  display: block;
+}
+
+.v_03 {
+  margin-top: 50rpx;
+}
+
+.v_04 {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.v_05 {
+  width: 690rpx;
+  height: 60rpx;
+}
+
+.v_06 {
+  width: 600rpx;
+  height: 60rpx;
+}
+
+.v_06 input {
+  width: 600rpx;
+  height: 60rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}
+
+.v_07 {
+  margin-top: 15rpx;
+}
+
+.v_07 image {
+  width: 17rpx;
+  height: 33rpx;
+}
+
+.section {
+  width: 690rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #666;
+  line-height: 60rpx;
+}
+
+.picker {
+  width: 690rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  box-sizing: border-box;
+}
+
+.v_08 {
+  width: 690rpx;
+  height: 2rpx;
+  background: #e5e5e5;
+  margin: 60rpx 0;
+}
+
+.r_05 {
+  width: 690rpx;
+  height: 80rpx;
+  background: #0286ff;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  border-radius: 15rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+}
+
+/* -----婚姻状况弹框----------- */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.mask_Mar {
+  width: 650rpx;
+  height: 400rpx;
+  position: fixed;
+  left: 50rpx;
+  z-index: 9999;
+  top: 320rpx;
+  /* text-align: center; */
+}
+
+.mar_top {
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  /* padding-left: 50rpx; */
+  /* height: 400rpx; */
+  background: #fff;
+  /* width: 650rpx; */
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+.mar_bot{
+  padding-left: 20rpx;
+  margin-bottom: 40rpx;
+  /* text-align: center; */
+}
+.but{
+  text-align: center;
+  /* margin-bottom: 38rpx; */
+}
+.mar_title {
+  margin-bottom: 38rpx;
+  font-style: 26rox;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.queren {
+  min-width: 260rpx;
+  min-height: 68rpx;
+  background: #0286ff;
+  color:#fff;
+  line-height: 68rpx;
+  margin-bottom: 30rpx;
+
+}
+
+.no {
+  background: #f5f5f5;
+  color: #909090;
+  font-size: 25rpx;
+  font-weight: normal;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  min-height: 60rpx;
+  line-height: 60rpx;
+  min-width: 180rpx;
+}
+
+.no1 {
+  font-weight: normal;
+  font-size: 25rpx;
+  background: #0286ff;
+  color: #fff;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  min-height:60rpx;
+  line-height: 60rpx;
+  min-width: 180rpx;
+}
+
+/* -----end------ */
+/* 性别弹框 */
+.bot{
+  font-weight: normal;
+  margin-bottom: 20rpx;
+  background:#fff;
+  font-size: 30rpx;
+  text-align: center;
+  color: #c3c3c3;
+  min-width: 100%;
+}
+.bot1{
+  font-weight: normal;
+  margin-bottom: 20rpx;
+  background:#fff;
+  font-size: 30rpx;
+  text-align: center;
+  color: #000;
+  min-width: 100%;
+}
+/* ---end--- */
+.mask_edu{
+  width: 690rpx;
+  /* height: 380rpx; */
+  position: fixed;
+  left: 30rpx;
+  z-index: 9999;
+  bottom: 20rpx;
+}
+.edu_top{
+  /* height: 260rpx; */
+  padding-left: 26rpx;
+  padding-top: 50rpx;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx;
+}
+.edu_title{
+  font-size: 26rpx;
+  color: #565656;
+  margin-bottom: 30rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.edu_bot{
+  padding-bottom: 20rpx;
+}
+.mask_edu .no{
+  min-width: 140rpx;
+  min-height: 58rpx;
+  line-height: 58rpx;
+  color: #909090;
+  background: #e5e5e5;
+  font-weight: normal;
+  margin-right: 26rpx;
+}
+.mask_edu .no1{
+  min-width: 140rpx;
+  min-height: 58rpx;
+  line-height: 58rpx;
+  color: #fff;
+  font-weight: normal;
+  margin-right: 26rpx;
+  font-weight: normal;
+  background: #0385ff;
+}
+/* 底部按钮 */
+.m_bottom {
+	height: 100rpx;	
+	/* display: flex;
+	justify-content: space-around; */
+}
+.b_left {
+	/* box-sizing: border-box; */
+	position: absolute;
+	left: 0;
+	max-width: 335rpx;
+	padding: 0;
+	line-height: 100rpx;
+	margin-right: 20rpx;
+	font-size: 30rpx;
+	color: #aaaaaa;
+
+}
+
+.b_right {
+	position: absolute;
+	right: 0;
+	max-width: 335rpx;
+	padding: 0;
+	line-height: 100rpx;
+	background-color:#0385ff;
+	margin-right: 20rpx;
+	font-size: 30rpx;
+	color: #fff;
+}
+.s_24 {
+  width: 690rpx;
+  height: 85rpx;
+  background: #0286ff;
+  line-height: 85rpx;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+}
+
+.f_07 {
+  width: 630rpx;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 15rpx;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  margin-top: 50%;
+}
+
+.f_08 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.f_11 {
+  width: 380rpx;
+  margin: 0 auto;
+  margin-top: 31rpx;
+  background: #fff;
+}
+
+.f_12 {
+  width: 170rpx;
+  height: 66rpx;
+  background: #ececec;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 66rpx;
+  border-radius: 40rpx;
+}
+
+.f_13 {
+  width: 170rpx;
+  height: 66rpx;
+  background: #0286ff;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  line-height: 66rpx;
+  border-radius: 40rpx;
+}
+
+.zc_18 {
+  margin: 0 auto;
+  width: 492rpx;
+  display: block;
+  height: 240rpx;
+}
+
+.zc_18 image {
+  width: 492rpx;
+  height: 250rpx;
+  display: block;
+}
+
+.zc_19 {
+  background: #fff;
+  width: 492rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 60rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.zc_20 p {
+  font-size: 30rpx;
+  color: #000;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.zc_20 span {
+  font-size: 26rpx;
+  color: #666;
+  display: block;
+}

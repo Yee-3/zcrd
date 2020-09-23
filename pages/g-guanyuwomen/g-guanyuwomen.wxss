@@ -1,0 +1,27 @@
+.g_01{ width: 690rpx; padding: 0 30rpx 30rpx 30rpx; margin: 0 auto;}
+.g_02{ position: relative; top: 0; width: 690rpx; height: 300rpx; box-shadow: 0 0 7px rgba(0, 0, 0, 0.1); }
+.g_03{ position: absolute;}
+.g_03 image{ width: 690rpx; height: 300rpx;}
+.g_09{ position: absolute; top: 0; width: 690rpx;}
+.g_04{ margin-top: 59rpx; margin-left: 39rpx; width: 440rpx;}
+.g_05{ font-size: 44rpx; color: #fff; margin-bottom: 50rpx;}
+.g_06{ width: 440rpx; height: 50rpx;}
+.g_07{ width: 30rpx; text-align: center;}
+.g_07 image{ width: 22rpx; height: 26rpx;}
+.g_08{ margin-left: 20rpx;}
+.g_08 p{ color: #fff; font-size: 30rpx;}
+.g_10{ width: 30rpx; text-align: center;}
+.g_10 image{ width: 29rpx; height: 22rpx;}
+.g_11{ width: 140rpx; height: 140rpx; margin: 40rpx 40rpx 0 0;}
+.g_11 image{ width: 140rpx; height: 140rpx;}
+
+.g_12{ width: 690rpx; margin-top: 60rpx;}
+.g_13{ width: 690rpx; height: 40rpx;}
+.g_14{ width: 8rpx; height: 40rpx; background: #0286ff; border-radius: 4rpx;}
+.g_15{ margin-left: 16rpx;}
+.g_15 p{ font-size: 32rpx;}
+.g_16{ width: 690rpx; margin-top: 30rpx;}
+.g_16 p{ font-size: 28rpx; color: #666; text-align: justify; display: block; line-height: 42rpx;}
+
+
+

@@ -1,0 +1,59 @@
+/* pages/index/index.wxss */
+.title {
+  font-size: 20px;
+  margin-top: 50%;
+  text-align: center;
+}
+
+button {
+  min-width: 180rpx;
+  line-height: 60rpx;
+  background-color: silver;
+  border-radius: 30rpx;
+  margin-top: 20rpx;
+}
+
+view {
+  text-align: center;
+}
+
+page {
+  background: #f6f6f6;
+}
+
+.content {
+  margin-top: 140rpx;
+}
+
+.top {
+  margin-bottom: 60rpx;
+}
+
+.ti {
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+  font-size: 34rpx;
+  color: #000;
+
+}
+
+.p {
+
+  font-size: 26rpx;
+  color: #666;
+
+}
+
+image {
+  width: 695rpx;
+  height: 252rpx;
+
+}
+
+.qiuzhi {
+  margin-bottom: 60rpx;
+}
+
+/* button:first-child{
+  background: royalblue;
+} */

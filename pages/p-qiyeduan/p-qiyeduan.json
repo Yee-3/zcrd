@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tabbars":"../components/tabbar/tab"
+  },
+  "navigationBarTitleText": "职面|企业端"
+}

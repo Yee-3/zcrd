@@ -1,0 +1,92 @@
+<view class="h_01">
+	<view class="h_02">
+		<ul>
+			<li>
+				<view class="{{idn==1?'h_04':'h_03'}}" data-index="1" bindtap="toggleShen">已通过</view>
+				<view class="{{idn==1?'h_05':''}}"></view>
+			</li>
+			<li>
+				<view class="{{idn==2?'h_04':'h_03'}}" data-index="2" bindtap="toggleShen">审核中</view>
+				<view class="{{idn==2?'h_05':''}}"></view>
+			</li>
+			<li>
+				<view class="{{idn==3?'h_04':'h_03'}}" data-index="3" bindtap="toggleShen">未通过</view>
+				<view class="{{idn==3?'h_05':''}}"></view>
+			</li>
+		</ul>
+	</view>
+</view>
+
+<view class="l_01">
+	<!-- <view class="h_10" wx:if="{{idn==2}}">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fl h_13">审核中... </view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15"><p>济南市天桥</p><span>|</span><p>5年</p><span>|</span><p>本科</p><span>|</span><p>5人</p><span>|</span><p>到岗式</p></view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_17"><span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span></view>
+	</view>
+	
+	<view class="h_10" wx:if="{{idn==3}}">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fl h_133">未通过</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15"><p>济南市天桥</p><span>|</span><p>5年</p><span>|</span><p>本科</p><span>|</span><p>5人</p><span>|</span><p>到岗式</p></view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_17"><span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span></view>
+		<view class="l_02">
+			<view class="l_03">原因:</view>
+			<view class="l_04">招聘信息格式填写出错，请重新修改后再次发布！</view>
+		</view>
+	</view> -->
+
+	<view class="h_10" wx:for="{{recomList}}">
+		<view class="h_11">
+			<view class="fl h_12">{{item.title}}</view>
+			<view class="{{idn==1?'fl h_1333':idn==2?'fl h_13':'fl h_133'}}">{{idn==1?'已通过':idn==2?'审核中':'未通过'}}</view>
+			<view class="fr l_05" wx:if="{{idn==1}}">成功入职{{item.hiring?item.hiring:'0'}}人</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15">
+				<p>{{item.address}}</p><span>|</span>
+				<p>{{item.workExperience}}</p><span>|</span>
+				<p>{{item.schoolRecord}}</p><span>|</span>
+				<p>{{item.num+'人'}}</p><span>|</span>
+				<p>{{item.serviceType==1?'到面试':item.serviceType==2?'到岗式':'管家式'}}</p>
+			</view>
+			<view class="fr h_16">{{item.updateStr}}</view>
+		</view>
+		<view class="h_17"><span wx:for="{{item.wel}}" wx:for-index="index2" wx:for-item="ite">{{ite}}</span></view>
+		<view class="l_02" wx:if="{{idn==3}}">
+			<view class="l_03">原因:</view>
+			<view class="l_04">{{item.why?item.why:''}}</view>
+		</view>
+	</view>
+</view>
+
+
+<view class="l_06" bindtap="release">
+	<view class="l_07">发布职位</view>
+</view>
+<view class="f_08" wx:if="{{isHz}}">
+	<view class="f_07">
+		<view class="f_14">
+			<p>您还没与平台达成合作</p>
+			<view><span>请联系客服</span><span style="color: #0286ff;">{{kefuPhone.phone}}</span></view>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="quxiao2">取消</view>
+			<view class="f_13 fr" bindtap="phone">拨打</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+<view class="d_16" wx:if="{{loadingType!=2}}">
+		{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+	</view>

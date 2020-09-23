@@ -1,0 +1,14 @@
+<!--pages/components/spring-box/spring-box.wxml-->
+<view class="mask" wx:if="{{isShow}}" bindtap="show"></view>
+<view class="mask_edu" wx:if="{{isShow}}">
+	<view class="edu_top" style="{{padding}}">
+		<view class="edu_title">{{title}}</view>
+		<view class="edu_bot">
+			<button class="{{item.dandu?'no1':'no'}}" size="mini" data-value="{{item.value}}" data-show="{{isEdu}}" data-index="{{index}}" wx:for="{{content}}" bindtap="toggle" style="{{style}};font-size:24rpx">{{item.label}}</button>
+		</view>
+	</view>
+	<view class="m_bottom">
+		<view class="cancel" bindtap='_cancel'>取消</view>
+		<view class="confirm" bindtap="_confirm">确定</view>
+	</view>
+</view>

@@ -1,0 +1,67 @@
+<view class="d_01">
+	<view class="l_01">
+		<ul>
+			<li bindtap="toggleZong">
+				<view class="l_02" >{{value}}
+					<image class="image" src="../img/f033.png" animation="{{animationCon}}"></image>
+				</view>
+			</li>
+			<zonghe id="zonghe" bind:confirm="togValue" bind:zongHide="zongHide" style="{{style}}"></zonghe>
+			<li bindtap="toggleZhi">
+				<view class="l_02">职位
+					<image class="image" src="../img/f033.png" animation="{{animationData}}"></image>
+				</view>
+			</li>
+			<zhiwei id="zhiwei" bind:confirm="tog" bind:hidden="hidden" zhiList="{{zList}}"></zhiwei>
+			<li bindtap="toggleMor">
+				<view class="l_02">更多
+					<image class="image" src="../img/f033.png" animation="{{animationMor}}"></image>
+				</view>
+			</li>
+			<more id="more" bind:confirm="togMore" bind:cancel="moCancel" moneyList="{{moneyList}}" expList="{{expList}}" codList="{{codList}}"></more>
+		</ul>
+	</view>
+</view>
+
+<view class="d_02">
+	<view class="d_03" bindtap="detail" data-id="{{item.id}}" wx:for="{{recomList}}">
+		<view class="">
+			<view class="fl d_04" >
+				<view class="fl d_05">
+					<image src="{{item.url?item.url:(item.sex==0?'../img/f004.png':'../img/f051.png')}}"></image>
+				</view>
+				<view class="fl d_06">
+					<view class="d_07">
+						<view class="fl d_08">{{item.name}}</view>
+						<view class="fl d_091">{{item.ctrlObjectiveDTOS[0].positionName}}</view>
+						<view class="w-clear"></view>
+					</view>
+					<view class="d_10">
+					<p>{{item.workTimeName?item.workTimeName:''}}</p><span wx:if="{{item.schoolName}}">|</span>
+						<p>{{item.schoolName?item.schoolName:''}}</p><span wx:if="{{item.ctrlObjectiveDTOS[0].address}}">|</span>
+						<p>{{item.ctrlObjectiveDTOS[0].address?item.ctrlObjectiveDTOS[0].address:''}}</p><span wx:if="{{item.ctrlObjectiveDTOS[0].moneyName}}">|</span>
+						<p>{{item.ctrlObjectiveDTOS[0].moneyName?item.ctrlObjectiveDTOS[0].moneyName:''}}</p>
+					</view>
+				</view>
+			</view>
+			<view class="d_11 fr">{{item.timeVal}}</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="d_12">
+				<view class="fl d_14" wx:if="{{item.ctrlWorkDTOS.length>0}}">
+					<image src="../img/f0021.png"></image>
+				</view>
+			<view class="d_13" wx:for="{{item.ctrlWorkDTOS}}" wx:for-index="index2" wx:for-item="i">
+				<view class="fl d_15">
+				<p>{{i.company}}·{{i.timeVal}}</p>
+					<span>{{i.position}}</span>
+				</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+	</view>
+	
+</view>
+<view class="d_16">
+		{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+	</view>

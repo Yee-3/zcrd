@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "zonghe": "../components/qiye_zonghe/zonghe",
+    "zhiwei": "../components/zhiwei/zhiwei",
+    "more": "../components/gengduo/more"
+  },
+  "navigationBarTitleText": "海量人才"
+}

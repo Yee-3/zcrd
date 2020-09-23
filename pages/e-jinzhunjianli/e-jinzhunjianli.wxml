@@ -1,0 +1,48 @@
+<view class="e_01">
+	<view class="e_02" bindtap="jingzhun" data-id="{{item.id}}" data-name="{{item.title}}" data-addr="{{item.address}}" data-money="{{item.money}}" data-num="{{item.memberCount}}" wx:for="{{jlList}}">
+		<view class="fl e_03">
+			<view class="e_04">{{item.title}}</view>
+			<view class="d_10">
+				<p>{{item.city}}</p><span>|</span>
+				<p>{{item.money}}</p><span>|</span>
+				<p>{{item.serviceType=='1'?'到岗式':item.serviceType=='2'?'到面式':'管家式'}}</p><span>|</span>
+				<p>{{item.num}}人</p>
+			</view>
+		</view>
+		<view class="fr e_05">
+			<view class="e_06" style="position: relative;">
+				<view class="e_07 fl">应聘简历</view>
+				<view class="e_08 fr">{{item.memberCount}}</view>
+			<image src="../img/yuan.jpg" wx:if="{{!item.read}}"></image>
+			</view>
+			<view class="e_06">
+				<view class="e_07 fl">{{item.serviceType=='2'?'成功面试':'成功入职'}}</view>
+				<view class="e_08 fr">{{item.hiring}}</view>
+			</view>
+		</view>
+		<view class="w-clear"></view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

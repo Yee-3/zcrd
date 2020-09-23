@@ -1,0 +1,48 @@
+<view class="n_01">
+	<view class="n_02">
+		<view class="n_03 fl">
+			<view class="fl n_04"><image src="../img/f057.png"></image></view>
+			<view class="fl n_05"><input placeholder="请输入需要查找的职位" value="{{val}}" data-value="{{value}}" bindblur="search" /></view>
+		</view>
+		<view class="fr n_06" bindtap="search_s">搜索</view>
+	</view>
+	
+	<view class="n_07">
+		<view class="n_08">搜索记录</view>
+		<view class="n_09">
+			<ul>
+				<li wx:for="{{hisList}}" data-value="{{item.name}}" bindtap="addValue">{{item.name}}</li>
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="n_07">
+		<view class="n_08">热门搜索</view>
+		<view class="n_09">
+			<ul>
+				<li wx:for="{{searchList}}" data-value="{{item.name}}" bindtap="addValue">{{item.name}}</li>
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

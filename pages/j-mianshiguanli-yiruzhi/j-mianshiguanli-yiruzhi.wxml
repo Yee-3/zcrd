@@ -1,0 +1,119 @@
+<view class="h_01">
+	<view class="h_02">
+		<ul>
+			<li>
+				<view class="h_03">面试进程</view>
+			</li>
+			<li>
+				<view class="h_03">入职进程</view>
+				<view class=""></view>
+			</li>
+			<li>
+				<view class="h_04">成功招聘</view>
+				<view class="h_05"></view>
+				<view class=""></view>
+			</li>
+		</ul>
+	</view>
+	<view class="h_10">
+		<ul>
+			<li>
+				<view class="h_07"></view>
+			</li>
+			<li>
+				<view class="h_07"></view>
+			</li>
+			<li>
+				<view class="h_07">
+					<image src="../img/f026.png"></image>
+				</view>
+			</li>
+		</ul>
+	</view>
+	<view class="h_06">
+		<ul>
+			<li class="on">
+				<view class="h_08">到面式</view>
+			</li>
+			<li>
+
+				<view class="h_08">到岗式</view>
+			</li>
+
+		</ul>
+	</view>
+</view>
+
+
+<view class="h_11">
+	<view class="h_12">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15">
+					<image src="../img/f004.png"></image>
+				</view>
+				<view class="fl h_16">
+					<view class="h_17">李先生</view>
+					<view class="h_18">
+						<p>10年</p><span>|</span>
+						<p>本科</p><span>|</span>
+						<p>北京</p><span>|</span>
+						<p>15k~30k</p>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="">
+			<view class="h_22 fl">
+				<view class="h_23">
+					<p>应聘职位：</p>
+					<span>业务部经理</span>
+				</view>
+				<view class="h_23">
+					<p>面试时间：</p>
+					<span>2020年03月24日</span>
+				</view>
+				<view class="h_23">
+					<p>服务模式：</p>
+					<span>到面式</span>
+				</view>
+			</view>
+			<view class="h_26 fr">离职</view>
+		</view>
+	</view>
+	<view class="h_12">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15">
+					<image src="../img/f004.png"></image>
+				</view>
+				<view class="fl h_16">
+					<view class="h_17">李先生</view>
+					<view class="h_18">
+						<p>10年</p><span>|</span>
+						<p>本科</p><span>|</span>
+						<p>北京</p><span>|</span>
+						<p>15k~30k</p>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="">
+			<view class="h_22 fl">
+				<view class="h_23">
+					<p>应聘职位：</p>
+					<span>业务部经理</span>
+				</view>
+				<view class="h_23">
+					<p>面试时间：</p>
+					<span>2020年03月24日</span>
+				</view>
+				<view class="h_23">
+					<p>服务模式：</p>
+					<span>到面式</span>
+				</view>
+			</view>
+			
+		</view>
+	</view>
+</view>

@@ -1,0 +1,255 @@
+<view class="v_01">
+	<view class="v_02">
+		<image bindtap="images" src="{{img}}"></image>
+		<!-- <image src="../img/f067.png"></image> -->
+		<p>上传头像</p>
+	</view>
+
+	<view class="v_03">
+		<view class="v_04">名字</view>
+		<view class="v_05">
+			<view class="v_06 fl"><input placeholder="请输入" data-value="{{value}}" data-ty="1" bindblur="blur" value="{{name_value}}" /></view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+
+	<view class="v_03">
+		<view class="v_04">生日</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section" bindtap="showDatePicker">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker">{{date_value}}</view>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<date-picker id="date-picker" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+
+	<view class="v_03">
+		<view class="v_04">性别</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker" bindtap="hidden">{{six_val}}</view>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<!--性别弹框 -->
+	<view class="mask" wx:if="{{isSix}}"></view>
+	<view class="mask_Mar" wx:if="{{isSix}}">
+		<view class="mar_top">
+			<view class="mar_title">性别</view>
+			<view class="mar_bot" style="padding:0">
+				<button class="{{six==0?'bot1':'bot'}}" data-index="0" bindtap="sixChange">男</button>
+				<button class="{{six==1?'bot1':'bot'}}" data-index="1" bindtap="sixChange">女</button>
+			</view>
+			<view class="but">
+				<button class="queren" size="mini" style="font-weight:normal;" bindtap="con1">确认</button>
+			</view>
+		</view>
+	</view>
+	<!-- ---end---- -->
+	<view class="v_03">
+		<view class="v_04">求职状态</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker" bindtap="show">{{type_content}}</view>
+
+					<spring id="spring" title="求职状态" confirmText="确定" cancelText="取消" content="{{springContent}}" bind:confirm="handleConfirmDialog">
+					</spring>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+
+	<view class="v_03">
+		<view class="v_04">最高学历</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker" bindtap="educat">{{valu2}}</view>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 学历弹框 -->
+	<view class="mask" wx:if="{{isEdu}}"></view>
+	<view class="mask_edu" wx:if="{{isEdu}}">
+		<view class="edu_top">
+			<view class="edu_title">最高学历</view>
+			<view class="edu_bot">
+				<button class="{{edu==item.value?'no1':'no'}}" wx:for="{{eduction}}" size="mini" data-edu="{{item.value}}" data-index="{{index}}" bindtap="toggle" style="font-size:24rpx;">{{item.label}}</button>
+			</view>
+		</view>
+		<view class="m_bottom">
+			<button class="b_left" bindtap="educat">取消</button>
+			<button class="b_right" bindtap="con2">确认</button>
+		</view>
+	</view>
+	<!-- ---end--- -->
+	<view class="v_03">
+		<view class="v_04">居住地</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker"><input placeholder="请输入" data-value="{{value}}" data-ty="2" bindblur="blur" value="{{home_value}}" /></view>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="v_03">
+		<view class="v_04">参加工作时间</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker" bindtap="yearShow">{{yearValue}}</view>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 参加工作时间 -->
+	<view class="mask" wx:if="{{isYear}}"></view>
+	<view class="mask_edu" wx:if="{{isYear}}">
+		<view class="edu_top">
+			<view class="edu_title">工作时间</view>
+			<view class="edu_bot">
+				<button class="{{year_time==item.value?'no1':'no'}}" wx:for="{{yearList}}" size="mini" data-year="{{item.value}}" data-index="{{index}}" bindtap="toggle_year" style="font-size:24rpx;">{{item.label}}</button>
+			</view>
+		</view>
+		<view class="m_bottom">
+			<button class="b_left" bindtap="yearShow">取消</button>
+			<button class="b_right" bindtap="con_year">确认</button>
+		</view>
+	</view>
+	<!-- <view class="v_03">
+		<view class="v_04">目前年收入</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<view class="picker"><input placeholder="请输入" data-value="{{value}}" data-ty="3" bindblur="blur" value="{{money_value}}"  /></view>
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view> -->
+
+	<view class="v_08"></view>
+
+	<!-- <view class="v_03">
+		<view class="v_04">户口</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<view class="picker"><input placeholder="请输入" data-value="{{value}}" data-ty="4" bindblur="blur" value="{{reg_value}}"  /></view>
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view> -->
+
+	<view class="v_03">
+		<view class="v_04">婚姻状况</view>
+		<view class="v_05">
+			<view class="v_06 fl">
+				<view class="section">
+					<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker" bindtap="marriage">{{valu}}</view>
+					<!-- </picker> -->
+				</view>
+			</view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<!-- 婚姻状况弹框 -->
+	<view class="mask" wx:if="{{isMar}}" bindtap="marriage"></view>
+	<view class="mask_Mar" wx:if="{{isMar}}">
+		<view class="mar_top">
+			<view class="mar_title">婚姻状况</view>
+			<view class="mar_bot">
+				<button class="{{mar==item.value?'no1':'no'}}" wx:for="{{marr}}" size="mini" data-mar="{{item.value}}" data-index="{{index}}" bindtap="toggle_marr" style="font-size:28rpx">{{item.label}}</button>
+			</view>
+			<view class="but">
+				<button class="queren" size="mini" style="font-weight:normal;" bindtap="con">确认</button>
+			</view>
+		</view>
+	</view>
+	<!-- ---end---- -->
+	<view class="v_03">
+		<view class="v_04">手机号码</view>
+		<view class="v_05">
+			<view class="v_06 fl"><input placeholder="请输入" data-value="{{value}}" data-ty="5" bindblur="blur" value="{{phone_value}}" /></view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="v_03">
+		<view class="v_04">常用邮箱</view>
+		<view class="v_05">
+			<view class="v_06 fl"><input placeholder="请输入" data-value="{{value}}" data-ty="6" bindblur="blur" value="{{emil_value}}" /></view>
+			<view class="v_07 fr">
+				<image src="../img/f068.png"></image>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- <view class="f_08" style="{{sty}}">
+	<view class="f_07">
+		<view class="zc_18">
+			<image src="../img/f077.png"></image>
+		</view>
+		<view class="zc_19">
+			<view class="zc_20">
+				<p>您还没有绑定简历</p>
+				<span>请您先完善基本信息并绑定简历</span>
+			</view>
+			<view class="f_11">
+				<view class="f_12 fl" bindtap="quxiao1">朕知道了</view>
+				<view class="f_13 fr" bindtap="wanshan">完善信息</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+	</view>
+</view> -->
+<view class="r_05" bindtap="submit">上传</view>

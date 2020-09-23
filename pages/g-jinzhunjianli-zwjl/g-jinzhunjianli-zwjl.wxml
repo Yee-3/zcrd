@@ -1,0 +1,65 @@
+<view class="g_10">
+	<view class="g_11">
+		<view class="fl g_12">{{titleCon.name}}</view>
+		<view class="fr g_13">{{titleCon.num}}</view>
+		<view class="w-clear"></view>
+	</view>
+	<view class="g_17">
+		<view class="fl g_14">
+			<p>{{titleCon.address}}</p>
+			<p>{{titleCon.money}}</p>
+		</view>
+		<view class="fr g_15">应聘简历</view>
+		<view class="w-clear"></view>
+	</view>
+</view>
+
+
+<view class="d_02">
+	<view class="d_03" bindtap="detail" data-pushId="{{item.pushId}}" data-id="{{item.resumeData.id}}" wx:for="{{conList}}">
+		<view class="">
+			<view class="fl d_04">
+				<view class="fl d_05">
+					<image src="{{item.resumeData.url?item.resumeData.url:(item.resumeData.sex==0?'../img/f004.png':'../img/f051.png')}}"></image>
+				</view>
+				<view class="fl d_06">
+					<view class="d_07">
+						<view class="fl d_08">{{item.resumeData.name}}</view>
+						<view class="fl d_091">{{item.resumeData.ctrlObjectiveDTOS[0].positionName}}</view>
+						<view class="w-clear"></view>
+					</view>
+					<view class="d_10">
+						<p>{{item.resumeData.workTimeName?item.resumeData.workTimeName:''}}</p><span wx:if="{{item.resumeData.schoolName}}">|</span>
+						<p>{{item.resumeData.schoolName?item.resumeData.schoolName:''}}</p><span wx:if="{{item.resumeData.ctrlObjectiveDTOS[0].address}}">|</span>
+						<p>{{item.resumeData.ctrlObjectiveDTOS[0].address?item.resumeData.ctrlObjectiveDTOS[0].address:''}}</p><span wx:if="{{item.resumeData.ctrlObjectiveDTOS[0].moneyName}}">|</span>
+						<p>{{item.resumeData.ctrlObjectiveDTOS[0].moneyName?item.resumeData.ctrlObjectiveDTOS[0].moneyName:''}}</p>
+					</view>
+				</view>
+			</view>
+			<view class="fr g_03">
+				<view class="g_02">
+					<view class="g_04">
+						<image src="../img/f03.png"></image>
+					</view>
+					<view class="g_05">新</view>
+				</view>
+				<view class="g_01">22小时前活跃</view>
+			</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="d_12">
+			<view class="fl d_14" wx:if="{{item.resumeData.ctrlWorkDTOS.length>0}}">
+				<image src="../img/f0021.png"></image>
+			</view>
+			<view class="d_13" wx:for="{{item.resumeData.ctrlWorkDTOS}}" wx:for-index="index2" wx:for-item="i">
+				<view class="fl d_15">
+					<p>{{i.company}}·{{i.timeVal}}</p>
+					<span>{{i.position}}</span>
+				</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="d_16">就这么多了~</view>

@@ -1,0 +1,74 @@
+<view class="d_01">
+	<ul>
+		<li bindtap="detail" data-index="{{clas[0].value}}" data-value="{{clas[0].label}}">
+			<view class="d_02"><image src="../img/f004.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f005.png"></image></view>
+				<view class="d_05">{{clas[0].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[1].value}}" data-value="{{clas[1].label}}">
+			<view class="d_02"><image src="../img/f013.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f006.png"></image></view>
+				<view class="d_05">{{clas[1].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[2].value}}" data-value="{{clas[2].label}}">
+			<view class="d_02"><image src="../img/f014.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f007.png"></image></view>
+				<view class="d_05">{{clas[2].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[3].value}}" data-value="{{clas[3].label}}">
+			<view class="d_02"><image src="../img/f015.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f008.png"></image></view>
+				<view class="d_05">{{clas[3].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[4].value}}" data-value="{{clas[4].label}}">
+			<view class="d_02"><image src="../img/f016.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f009.png"></image></view>
+				<view class="d_05">{{clas[4].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[5].value}}" data-value="{{clas[5].label}}">
+			<view class="d_02"><image src="../img/f017.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f010.png"></image></view>
+				<view class="d_05">{{clas[5].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[6].value}}" data-value="{{clas[6].label}}">
+			<view class="d_02"><image src="../img/f018.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f011.png"></image></view>
+				<view class="d_05">{{clas[6].label}}</view>
+			</view>
+		</li>
+		<li bindtap="detail" data-index="{{clas[7].value}}" data-value="{{clas[7].label}}">
+			<view class="d_02"><image src="../img/f019.jpg"></image></view>
+			<view class="d_03">
+				<view class="d_04"><image src="../img/f012.png"></image></view>
+				<view class="d_05">{{clas[7].label}}</view>
+			</view>
+		</li>
+	</ul>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

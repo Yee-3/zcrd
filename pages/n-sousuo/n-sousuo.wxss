@@ -1,0 +1,20 @@
+.n_01{ width: 690rpx; margin: 0 auto;}
+.n_02{ width: 690rpx; height: 76rpx;}
+.n_03{ width: 610rpx; background: #f5f5f5; border: 1rpx solid #e8e8eb; height: 76rpx; box-sizing: border-box; border-radius: 40rpx;}
+.n_04{ width: 80rpx; text-align: center; margin-top: 15rpx;}
+.n_04 image{ width: 23rpx; height: 22rpx;}
+.n_05{ width: 520rpx; height: 76rpx;}
+.n_05 input{ width: 520rpx; line-height: 72rpx; font-size: 24rpx; height: 72rpx;}
+.n_06{ width: 80rpx; font-size: 30rpx; color: #0286ff; line-height: 76rpx; height: 76rpx; text-align: right;}
+
+
+.n_07{ margin-top: 60rpx;}
+.n_08{ font-size: 26rpx; color: #565656;}
+.n_09 ul li{ float: left; background: #f5f5f5; line-height: 60rpx; padding: 0 20rpx; margin-right: 30rpx; font-size: 24rpx; color: #909090; border-radius: 30rpx; margin-top: 20rpx; display: inline-block;}
+
+
+
+
+
+
+

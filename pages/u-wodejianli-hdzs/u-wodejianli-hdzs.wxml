@@ -1,0 +1,33 @@
+<view class="r_01">
+	<view class="r_02">
+		<view class="r_03">证书名字：</view>
+		<view class="r_04"><input placeholder="请输入" data-value="{{vulue}}" bindblur="blur" value="{{name_value}}"/></view>
+	</view>
+
+	<view class="r_02">
+		<view class="r_03">获得证书时间：</view>
+		<view class="r_04">
+			<view class="section" bindtap="bindDateChange"  data-de="1">
+				<!-- <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange"> -->
+				<view class="picker">{{date}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+		<!-- 时间弹框 -->
+		<date-picker id="star-date" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+	</view>
+
+	<view class="r_02">
+		<view class="r_03">获得证书图片：</view>
+		<view class="u_01">
+			<image bindtap="images" src="{{img}}"></image>
+		</view>
+	</view>
+</view>
+
+<view class="r_05" bindtap="submit" wx:if="{{!isToggle}}">提交</view>
+
+<view class="bot_05" wx:if="{{isToggle}}">
+	<view class="del fl" bindtap="dele">删除</view>
+	<view class="sub fr" bindtap="submit">提交</view>
+</view>

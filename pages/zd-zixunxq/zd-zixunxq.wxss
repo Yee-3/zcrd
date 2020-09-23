@@ -1,0 +1,27 @@
+.e_05{ }
+.e_06 p{ font-size: 24rpx; color: #909090;}
+.e_07{ padding-left: 16rpx;}
+.e_08{ float: left;}
+.e_08 image{ width: 24rpx; height: 16rpx;}
+.e_09{ margin-left: 10rpx;}
+.e_09 p{ font-size: 24rpx; color: #909090;}
+
+.f_02{ width: 690rpx; height: 60rpx;}
+.f_02 p{ float: left; font-size: 32rpx;}
+
+
+.zd_01{ width: 690rpx; margin: 0 auto; margin-top: 30rpx;}
+.zd_02{ width: 690rpx; margin: 0 auto; margin-top: 60rpx;}
+.zd_03{ width: 690rpx; height: 74rpx; position: relative;}
+.zd_04{ position: absolute; left: 5%; right: 0; margin: 0 auto; top: 0; text-align: center;}
+.zd_04 image{ width: 73rpx; height: 74rpx;}
+.zd_05{ text-align: center; position: absolute; z-index: 10; left: 0; right: 0; margin: 0 auto; top: 0; height: 74rpx; display: block;}
+.zd_05 p{ font-size: 74rpx; color: #000; line-height: 74rpx;}
+
+.zd_06{ width: 690rpx; margin: 0 auto; font-size: 26rpx; color: #666; line-height: 50rpx; text-align: justify; display: block; margin-top: 30rpx;}
+.zd_07 image{ width: 656rpx; height: 360rpx;}
+
+page{ padding-bottom: 50rpx;}
+
+
+

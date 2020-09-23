@@ -1,0 +1,27 @@
+<view class="k_01">
+	<view class="k_02" wx:for="{{hotList}}" bindtap="detail" data-id="{{item.id}}" data-index="{{index}}">
+		<view class="fl">
+			<view class="k_03">{{item.title}}</view>
+			<view class="e_05">
+				<view class="e_07 fl">
+					<view class="e_08 fl">
+						<image src="../img/f020.png"></image>
+					</view>
+					<view class="e_09 fr">
+						<p>{{item.view}}</p>
+					</view>
+				</view>
+				<view class="e_06 fl">
+					<p>{{item.createTime}}</p>
+				</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+		<view class="k_04 fr">
+			<image src="../img/f032.jpg"></image>
+		</view>
+	</view>
+	<view class="loading-text"> 
+	{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+	</view>
+</view>

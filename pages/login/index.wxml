@@ -1,0 +1,21 @@
+<!-- pages/login/index.wxml -->
+<view>
+	<view class='header'>
+		<image src="{{avatarUrl}}"></image>
+	</view>
+	<view class='content'>
+		<view>申请获取以下权限</view>
+		<text>获得你的公开信息(昵称，头像、地区等)</text>
+	</view>
+	<button class='bottom' type='primary' open-type="getUserInfo" withCredentials="true" lang="zh_CN" bindgetuserinfo="getPerson">
+		授权登录
+	</button>
+	<!-- <button class="phone" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">
+    绑定微信手机号
+</button> -->
+
+	<button class='nologin' type='default' withCredentials="true" lang="zh_CN" bindtap="noLogin">
+		拒绝登录
+	</button>
+
+</view>

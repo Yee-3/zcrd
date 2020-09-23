@@ -1,0 +1,88 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/m-shouye/m-shouye",
+    "pages/zd-zixunxq/zd-zixunxq",
+    "pages/zc-zhiweixq/zc-zhiweixq",
+    "pages/zb-yijianfank/zb-yijianfank",
+    "pages/za-xinzeng-qyzsxq/z-xinzeng-qyzsxq",
+    "pages/y-wodejianli-xmjl/y-wodejianli-xmjl",
+    "pages/x-wodejianli-qzyx/x-wodejianli-qzyx",
+    "pages/w-wodejianli-jyjl/w-wodejianli-jyjl",
+    "pages/v-wodejianli-jcxx/v-wodejianli-jcxx",
+    "pages/u-wodejianli-hdzs/u-wodejianli-hdzs",
+    "pages/t-wodejianli-gzjl/t-wodejianli-gzjl",
+    "pages/s-wodejianli/s-wodejianli",
+    "pages/r-wode-bdjl/r-wode-bdjl",
+    "pages/q-wode/q-wode",
+    "pages/p-sousuojieguo/p-sousuojieguo",
+    "pages/o-sousuojieguo-jl/o-sousuojieguo-jl",
+    "pages/n-sousuo/n-sousuo",
+    "pages/l-remenzhiwei/l-remenzhiwei",
+    "pages/k-redianzixun/k-redianzixun",
+    "pages/j-mianshi-ytd/j-mianshi-ytd",
+    "pages/i-mianshi-yrz/i-mianshi-yrz",
+    "pages/h-mianshi-yms/h-mianshi-yms",
+    "pages/g-guanyuwomen/g-guanyuwomen",
+    "pages/f-gaoduanzhiwei-zexq/f-gaoduanzhiwei-zexq",
+    "pages/e-gaoduanzhiwei-gqyh/e-gaoduanzhiwei-gqyh",
+    "pages/d-gaoduanzhiwei/d-gaoduanzhiwei",
+    "pages/c-dingwei/c-dingw",
+    "pages/b-dingweiq/b-dingwq",
+    "pages/a-bangwozhaogongzuo/index",
+    "pages/p-qiyeduan/p-qiyeduan",
+    "pages/o-qiyezhuce/o-qiyezhuce",
+    "pages/n-qiyezhuce-gsms/n-qiyezhuce-gsms",
+    "pages/m-qiyezhuce/m-qiyezhuce",
+    "pages/l-qiyezhongxin-zpgw-shz/l-qiyezhongxin-zpgw-shz",
+    "pages/k-qiyezhongxin/k-qiyezhongxin",
+    "pages/j-mianshiguanli-yiruzhi/j-mianshiguanli-yiruzhi",
+    "pages/i-mianshiguanli-yrz/i-mianshiguanli-yrz",
+    "pages/h-mianshiguanli-yms/h-mianshiguanli-yms",
+    "pages/g-jinzhunjianli-zwjl/g-jinzhunjianli-zwjl",
+    "pages/f-jinzhunjianlixq/f-jinzhunjianlixq",
+    "pages/e-jinzhunjianli/e-jinzhunjianli",
+    "pages/d-hailiangrencai/d-hailiangrencai",
+    "pages/c-hailiangjianlixq/c-hailiangjianlixq",
+    "pages/b-guanyuwomen/b-guanyuwomen",
+    "pages/a-gangweifabu/a-gangweifabu",
+    "pages/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#a1a1a1",
+    "selectedColor": "#0286ff",
+    "list": [
+      {
+        "pagePath": "pages/m-shouye/m-shouye",
+        "text": "首页",
+        "iconPath": "pages/img/d_1.png",
+        "selectedIconPath": "pages/img/d_11.png"
+      },
+      {
+        "pagePath": "pages/i-mianshi-yrz/i-mianshi-yrz",
+        "text": "面试",
+        "iconPath": "pages/img/d_2.png",
+        "selectedIconPath": "pages/img/d_22.png"
+      },
+      {
+        "pagePath": "pages/q-wode/q-wode",
+        "text": "我的",
+        "iconPath": "pages/img/d_3.png",
+        "selectedIconPath": "pages/img/d_33.png"
+      }
+    ]
+  }
+}

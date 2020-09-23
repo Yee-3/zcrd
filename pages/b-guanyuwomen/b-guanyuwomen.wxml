@@ -1,0 +1,19 @@
+<view class="g_01">
+	<rich-text nodes="{{content.noticeContent}}"></rich-text>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.0",
+  "appid": "wx4e6c0fd45e00eba3",
+  "projectname": "%E4%B8%AD%E6%89%8D%E7%91%9E%E8%BE%BE%EF%BC%88%E6%B1%82%E8%81%8C%E7%AB%AF%EF%BC%89",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/i-mianshi-yrz/i-mianshi-yrz",
+          "pathName": "pages/i-mianshi-yrz/i-mianshi-yrz",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/p-qiyeduan/p-qiyeduan",
+          "pathName": "pages/p-qiyeduan/p-qiyeduan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/q-wode/q-wode",
+          "pathName": "pages/q-wode/q-wode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/m-shouye/m-shouye",
+          "pathName": "pages/m-shouye/m-shouye",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/index",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

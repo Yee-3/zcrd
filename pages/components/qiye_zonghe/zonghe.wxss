@@ -1,0 +1,46 @@
+/* pages/components/zonghe/zonghe.wxss */
+.mask_con {
+  position: fixed;
+  top: 400rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.mask2_con {
+  position: fixed;
+  left: 0rpx;
+  width: 100%;
+  height: 240rpx;
+  color: #f6f6f6;
+  z-index: 999;
+  top: 162rpx;
+  box-sizing: border-box;
+}
+.con_top{
+  height: 170rpx;
+  width: 100%;
+  padding-top: 30rpx;
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+  background: #f6f6f6;
+}
+.list {
+  color: #666;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+
+.img1 {
+  width: 30rpx;
+  height: 26rpx;
+  color: #ffff;
+  position: absolute;
+  right: 50%;
+  margin-top: 25rpx;
+}

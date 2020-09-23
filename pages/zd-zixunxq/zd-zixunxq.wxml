@@ -1,0 +1,35 @@
+<view class="zd_01">
+	<view class="f_02">
+		<p>{{content.title}}</p>
+	</view>
+	<view class="e_05">
+		<view class="e_06 fl">
+			<p>{{content.createTime}}</p>
+		</view>
+		<view class="e_07 fl">
+			<view class="e_08 fl">
+				<image src="../img/f020.png"></image>
+			</view>
+			<view class="e_09 fr">
+				<p>{{content.view}}</p>
+			</view>
+		</view>
+		<view class="w-clear"></view>
+	</view>
+</view>
+
+<view class="zd_02">
+<rich-text nodes="{{content.context}}"></rich-text>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<view class="f_01">
+	<view class="f_02">
+		<p>{{detailCont.title}}</p>
+	</view>
+	<view class="e_05">
+		<view class="e_06 fl">
+			<p>{{date}}</p>
+		</view>
+		<view class="e_07 fl">
+			<view class="e_08 fl">
+				<image src="../img/f020.png"></image>
+			</view>
+			<view class="e_09 fr">
+				<p>{{detailCont.view}}</p>
+			</view>
+		</view>
+		<view class="w-clear"></view>
+	</view>
+	<view class="f_03">
+		<span><rich-text nodes="{{detailCont.context}}"></rich-text></span>
+	
+	</view>
+</view>
+
+<view class="f_04">
+	<view class="f_05 fl">
+		<button open-type="share" style="font-size:28rpx;font-weight: normal;text-align: center;padding:0">我要分享</button>
+	</view>
+	<view class="f_06 fr" bindtap="tanchuang">
+		<p>{{isBao?'我要报名':'已报名'}}</p>
+	</view>
+</view>
+
+<view class="f_08" style="{{style}}">
+	<view class="f_07">
+		<ul>
+			<li bindtap="tanchuang_1">信息报名</li>
+			<li bindtap="tanchuang_2">客服报名</li>
+			<li bindtap="quxiao">取消</li>
+		</ul>
+	</view>
+</view>
+
+<view class="f_08" style="{{xinxibaom}}">
+	<view class="f_07">
+		<view class="f_09">
+			<p>姓名:</p>
+			<input placeholder="您的姓名" data-value="{{value}}" bindblur="blur" data-ty='1' value="{{name}}"/>
+		</view>
+		<view class="f_10">
+			<p>电话:</p>
+			<input placeholder="您的电话" data-value="{{value}}" bindblur="blur" data-ty='2' value="{{phone}}"/>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="quxiao1">取消</view>
+			<view class="f_13 fr" bindtap="submit">提交</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+
+<view class="f_08" style="{{dianhua}}">
+	<view class="f_07">
+		<view class="f_14">
+			<p>请拨打客服电话</p>
+			<span>400-061235</span>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="quxiao2">取消</view>
+			<view class="f_13 fr">拨打</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+
+
+
+
+

@@ -1,0 +1,3 @@
+<view>
+<cityList id="map" bind:citytap='cityTap' showMap="{{showMap}}"></cityList>
+</view>

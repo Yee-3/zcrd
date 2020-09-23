@@ -1,0 +1,169 @@
+@keyframes fade-in {
+  0% {
+    top: 1000rpx;
+    opacity: 0;
+  }/*初始状态 透明度为0*/
+
+  40% {
+    top: 1000rpx;
+    opcity: 0;
+  }/*过渡状态 透明度为0*/
+
+  100% {
+    margin-top: 0rpx;
+    opacity: 1;
+  }/*结束状态 透明度为1*/
+}
+
+.date-picker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  animation: fade-in 0.5s ease 1 forwards; 
+}
+
+.date-picker-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #353535;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.date-picker-content {
+  position: fixed;
+ top:50%;
+ margin-top: -250rpx;
+  left: 50rpx;
+  width: 650rpx;
+  height: 500rpx;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+  background: #fff;
+  z-index: 33;
+}
+
+/* .date-picker-content-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 112rpx;
+  justify-content: space-between;
+} */
+.title{
+  text-align: center;
+  line-height: 110rpx;
+  font-size: 30rpx;
+}
+
+.hover-class {
+  background-color: #e6e6e6;
+}
+
+.line .date-picker-content-line:first-child {
+  position: absolute;
+  top: 180rpx;
+  left: 53rpx;
+  background-color: #0286ff;
+  height: 2px;
+  width: 120rpx;
+}
+.line .date-picker-content-line:last-child {
+  position: absolute;
+  top: 247rpx;
+  left: 53rpx;
+  background-color: #0286ff;
+  height: 2px;
+  width: 120rpx;
+}
+.line .date-picker-content-line:nth-child(2) {
+  position: absolute;
+  top: 180rpx;
+  left: 269rpx;
+  background-color: #0286ff;
+  height: 2px;
+  width: 120rpx;
+}
+.line .date-picker-content-line:nth-child(5) {
+  position: absolute;
+  top: 247rpx;
+  left: 269rpx;
+  background-color: #0286ff;
+  height: 2px;
+  width: 120rpx;
+}
+.line .date-picker-content-line:nth-child(3) {
+  position: absolute;
+  top: 180rpx;
+  right: 44rpx;
+  background-color: #0286ff;
+  height: 2px;
+  width: 120rpx;
+}
+.line .date-picker-content-line:nth-child(4) {
+  position: absolute;
+  top: 247rpx;
+  right: 44rpx;
+  background-color: #0286ff;
+  height: 2px;
+  width: 120rpx;
+}
+
+
+/* .date-picker-content-cancel {
+  line-height: 50rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  color: #353535;
+  padding: 30rpx 48rpx;
+} */
+
+/* .date-picker-content-sure {
+  line-height: 50rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  color: #ed373d;
+  padding: 30rpx 48rpx;
+} */
+
+.date-picker-content-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 200rpx;
+  overflow: hidden;
+  margin-top: 6rpx;
+  margin-bottom: 6rpx;
+  justify-content: space-between;
+ 
+}
+/* picker-view-column view{
+  border-bottom: 1rpx solid #ffffff;
+}
+picker-view-column view:first-child{
+  border-top: 1rpx solid #ffffff;
+} */
+.date-picker-content-item {
+  width: 33.3%;
+  height: 210rpx;
+  text-align: center;
+}
+.bot{
+  min-width: 260rpx;
+  min-height: 60rpx;
+  background: #0286ff;
+  color: #fff;
+  position: absolute;
+  bottom: 35rpx;
+  left: 195rpx;
+  font-weight: normal;
+}

@@ -1,0 +1,14 @@
+<!--pages/index/index.wxml-->
+<view class="content">
+	<view class="top">
+	<view class="ti">企业招聘、精英求职</view>
+		<view class="p">用职面轻松搞定</view>
+	</view>
+	<view class="qiuzhi" bindtap="qiuzhi">
+		<image src="../img/qiuzhi_bag.png"></image>
+	</view>
+	<view class="qiye" bindtap="qiye">
+		<image src="../img/qiye_bag.png"></image>
+	</view>
+	
+</view>

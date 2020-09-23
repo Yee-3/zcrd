@@ -1,0 +1,139 @@
+<view class="h_01">
+	<!-- 头部标题 -->
+	<view class="h_02">
+		<ul>
+			<li>
+				<view class="{{idn==1?'h_04':'h_03'}}" data-index="1" bindtap="toggleTitle">面试进程</view>
+				<view class="{{idn==1?'h_05':''}}"></view>
+			</li>
+			<li>
+				<view class="{{idn==2?'h_04':'h_03'}}" data-index="2" bindtap="toggleTitle">入职进程</view>
+				<view class="{{idn==2?'h_05':''}}"></view>
+			</li>
+			<li>
+				<view class="{{idn==3?'h_04':'h_03'}}" data-index="3" bindtap="toggleTitle">成功招聘</view>
+				<view class="{{idn==3?'h_05':''}}"></view>
+			</li>
+		</ul>
+	</view>
+	<!-- 标题图标 -->
+	<view class="h_10">
+		<ul>
+			<li>
+				<view class="h_07">
+					<image wx:if="{{idn==1}}" src="../img/f026.png"></image>
+				</view>
+			</li>
+			<li>
+				<view class="h_07">
+					<image wx:if="{{idn==2}}" src="../img/f026.png"></image>
+				</view>
+			</li>
+			<li>
+				<view class="h_07">
+					<image wx:if="{{idn==3}}" src="../img/f026.png"></image>
+				</view>
+			</li>
+		</ul>
+	</view>
+	<!-- 面试进程，入职进程 -->
+	<view class="{{idn==1?'h_06':'two_t'}}" wx:if="{{idn==1||idn==2}}">
+		<ul>
+			<li class="{{ind==1?'on':''}}" data-index="1" bindtap="toggleMin">
+				<view class="h_08">待回复</view>
+			</li>
+			<li class="{{ind==2?'on':''}}" data-index="2" bindtap="toggleMin">
+
+				<view class="h_08">已同意</view>
+			</li>
+			<li class="{{ind==3?'on':''}}" data-index="3" bindtap="toggleMin">
+
+				<view class="h_08">已拒绝</view>
+			</li>
+			<li class="{{ind==4?'on':''}}" wx:if="{{idn==1}}" data-index="4" bindtap="toggleMin">
+				<view class="h_08">已面试</view>
+			</li>
+		</ul>
+	</view>
+	<!-- 成功招聘 -->
+	<view class="h_06_1" wx:if="{{idn==3}}">
+		<ul>
+			<li class="{{ind1==1?'on':''}}" data-index="1" bindtap="toggleMin1">
+				<view class="h_08">到面式</view>
+			</li>
+			<li class="{{ind1==2?'on':''}}" data-index="2" bindtap="toggleMin1">
+				<view class="h_08">到岗式</view>
+			</li>
+				<li class="{{ind1==3?'on':''}}" data-index="3" bindtap="toggleMin1">
+				<view class="h_08">管家式</view>
+			</li>
+		</ul>
+	</view>
+</view>
+<!-- 删除弹框 -->
+<view class="del_mask" wx:if="{{isDel}}"></view>
+<view class="del" wx:if="{{isDel}}">
+	<view class="title">您要<text style="color:#fa4b4f">删除</text>这条进程吗？</view>
+	<view class="de_bot">
+		<button class="del_cancle" bindtap="del_cancle" size="mini">取消</button>
+		<button class="del_confirm" bindtap="del_confirm" size="mini">确定</button>
+	</view>
+</view>
+<!-- 面试进程 -->
+<view class="h_11">
+	<view class="h_12" style="{{ind==2||ind==4||ind==3?'padding-bottom:0rpx;':''}}" data-id="{{item.memberCompanyId}}" bindlongtap="dele" wx:for="{{msList}}">
+		<view class="h_13">
+			<view class="fl h_14">
+				<view class="fl h_15">
+					<image src="{{item.url?item.url:(item.sex==0?'../img/f004.png':'../img/f051.png')}}"></image>
+				</view>
+				<view class="fl h_16">
+					<view class="h_17">{{item.name}}</view>
+					<view class="h_18">
+						<p>{{item.workTimeName}}</p><span>|</span>
+						<p>{{item.school}}</p><span>|</span>
+						<p>{{item.address}}</p>
+						<!-- <span>|</span> -->
+						<!-- <p>{{item.money}}</p> -->
+					</view>
+				</view>
+			</view>
+			<view class="fr h_19" wx:if="{{idn==1||idn==2}}">
+				<view class="h_20">{{ind==1?'待回复':ind==2?'同意':ind==3?'已拒绝':'已面试'}}</view>
+				<view class="h_21">{{item.timeVal}}活跃</view>
+			</view>
+		</view>
+		<view class="{{idn==3?'h_22 fl':'h_22'}}">
+			<view class="h_23">
+				<p>应聘职位：</p>
+				<span>{{item.positionName}}</span>
+			</view>
+			<view class="h_23" wx:if="{{idn!=2}}">
+				<p>{{idn==3&&ind1==2?'入职时间：':'面试时间：'}}</p>
+				<span>{{item.time}}</span>
+			</view>
+			<view class="h2_23" wx:if="{{idn==3}}">
+				<p>服务模式：</p>
+				<span>{{ind1==1?'到面式':ind1==2?'到岗式':'管家式'}}</span>
+			</view>
+			<view class="h_23" wx:if="{{ind==3}}">
+				<p>拒绝原因：</p>
+				<text>{{item.whyStatus==1?'面试时间不合适':'其他原因'}}\n{{item.why?item.why:''}}</text>
+			</view>
+		</view>
+		<view class="h2_26 fr" data-id="{{item.memberCompanyId}}" bindtap="quit" wx:if="{{idn==3&&(ind1==2||ind1==3)}}">离职</view> 
+		<view class="h_26" wx:if="{{ind==3&&item.whyStatus==1}}" data-id="{{item.memberCompanyId}}" bindtap="invitTo">再邀请</view>
+		<view class="h_24" wx:if="{{ind==2||ind==4}}">
+			<ul>
+				<li bindtap="refuse" data-id="{{item.memberCompanyId}}">{{idn==1&&ind==2?'未面试':idn==1&&ind==4?'不合适':'未入职'}}</li>
+				<li bindtap="invit" data-id="{{item.memberCompanyId}}">{{idn==1&&ind==2?'已面试':idn==1&&ind==4?'邀入职':'已入职'}}</li>
+			</ul>
+		</view>
+	</view>
+
+</view>
+<date-picker id="time" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+<!-- end -->
+
+<!-- end -->
+<tabbars></tabbars>

@@ -1,0 +1,9 @@
+<!--pages/components/tabbar/tab.wxml-->
+
+<view class="content" >
+  <view bindtap="redirectTo" wx:for="{{list}}" data-taburl="{{item.pagePath}}" wx:key="index" class="tabbarItem">
+    <image class="icon" src="{{curRoute==item.pagePath?item.selectedIconPath:item.iconPath}}" mode="aspectFit"></image>
+    <!-- <image src="../../img2/d_22.png"></image> -->
+    <view>{{item.text}}</view>
+  </view>
+</view>

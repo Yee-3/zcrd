@@ -1,0 +1,11 @@
+<!--pages/components/select/select.wxml-->
+<!-- <text>原因</text> -->
+<view class='com-selectBox'>
+    <view class='com-sContent' bindtap='selectToggle'>
+        <view class='com-sTxt'>{{nowText}}</view>
+        <image src='../../img/f052_01.png'  class='com-sImg'  animation="{{animationData}}"></image>
+    </view>
+    <view class='com-sList' wx:if="{{selectShow}}">
+        <view wx:for="{{propArray}}" data-index="{{index}}" data-id="{{item.id}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.text}}</view>
+    </view>
+</view>

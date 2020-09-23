@@ -1,0 +1,25 @@
+<!--pages/components/gongsi/gongsi.wxml-->
+<!-- 公司弹窗 -->
+<view class="mask2" wx:if="{{isAdd_T}}"></view>
+<view class="mask2_01" wx:if="{{isAdd_T}}">
+	<view class="mask2_top">
+		<view class="top_t">
+			<view class="t_title">公司性质</view>
+			<scroll-view class="scr_02" scroll-y="true">
+				<button class="{{item.value==ind3?'no1':'bott'}}" size="mini" wx:for="{{comList}}" data-index='{{item.value}}' bindtap="toggle3" style="font-size:25rpx">{{item.label}}</button>
+			</scroll-view>
+		</view>
+		<view class="top_bb">
+			<view class="t_title">公司规模</view>
+			<scroll-view class="scr_01" scroll-y="true">
+				<button class="{{item.value==ind4?'no1':'bott'}}" size="mini" wx:for="{{scaleList}}" data-index='{{item.value}}' bindtap="toggle4" style="font-size:25rpx">{{item.label}}</button>
+			</scroll-view>
+		</view>
+
+	</view>
+	<view class="m_bottom">
+		<button class="b_left" bindtap="cancel">{{(ind3||ind4)?'清空':'不限'}}</button>
+		<button class="b_right" bindtap="confirm">确认</button>
+	</view>
+</view>
+<!-- --end-- -->

@@ -1,0 +1,5 @@
+<view class="r_02">
+		
+		<view class="t_05"><textarea placeholder="请输入"></textarea></view>
+	</view>
+	<view class="r_05">提交</view>

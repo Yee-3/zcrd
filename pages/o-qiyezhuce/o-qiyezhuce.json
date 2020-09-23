@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "spring":"../components/spring2_box/spring-box"
+  },
+  "navigationBarTitleText": "企业注册"
+}

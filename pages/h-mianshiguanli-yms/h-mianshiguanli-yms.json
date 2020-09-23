@@ -1,0 +1,7 @@
+{
+  "usingComponents": { 
+    "tabbars":"../components/tabbar/tab",
+    "date-picker": "../components/date-picker/date-picker"
+  },
+  "navigationBarTitleText": "进程管理"
+}

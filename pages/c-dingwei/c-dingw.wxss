@@ -1,0 +1,55 @@
+/* pages/b-dingwq/b-dingwq.wxss */
+
+.b_01{ }
+.b_02{ width: 750rpx; height: 50rpx; background: #f6f6f6; padding: 0 30rpx; box-sizing: border-box;}
+.b_03{ float: left; padding-right: 8rpx; padding-top: 8rpx;}
+.b_03 image{ width: 21rpx; height: 25rpx;}
+.b_04 p{ font-size: 24rpx; line-height: 50rpx;}
+
+.b_05{ width: 640rpx; margin: 0 auto; padding: 40rpx 0;}
+.b_05 ul li{ width: 180rpx; height: 68rpx; border: 1rpx solid #a9a9a9; display: block; text-align: center; border-radius: 34rpx;}
+.b_05 ul li p{ line-height: 64rpx; font-size: 30rpx; color: #a9a9a9;}
+.b_05 ul li.on{ background: #0286ff; border: none;}
+.b_05 ul li.on p{ color: #fff;}
+
+.b_06{ width: 750rpx; background: #f1f1f1; margin: 0 auto; padding: 40rpx 55rpx 10rpx 55rpx; box-sizing: border-box;}
+.b_06 ul li{ width: 180rpx; height: 68rpx; border: 1rpx solid #a9a9a9; display: block; text-align: center; border-radius: 34rpx; float: left; margin-bottom: 30rpx; margin-left: 50rpx; box-sizing: border-box;}
+.b_06 ul li p{ line-height: 64rpx; font-size: 30rpx; color: #a9a9a9; display: block;}
+.b_06 ul li:nth-child(3n+1){ margin-left: 0;}
+.b_06 ul li.on{ background: #0286ff; border: none;}
+.b_06 ul li.on p{ color: #fff;}
+
+.b_07{ width: 750rpx; background: #fff; margin: 0 auto; padding: 40rpx 55rpx 10rpx 55rpx; box-sizing: border-box;}
+.b_07 ul li{ width: 180rpx; height: 68rpx; border: 1rpx solid #a9a9a9; display: block; text-align: center; border-radius: 34rpx; float: left; margin-bottom: 30rpx; margin-left: 50rpx; box-sizing: border-box;}
+.b_07 ul li p{ line-height: 64rpx; font-size: 30rpx; color: #a9a9a9; display: block;}
+.b_07 ul li:nth-child(3n+1){ margin-left: 0;}
+.b_07 ul li.on{ background: #0286ff; border: none;}
+.b_07 ul li.on p{ color: #fff;}
+
+.b_08{ float: left; padding-right: 8rpx; padding-top: 6rpx;}
+.b_08 image{ width: 26rpx; height: 25rpx;}
+
+.b_09{ position: fixed; top: 5%; right: 12rpx;}
+.b_09 ul li{ display: block; text-align: center; font-size: 26rpx; line-height: 40rpx; color: #909090;}
+
+
+.w-clear{clear:both;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

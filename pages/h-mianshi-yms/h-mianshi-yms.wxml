@@ -1,0 +1,203 @@
+<view class="h_01">
+	<view class="h_02">
+		<ul>
+			<li>
+				<view class="h_03">投递列表</view>
+				<view class=""></view>
+			</li>
+			<li>
+				<view class="h_04">面试状态</view>
+				<view class="h_05"></view>
+			</li>
+			<li>
+				<view class="h_03">入职状态</view>
+				<view class=""></view>
+			</li>
+		</ul>
+	</view>
+	<view class="h_06">
+		<ul>
+			<li class="on">
+				<view class="h_07"></view>
+				<view class="h_08">邀面试</view>
+			</li>
+			<li>
+				<view class="h_07"><image src="../img/f026.png"></image></view>
+				<view class="h_08">已同意</view>
+			</li>
+			<li>
+				<view class="h_07"></view>
+				<view class="h_08">已拒绝</view>
+			</li>
+		</ul>
+	</view>
+</view>
+
+<view class="h_09">
+	<view class="h_10">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">已同意</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15">
+				<p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p>
+			</view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_18">
+			<view class="h_19 fl">面试时间：</view>
+			<view class="h_20 fl">2020-05-20  13:30</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="h_22">
+			<view class="h_23"><image src="../img/f027.png"></image></view>
+			<view class="h_24">
+				<view class="h_27">
+					<view class="h_26 fl"><image src="../img/f029.png"></image></view>
+					<view class="h_25 fl"><p>面试地点</p><span>（请按照约定时间和地点参加面试）</span></view>
+				</view>
+				<view class="h_28">地址：北京市-昌平区南彩镇彩祥东路16号29幢1层1</view>
+			</view>
+			<view class="h_29"><image src="../img/f030.png"></image></view>
+			<view class="h_30"><image src="../img/f028.png"></image></view>
+		</view>
+	</view>
+	
+	<view class="h_10">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">已同意</view>
+		</view>
+		
+		<view class="h_14">
+			<view class="fl h_15">
+				<p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p>
+			</view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		
+		<view class="h_18">
+			<view class="h_19 fl">面试时间：</view>
+			<view class="h_20 fl">2020-05-20  13:30</view>
+			<view class="w-clear"></view>
+		</view>
+		
+		<view class="h_21">
+			<ul>
+				<li bindtap="tanchuang">取消</li>
+				<li>同意</li>
+			</ul>
+		</view>
+	</view>
+	
+	<view class="h_31">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">已同意</view>
+		</view>
+		
+		<view class="h_14">
+			<view class="fl h_15">
+				<p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p>
+			</view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		
+		<view class="h_18">
+			<view class="h_19 fl">原因：</view>
+			<view class="h_20 fl">其他原因</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="h_18">
+			<view class="h_19 fl">详细：</view>
+			<view class="h_20 fl">工作地址太远，不合适；薪资不合适...</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+	
+	<view class="h_31">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">已同意</view>
+		</view>
+		
+		<view class="h_14">
+			<view class="fl h_15">
+				<p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p>
+			</view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		
+		<view class="h_18">
+			<view class="h_19 fl">原因：</view>
+			<view class="h_20 fl">面试时间不合适</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="h_18">
+			<view class="h_19 fl">请写下合适的面试时间：</view>
+			<view class="h_20 fl">2020.05.13 周三 下午   2020.05.13 周三 下午    2020.05.13 周三 下午</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+
+
+<view class="f_08" style="{{style}}">
+	<view class="f_07">
+		<view class="f_09">
+			<p>姓名:</p>
+			<picker value="{{index}}" range="{{array}}">
+				<view class="picker">这里有个弹窗</view>
+			</picker>
+		</view>
+		<view class="f_10">
+			<p>姓名:</p>
+			<textarea placeholder="原因"></textarea>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="quxiao2">取消</view>
+			<view class="f_13 fr">提交</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

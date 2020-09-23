@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "date-picker": "../components/date-picker1/date-picker"
+  },
+  "navigationBarTitleText": "获得证书"
+}

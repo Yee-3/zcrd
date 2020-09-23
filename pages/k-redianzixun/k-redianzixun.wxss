@@ -1,0 +1,33 @@
+
+page{ background: #f6f6f6;}
+
+.e_05{ }
+.e_06{ padding-left: 30rpx;}
+.e_06 p{ font-size: 24rpx; color: #909090;}
+.e_07{ }
+.e_08{ float: left;}
+.e_08 image{ width: 24rpx; height: 16rpx;}
+.e_09{ margin-left: 10rpx;}
+.e_09 p{ font-size: 24rpx; color: #909090;}
+
+.k_01{ width: 690rpx; margin: 0 auto; margin-top: 30rpx;}
+.k_02{ width: 690rpx; border-radius: 15rpx; height: 200rpx; background: #fff; padding: 20rpx; box-sizing: border-box; margin-bottom: 20rpx;}
+.k_03{ width: 380rpx; height: 120rpx; font-size: 34rpx;}
+.k_04{ width: 220rpx; height: 160rpx; border-radius: 10rpx; overflow: hidden;}
+.k_04 image{ width: 220rpx; height: 160rpx;}
+.loading-text{
+  /* display: block; */
+  padding-bottom: 20rpx;
+  text-align: center;
+  color: #c0c0c0;
+font-size: 26rpx;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "zhiwei": "../components/zhiwei/zhiwei",
+    "gongsi": "../components/gongsi/gongsi",
+    "zonghe": "../components/zonghe/zonghe",
+    "more": "../components/gengduo/more"
+  },
+  "navigationBarTitleText": "搜索结果"
+}

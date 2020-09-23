@@ -1,0 +1,18 @@
+<!--pages/components/zonghe/zonghe.wxml-->
+	<!-- 弹框 -->
+		<view class="mask_con" wx:if="{{isCon}}" style="{{styleT}}" bindtap="hidden"></view>
+		<view class="mask2_con" wx:if="{{isCon}}" style="{{style}}">
+			<view class="con_top">
+				<view class="list" data-index='1' bindtap="toggleZ">
+					综合排序
+					<image class="img1" wx:if="{{ind==1}}" src="../../img/icon_01.png"></image>
+				</view>
+				<view class="list" data-index='3' bindtap="toggleZ">距离排序
+					<image class="img1" wx:if="{{ind==3}}" src="../../img/icon_01.png"></image>
+				</view>
+				<view class="list" data-index='2' bindtap="toggleZ">最新发布优先
+					<image class="img1" wx:if="{{ind==2}}" src="../../img/icon_01.png"></image>
+				</view>
+			</view>
+		</view>
+		<!-- end -->

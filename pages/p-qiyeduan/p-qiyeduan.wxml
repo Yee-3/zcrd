@@ -1,0 +1,116 @@
+<view class="top">
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block class="top_img">
+			<swiper-item wx:for="{{imgList}}">
+				<image class="banner" src="{{item.url}}"></image>
+			</swiper-item>
+			<!-- <swiper-item>
+				<image class="banner" src="../img/q008.png"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="banner" src="../img/q008.png"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="banner" src="../img/q008.png"></image>
+			</swiper-item> -->
+		</block>
+	</swiper>
+</view>
+
+<view class="m_01">
+	<ul>
+		<li bindtap="person">
+			<image src="../img/q038.png"></image>
+			<p>海量人才</p>
+		</li>
+		<li bindtap="resume">
+			<image src="../img/q039.png"></image>
+			<p>精准简历</p>
+		</li>
+		<li bindtap="entry">
+			<image src="../img/q040.png"></image>
+			<p>即刻入职</p>
+		</li>
+		<view class="w-clear"></view>
+	</ul>
+</view>
+
+<view class="p_01">
+	<image src="../img/q073.png"></image>
+</view>
+
+<view class="p_02">
+	<view class="p_03">
+		<view class="g_13 fl">
+			<view class="g_14 fl"></view>
+			<view class="g_15 fl">
+				<p>为你推荐</p>
+			</view>
+		</view>
+		<!-- <view class="p_04 fr">
+			<view class="p_05 fl">更多</view>
+			<view class="p_06 fl"><image src="../img/q074.png"></image></view>
+		</view> -->
+		<view class="w-clear"></view>
+	</view>
+</view>
+
+<view class="d_02">
+	<view class="d_03" bindtap="detail" data-id="{{item.id}}" wx:for="{{recomList}}">
+		<view class="">
+			<view class="fl d_04">
+				<view class="fl d_05">
+					<image src="{{item.url?item.url:(item.sex==0?'../img/f004.png':'../img/f051.png')}}"></image>
+				</view>
+				<view class="fl d_06">
+					<view class="d_07">
+						<view class="fl d_08">{{item.name}}</view>
+						<view class="fl d_091">{{item.ctrlObjectiveDTOS[0].positionName}}</view>
+						<view class="w-clear"></view>
+					</view>
+					<view class="d_10">
+						<p>{{item.workTimeName?item.workTimeName:''}}</p><span wx:if="{{item.schoolName}}">|</span>
+						<p>{{item.schoolName?item.schoolName:''}}</p><span wx:if="{{item.ctrlObjectiveDTOS[0].address}}">|</span>
+						<p>{{item.ctrlObjectiveDTOS[0].address?item.ctrlObjectiveDTOS[0].address:''}}</p><span wx:if="{{item.ctrlObjectiveDTOS[0].moneyName}}">|</span>
+						<p>{{item.ctrlObjectiveDTOS[0].moneyName?item.ctrlObjectiveDTOS[0].moneyName:''}}</p>
+					</view>
+				</view>
+			</view>
+			<view class="d_11 fr">{{item.timeVal}}活跃</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="d_12">
+			<view class="fl d_14" wx:if="{{item.ctrlWorkDTOS.length>0}}">
+				<image src="../img/f0021.png"></image>
+			</view>
+			<view class="d_13" wx:for="{{item.ctrlWorkDTOS}}" wx:for-index="index2" wx:for-item="i">
+				<view class="fl d_15">
+					<p>{{i.company}}·{{i.timeVal}}</p>
+					<span>{{i.position}}</span>
+				</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="f_08" wx:if="{{isHz}}">
+	<view class="f_07">
+		<view class="f_14">
+			<p>您还没与平台达成合作</p>
+			<view>
+			<p>想要查看精准简历，请联系客服：</p>
+			<span style="color: #0286ff;">{{kefuPhone.phone}}</span></view>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="cancle">取消</view>
+			<view class="f_13 fr" bindtap="phone">拨打</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+<view class="d_16">
+	{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+
+</view>
+
+<tabbars id="tab" bind:toggle="showTab"></tabbars>

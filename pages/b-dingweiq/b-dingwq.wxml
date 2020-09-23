@@ -1,0 +1,13 @@
+<!--pages/b-dingwq/b-dingwq.wxml-->
+<view>
+<cityList id="map" bind:citytap='cityTap' showMap="{{showMap}}"></cityList>
+</view>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,302 @@
+<view class="top">
+	<view class="top_a">
+		<view class="top_b">
+			<view class="top_f">
+				<image src="../img/f036.png"></image>
+			</view>
+			<view class="top_g" bindtap="weizhi">
+				<p>{{mapValue}}</p>
+			</view>
+			<view class="top_h">
+				<image src="../img/f037.png"></image>
+			</view>
+		</view>
+		<view class="top_c">
+			<view class="top_d"><input bindfocus="search" placeholder="搜索产品、商家或关键词" /></view>
+			<view class="top_e">
+				<image src="../img/f035.png"></image>
+			</view>
+		</view>
+	</view>
+
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block class="top_img">
+			<!-- wx:for="{{imgList}}" -->
+			<swiper-item wx:for="{{imgList}}">
+				<image class="banner" src="{{item.url}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<view class="m_01">
+	<ul>
+		<li bindtap="hot">
+			<image src="../img/f038.png"></image>
+			<p>热门职位</p>
+		</li>
+		<li bindtap="high">
+			<image src="../img/f039.png"></image>
+			<p>高端职位</p>
+		</li>
+		<li bindtap="hotspot">
+			<image src="../img/f040.png"></image>
+			<p>热点资讯</p>
+		</li>
+		<view class="w-clear"></view>
+	</ul>
+</view>
+
+<view class="m_02">
+	<view class="m_03">
+		<view class="m_04">
+			<image src="../img/f041.jpg"></image>
+		</view>
+		<view class="m_05">
+			<view class="m_06">
+				<image src="../img/f042.png"></image>
+			</view>
+			<view class="m_07">
+				<ul>
+					<li>
+						<view class="m_08 fl">
+							<image src="../img/f043.png"></image>
+						</view>
+						<view class="m_09 fl">{{selList[0].label?selList[0].label:'精准职位一键触达'}}</view>
+					</li>
+					<li>
+						<view class="m_08 fl">
+							<image src="../img/f044.png"></image>
+						</view>
+						<view class="m_09 fl">{{selList[1].label?selList[1].label:'名企职位为您甄选'}}</view>
+					</li>
+					<li>
+						<view class="m_08 fl">
+							<image src="../img/f045.png"></image>
+						</view>
+						<view class="m_09 fl">{{selList[2].label?selList[2].label:'高薪职位为您推荐'}}</view>
+					</li>
+					<li>
+						<view class="m_08 fl">
+							<image src="../img/f046.png"></image>
+						</view>
+						<view class="m_09 fl">{{selList[3].label?selList[3].label:'专属顾问求职指导'}}</view>
+					</li>
+				</ul>
+			</view>
+		</view>
+	</view>
+	<view class="m_10" bindtap="run">开始找工作</view>
+</view>
+
+<view class="m_11">
+	<view class="g_13">
+		<view class="g_14 fl"></view>
+		<view class="g_15 fl">
+			<p>为你推荐</p>
+		</view>
+	</view>
+
+	<view class="l_01">
+		<ul>
+			<li bindtap="position3" style="width:30%">
+				<view class="l_02">{{z_val}}
+					<image class="image" src="../img/f033.png"></image>
+				</view>
+			</li>
+			<!-- 综合排序弹框 -->
+			<view class="mask4" wx:if="{{isAdd_S}}"></view>
+			<view class="mask4_01" wx:if="{{isAdd_S}}">
+				<view class="mask4_top">
+					<button class="{{m_zong==1?'zong':'z'}}" data-index="1" bindtap="sixChange">综合排序</button>
+					<button class="{{m_zong==2?'zong':'z'}}" data-index="2" bindtap="sixChange">最新发布优先</button>
+				</view>
+				<view class="m_bottom">
+					<button class="b_left" bindtap="cancel">{{zhCom?'取消':'清空'}}</button>
+					<button class="b_right" bindtap="confirm">确认</button>
+				</view>
+			</view>
+			<!-- --end-- -->
+			<li bindtap="position" style="width:23%">
+				<view class="l_02">职位</view>
+				<view class="l_03">
+					<image src="../img/f033.png"></image>
+				</view>
+			</li>
+			<!-- 职位弹框 -->
+			<view class="mask" wx:if="{{isAdd}}"></view>
+			<view class="mask1" wx:if="{{isAdd}}">
+				<view class="m_top">
+					<view class="title">职位</view>
+					<!-- 遮罩层2 -->
+					<!-- 二级弹框 -->
+					<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
+					<view class="mask_02_01" wx:if="{{isTwo}}">
+						<scroll-view class="mask_left" scroll-y="true">
+							<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS}}' data-index='{{index}}' bindtap="toggle1" style="width:170rpx">
+								<image class="img" wx:if="{{index==ind1}}" src="../img/icon_02.png"></image>
+								{{item.name}}
+								<image class="img1" wx:if="{{index==ind1}}" src="../img/icon_01.png"></image>
+							</view>
+						</scroll-view>
+						<!-- 三级弹框 -->
+						<scroll-view class="mask_right" scroll-y="true">
+							<view class="{{index==ind2?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS[ind1].treeDTOS}}' data-id="{{item.id}}" data-index='{{index}}' bindtap="toggle2">
+								{{item.name}}
+								<image class="img2" wx:if="{{index==ind2}}" src="../img/icon_01.png"></image>
+							</view>
+						</scroll-view>
+					</view>
+					<!-- —————— -->
+					<!-- 一级弹框 -->
+					<scroll-view class="top_top" scroll-y="true">
+						<view class="{{index==ind?'no':'bot'}}" wx:for='{{zhiList}}' data-index='{{index}}' bindtap="toggle">
+							<image class="img" wx:if="{{index==ind}}" src="../img/icon_02.png"></image>
+							{{item.name}}
+						</view>
+					</scroll-view>
+				</view>
+				<view class="m_bottom">
+					<button class="b_left" bindtap="can">{{zwCom?'取消':'清空'}}</button>
+					<button class="b_right" bindtap="con">确认</button>
+				</view>
+			</view>
+			<!-- ---end-- -->
+
+			<li bindtap="position1" style="width:23%">
+				<view class="l_02">公司</view>
+				<view class="l_03">
+					<image src="../img/f033.png"></image>
+				</view>
+			</li>
+			<!-- 公司弹窗 -->
+			<view class="mask2" wx:if="{{isAdd_T}}"></view>
+			<view class="mask2_01" wx:if="{{isAdd_T}}">
+				<view class="mask2_top">
+					<view class="top_t">
+						<view class="t_title">公司性质</view>
+						<!-- <view class="t_title fr">重置</view> -->
+						<scroll-view class="scr_02" scroll-y="true">
+							<button class="{{item.value==ind3?'no1':'bott'}}" size="mini" wx:for="{{xingzhi}}" data-index='{{item.value}}' bindtap="toggle3" style="font-size:25rpx">{{item.label}}</button>
+						</scroll-view>
+					</view>
+					<view class="top_bb">
+						<view class="t_title">公司规模</view>
+						<scroll-view class="scr_01" scroll-y="true">
+							<button class="{{item.value==ind4?'no1':'bott'}}" size="mini" wx:for="{{guimo}}" data-index='{{item.value}}' bindtap="toggle4" style="font-size:25rpx">{{item.label}}</button>
+						</scroll-view>
+					</view>
+				</view>
+				<view class="m_bottom">
+					<button class="b_left" bindtap="gs_cancel">{{gsCom?'取消':'清空'}}</button>
+					<button class="b_right" bindtap="gs_confirm">确认</button>
+				</view>
+			</view>
+			<!-- --end-- -->
+			<li bindtap="position2" style="width:23%">
+				<view class="l_02">更多
+					<image class="image" src="../img/f033.png"></image>
+				</view>
+			</li>
+			<!-- 更多弹框 -->
+			<view class="mask3" wx:if="{{isAdd_F}}"></view>
+			<view class="mask3_01" wx:if="{{isAdd_F}}">
+				<view class="mask3_top">
+					<view class="top3_t">
+						<view class="t3_title">薪资范围</view>
+						<scroll-view class="scr3_02" scroll-y="true">
+							<button class="{{item.value==ind5?'no1':'bott'}}" size="mini" wx:for="{{moneryList}}" data-index='{{item.value}}' data-id="{{}}" bindtap="toggle5" style="font-size:25rpx;min-width:160rpx">{{item.label}}</button>
+						</scroll-view>
+					</view>
+					<view class="top3_bb">
+						<view class="t3_title">工作经验</view>
+						<scroll-view class="scr3_01" scroll-y="true">
+							<button class="{{item.value==ind6?'no1':'bott'}}" size="mini" wx:for="{{expList}}" data-index='{{item.value}}' bindtap="toggle6" style="font-size:25rpx;min-width:160rpx;">{{item.label}}</button>
+						</scroll-view>
+					</view>
+					<view class="top3_three">
+						<view class="t3_title">学历要求</view>
+						<scroll-view class="scr3_03" scroll-y="true">
+							<button class="{{item.value==ind7?'no1':'bott'}}" size="mini" wx:for="{{recList}}" data-index='{{item.value}}' bindtap="toggle7" style="font-size:25rpx;margin-left:16rpx;margin-top:20rpx">{{item.label}}</button>
+						</scroll-view>
+					</view>
+				</view>
+				<view class="m_bottom">
+					<button class="b_left" bindtap="mo_cancel">{{moCom?'取消':'清空'}}</button>
+					<button class="b_right" bindtap="mo_confirm">确认</button>
+				</view>
+			</view>
+			<!-- --end-- -->
+		</ul>
+	</view>
+
+	<view class="l_05">
+		<view class="h_10" bindtap="zhiDetail" data-id="{{item.id}}" wx:for="{{recomList}}">
+			<view class="h_11">
+				<view class="fl h_12">{{item.title}}</view>
+				<view class="fr h_13">{{item.moneyName}}</view>
+			</view>
+			<view class="h_14">
+				<view class="fl h_15">
+					<p>{{item.cityName}}{{item.districtName}}</p><span>|</span>
+					<p>{{item.workExperienceName}}</p><span>|</span>
+					<p>{{item.schoolRecordName}}</p>
+				</view>
+				<view class="fr h_16">{{item.timeVal}}</view>
+			</view>
+			<view class="h_17">
+				<span wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</span>
+			</view>
+			<view class="j_01">
+				<view class="j_02 fl">
+					<image src="{{item.companyLogo}}"></image>
+				</view>
+				<view class="j_03 fl">{{item.companyName}}</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+
+	</view>
+	<view class="loading-text">
+		{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : (!isBot?'~':contentText.contentnomore)}}
+	</view>
+	<view class="butImg" bindtap="userIn" wx:if="{{!isBot}}">
+		<image src="../img/c1.png"></image>
+	</view>
+</view>
+<view class="f_08" style="{{style}}">
+	<view class="f_07">
+		<view class="zc_18">
+			<image src="../img/f077.png"></image>
+		</view>
+		<view class="zc_19">
+			<view class="zc_20">
+				<p>您还没有补全简历</p>
+				<span>请您补全简历，再来投递吧</span>
+			</view>
+			<view class="f_11">
+				<!-- <view class="f_12 fl" bindtap="hidd">朕知道了</view> -->
+				<view class="f_11">
+					<view class="f_12 fl" bindtap="quxiao1">朕知道了</view>
+					<view class="f_13 fr" bindtap="block">补全简历</view>
+					<view class="w-clear"></view>
+				</view>
+				<view class="w-clear"></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="t_08" wx:if="{{isTs}}">
+	<view class="t_07">
+		<view class="t_14">
+			<view style="font-size:32rpx">温馨提示</view>
+			<p style="padding-top:20rpx">简历已投递</p> 
+			
+			<p>正在为您匹配职位</p>
+		</view>
+		<view class="t_11">
+			<view class="t_13" bindtap="confirm_ts">确定</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>

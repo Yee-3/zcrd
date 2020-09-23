@@ -1,0 +1,33 @@
+<view class="">
+	<view class="e_01">
+		<view class="e_02" bindtap="details" data-id="{{item.id}}" wx:for="{{lisList}}">
+			<view class="e_03 fl">
+				<view class="e_04">
+					<p>{{item.title}}</p>
+				</view>
+				<view class="e_05">
+					<view class="e_06 fl">
+						<p>{{item.valTime}}</p>
+					</view>
+					<view class="e_07 fl">
+						<view class="e_08 fl">
+							<image src="../img/f020.png"></image>
+						</view>
+						<view class="e_09 fr">
+							<p>{{item.view}}</p>
+						</view>
+					</view>
+					<view class="w-clear"></view>
+				</view>
+			</view>
+			<view class="e_10 fr">
+				<image src="../img/f021.png"></image>
+			</view>
+			<view class="w-clear"></view>
+		</view>
+	
+	</view>
+	<view class="loading-text" wx:if="{{loadingType==0||loadingType==1}}">
+		{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+	</view>
+</view>

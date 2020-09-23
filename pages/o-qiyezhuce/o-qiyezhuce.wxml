@@ -1,0 +1,119 @@
+<view class="a_01">
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>公司名称</p>
+		</view>
+		<view class="fr a_04">
+			<input placeholder="请输入" data-type="1" value="{{comVal}}" data-value="{{value}}" bindblur="blur"  />
+		</view>
+	</view>
+	<view class="a_02">
+		<view class="fl a_03">
+		<!-- <em style="width:30rpx"></em> -->
+			<p style="padding-left:10rpx">公司logo</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="logoImg">
+					<view class="picker">{{imgValue}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>公司性质</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="showNat" data-type="1">
+				<view class="picker">{{natValue}}</view>
+			</view>
+		</view>
+	</view>
+	<spring id="nature" title="公司性质" confirmText="确定" cancelText="取消" style="{{style}}" content="{{natureContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>公司类别</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="showClass" data-type="2">
+				<view class="picker">{{clsValue}}</view>
+			</view>
+		</view>
+	</view>
+	<spring id="cls" title="行业类别" confirmText="确定" cancelText="取消" style="{{style}}" content="{{classContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>公司地址</p>
+		</view>
+		<view class="fr a_04" bindtap='getLocation'>
+			<input placeholder="请选择" data-type="2" value="{{mapVal}}" disabled data-value="{{value}}" bindblur="blur"/>
+		</view>
+	</view>
+
+	<view class="o_02">
+		<view class="a_03"><em>*</em>
+			<p>公司环境</p>
+		</view>
+		<!-- 上传图片 -->
+		<view class="up-pic">
+			<view class='flex pic-box'>
+				<block wx:key="imgbox" wx:for="{{imgbox}}">
+					<view class='ap-box'>
+						<view class='add-pic'>
+							<image class='add-pic' src='{{item}}'></image>
+							<view class='img-de' data-deindex='{{index}}' bindtap='imgDelete1'>
+								<image class='img' src='../img/q071.png'></image>
+							</view>
+						</view>
+					</view>
+				</block>
+				<view class='add-pic' bindtap='images' wx:if="{{imgbox.length<9}}">
+					<image class='img' src='../img/f066.png'></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="a_01">
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>企业规模</p>
+		</view>
+		<view class="fr a_04">
+			<view class="section" bindtap="showScale" data-type="3">
+				<view class="picker">{{scalValue}}</view>
+			</view>
+		</view>
+	</view>
+	<spring id="scale" title="企业规模" confirmText="确定" cancelText="取消" style="{{style}}" content="{{numContent}}" bind:cancel="handleCancel" bind:confirm="handleConfirm">
+	</spring>
+	<view class="a_02">
+		<view class="fl a_03"><em>*</em>
+			<p>公司描述</p>
+		</view>
+		<view class="fr a_04" bindtap="desc">
+			<input style="overflow:hidden; white-space:nowrap; text-overflow:ellipsis; " placeholder="请输入" value="{{val}}" disabled/>
+		</view>
+	</view>
+	<view class="o_02">
+		<view class="a_03" style="width:100%"><em>*</em>
+			<p>上传营业执照</p>
+		</view>
+		<view class="o_05" bindtap="zhiZhao">
+			<image src="{{zhi_img}}"></image>
+			<p>营业执照(企业名称保持一致)</p>
+		</view>
+	</view>
+</view>
+
+
+<view class="o_06">
+	<view class="m_07" bindtap="next">下一步</view>
+
+	<view class="m_08">
+		<p bindtap="qzduan">前往求职端</p><span>|</span>
+		<p bindtap="phone">联系客服</p>
+	</view>
+</view>

@@ -1,0 +1,135 @@
+<!--index.wxml-->
+<view class="a_00">
+	<!-- 弹框 -->
+		<!-- 职位弹框 -->
+			<view class="mask" wx:if="{{isAdd}}"></view>
+			<view class="mask1" wx:if="{{isAdd}}">
+				<view class="m_top">
+					<view class="title">职位</view>
+					<!-- 遮罩层2 -->
+					<!-- 二级弹框 -->
+					<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
+					<view class="mask_02_01" wx:if="{{isTwo}}">
+						<scroll-view class="mask_left" scroll-y="true">
+							<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS}}' data-index='{{index}}' bindtap="toggle1" style="width:170rpx">
+								<image class="img" wx:if="{{index==ind1}}" src="../img/icon_02.png"></image>
+								{{item.name}}
+								<image class="img1" wx:if="{{index==ind1}}" src="../img/icon_01.png"></image>
+							</view>
+						</scroll-view>
+						<!-- 三级弹框 -->
+						<scroll-view class="mask_right" scroll-y="true">
+							<view class="{{index==ind_three?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS[ind1].treeDTOS}}' data-index='{{index}}' data-id="{{item.id}}" bindtap="toggle_three">
+								{{item.name}}
+								<image class="img2" wx:if="{{index==ind_three}}" src="../img/icon_01.png"></image>
+							</view>
+						</scroll-view>
+					</view>
+					<!-- —————— -->
+					<!-- 一级弹框 -->
+					<scroll-view class="top_top" scroll-y="true">
+						<view class="{{index==ind?'no':'bot'}}" wx:for='{{zhiList}}' data-index='{{index}}' bindtap="toggle">
+							<image class="img" wx:if="{{index==ind}}" src="../img/icon_02.png"></image>
+							{{item.name}}
+						</view>
+					</scroll-view>
+				</view>
+				<view class="m_bottom">
+					<button class="b_left" bindtap="confirm_zhi">取消</button>
+					<button class="b_right" bindtap="con_zhi">确认</button>
+				</view>
+			</view>
+			<!-- ---end-- -->
+	<!-- --end-- -->
+	<view class="a_01">
+		<view class="a_02">您的期望薪资（月）是多少？</view>
+		<view class="a_03">
+			<ul>
+				<li class='{{num==item.value?"on":""}}' bindtap="active" wx:for="{{money}}"  data-value="{{item.label}}" data-num='{{item.value}}'>
+					<p>{{item.label}}</p>
+				</li>
+			
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">类型</view>
+		<view class="a_05">
+			<ul>
+				<li class='{{indexs==item.value?"on":""}}' wx:for="{{work_type}}" data-value="{{item.label}}" data-index='{{item.value}}' bindtap="activeOne">
+					<p>{{item.label}}</p>
+				</li>
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您期望的职位类别</view>
+		<view class="a_06">
+			<view class="section" bindtap="zhiwei">
+				<view class="picker">{{vauee}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您期望的工作地点（多选）</view>
+		<view class="a_06">
+			<view class="section">
+					<view class="picker" bindtap="dingwei">{{mapValue}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">行业</view>
+		<view class="a_06">
+			<view class="section" bindtap="industry">
+				<!-- <picker value="{{index}}" range="{{array}}"> -->
+				<view class="picker">{{type_value}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+	</view>
+	<!-- 行业弹框 -->
+	<view class="mask" wx:if="{{isInd}}" bindtap="industry"></view>
+	<view class="mask_ind" wx:if="{{isInd}}">
+		<view class="ind_top">
+			<view class="ind_title">行业</view>
+			<view class="ind_bot">
+				<button class="{{item.value==ind2?'tt1':'ind_bot_tt'}}" size="mini" data-indu="{{item.value}}" data-index="{{index}}" wx:for="{{class_types}}" data-value="{{item.label}}" wx:key="index" bindtap="toggle2" style="font-size:25rpx">{{item.label}}</button>
+			</view>
+		</view>
+		<view class="m_bottom">
+			<button class="b_left" bindtap="industry">取消</button>
+			<button class="b_right" bindtap="confirm">确认</button>
+		</view>
+	</view>
+	<!-- --end-- -->
+	<view class="a_04">
+		<view class="a_02">到岗时间</view>
+		<view class="a_06">
+			<view class="section" bindtap="Ttime">
+				<!-- <picker value="{{index}}" range="{{array}}"> -->
+				<view class="picker">{{time_value}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+	</view>
+	<!-- 到岗时间弹窗 -->
+	<view class="mask2" wx:if="{{isTime}}" bindtap="Ttime"></view>
+	<view class="mask2_01" wx:if="{{isTime}}">
+		<view class="title_01"> 到岗时间</view>
+		<view class="butt">
+			<button class="{{item.value==num3?'bot_02':'bot_01'}}" wx:for="{{work_time}}" size="mini" style="font-size:28rpx" data-index="{{index}}" data-num="{{item.value}}" bindtap="activeFour"> {{item.label}}</button>
+		</view>
+		<button class="button_2" bindtap="con">确认</button>
+	</view>
+	<!-- end -->
+	<view class="r_02">
+		<view class="r_03">自我评价：</view>
+		<view class="t_05"><textarea placeholder="请输入" value="{{ping_value}}" data-value="{{value}}" bindinput="blur"></textarea></view>
+	</view>
+	<view class="a_14" bindtap="tijiao">
+		<p>提交</p>
+	</view>
+</view>

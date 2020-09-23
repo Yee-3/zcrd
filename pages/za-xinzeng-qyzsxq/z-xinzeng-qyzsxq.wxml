@@ -1,0 +1,83 @@
+<view class="z_01">
+	<view class="z_02">
+		<image src="../img/f069.png"></image>
+	</view>
+	<view class="z_03">
+		<view class="z_04 fl">
+			<image src="{{company.companyLogo}}"></image>
+		</view>
+		<view class="z_05 fl">
+			<view class="z_06">{{company.companyName}}</view>
+			<view class="z_07">
+				<p>{{company.companyNumName}}</p><span>|</span>
+				<p>{{company.companyTypeName}}</p><span>|</span>
+				<p>{{company.companyNatureName}}</p>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="">
+	<view class="g_13">
+		<view class="g_14 fl">
+			<image src="../img/f071.png"></image>
+		</view>
+		<view class="g_15 fl">
+			<p>公司描述</p>
+		</view>
+	</view>
+	<view class="z_08">
+		{{company.companyDescribe}}
+	</view>
+</view>
+
+<view class="">
+	<view class="g_13">
+		<view class="g_14 fl">
+			<image src="../img/f071.png"></image>
+		</view>
+		<view class="g_15 fl">
+			<p>公司环境</p>
+		</view>
+	</view>
+	<view class="z_09">
+		<ul>
+			<li wx:for="{{img}}">
+				<image src="{{item}}"></image>
+			</li>
+		
+			<view class="w-clear"></view>
+		</ul>
+	</view>
+</view>
+
+<view class="">
+	<view class="g_13">
+		<view class="g_14 fl">
+			<image src="../img/f071.png"></image>
+		</view>
+		<view class="g_15 fl">
+			<p>公司地址</p>
+		</view>
+	</view>
+	<view class="h_22">
+		<!-- <view class="h_23"><image src="../img/f073.png"></image></view> -->
+		<view class="map_container ">
+			<map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap' show-location></map>
+		</view>
+		<view class="h_24"  bindtap="onGuideTap" data-latitude='{{detaCont.latitude}}' data-longitude='{{detaCont.longitude}}' data-bankName='{{detaCont.address}}'>
+			<view class="h_27">
+				<view class="h_26 fl">
+					<image src="../img/f029.png"></image>
+				</view>
+				<view class="h_25 fl">
+					<p>办公地点</p>
+				</view>
+			</view>
+			<view class="h_28">地址：{{company.address}}</view>
+		</view>
+		<view class="h_30">
+			<image src="../img/f028.png"></image>
+		</view>
+	</view>
+</view>

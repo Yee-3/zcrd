@@ -1,0 +1,14 @@
+<view class="n_01">
+	<view class="n_02">
+		<view class="n_03 fl"><image src="../img/q068.png"></image></view>
+		<view class="n_04 fl"><p>公司描述</p><span>（最少二十字以上）</span></view>
+	</view>
+	<view class="n_05">
+		<textarea placeholder="请输入" value="{{val}}" data-value="{{value}}" bindinput="change"></textarea>
+	</view>
+</view>
+
+<view class="m_07" bindtap="baocun">保存</view>
+
+
+

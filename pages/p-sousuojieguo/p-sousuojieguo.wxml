@@ -1,0 +1,160 @@
+<view class="o_01">
+	<view class="top_a">
+		<view class="top_b">
+			<view class="top_f"><image src="../img/f047.png"></image></view>
+			<view class="top_g"><p>济南市</p></view>
+			<view class="top_h"><image src="../img/f048.png"></image></view>
+		</view>
+		<view class="top_c">
+			<view class="top_e"><image src="../img/f057.png"></image></view>
+			<view class="top_d"><input placeholder="搜索产品、商家或关键词" /></view>
+		</view>
+	</view>
+</view>
+
+<view class="l_01">
+	<ul>
+		<li>
+			<view class="l_02">综合排序</view>
+			<view class="l_04"><image src="../img/f033.png"></image></view>
+		</li>
+		<li>
+			<view class="l_02">职位</view>
+			<view class="l_03"><image src="../img/f033.png"></image></view>
+		</li>
+		<li>
+			<view class="l_02">公司</view>
+			<view class="l_03"><image src="../img/f033.png"></image></view>
+		</li>
+		<li>
+			<view class="l_02">更多</view>
+			<view class="l_03"><image src="../img/f033.png"></image></view>
+		</li>
+	</ul>
+</view>
+
+<view class="l_05">
+	<view class="h_10">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">9K-13K</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15"><p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p></view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		<view class="j_01">
+			<view class="j_02 fl"><image src="../img/f031.png"></image></view>
+			<view class="j_03 fl">成都锦江思儿康诊所有限公司</view>
+			
+			<view class="w-clear"></view>
+		</view>
+	</view>
+	<view class="h_10">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">9K-13K</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15"><p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p></view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		<view class="j_01">
+			<view class="j_02 fl"><image src="../img/f031.png"></image></view>
+			<view class="j_03 fl">成都锦江思儿康诊所有限公司</view>
+			
+			<view class="w-clear"></view>
+		</view>
+	</view>
+	<view class="h_10">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">9K-13K</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15"><p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p></view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		<view class="j_01">
+			<view class="j_02 fl"><image src="../img/f031.png"></image></view>
+			<view class="j_03 fl">成都锦江思儿康诊所有限公司</view>
+			
+			<view class="w-clear"></view>
+		</view>
+	</view>
+	<view class="h_10">
+		<view class="h_11">
+			<view class="fl h_12">行政助理</view>
+			<view class="fr h_13">9K-13K</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15"><p>济南市市中区</p><span>|</span><p>经验不限</p><span>|</span><p>本科</p></view>
+			<view class="fr h_16">4天前</view>
+		</view>
+		<view class="h_17">
+			<span>五险一金</span><span>带薪年假</span><span>高温补贴</span><span>定期体检</span>
+		</view>
+		<view class="j_01">
+			<view class="j_02 fl"><image src="../img/f031.png"></image></view>
+			<view class="j_03 fl">成都锦江思儿康诊所有限公司</view>
+			
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

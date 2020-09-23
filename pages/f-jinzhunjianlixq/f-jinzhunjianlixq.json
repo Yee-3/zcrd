@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "date-picker": "../components/date-picker/date-picker",
+    "toggle": "../components/toggle/toggle"
+  },
+  "navigationBarTitleText": "简历详情"
+}

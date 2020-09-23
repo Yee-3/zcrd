@@ -1,0 +1,123 @@
+<view class="q_01">
+	<view class="q_02">
+		<view class="k_01">
+			<image src="../img/f0666.jpg"></image>
+		</view>
+		<view class="k_02">
+			<view class="fl">
+				<view class="q_03">
+					<view class="q_04">{{user.name?user.name:users.nickName}}</view>
+				</view>
+				<view class="q_06">
+					<view class="k_03 fl">
+						<image src="../img/q005.png"></image>
+					</view>
+					<view class="q_08 fl">{{user.companyName?user.companyName:'未注册企业信息'}}</view>
+				</view>
+				<view class="q_06">
+					<view class="k_04 fl">
+						<image src="../img/f024.png"></image>
+					</view>
+					<view class="q_08 fl">{{user.phone?user.phone:''}}</view>
+				</view>
+				<view class="q_06">
+					<view class="k_05 fl">
+						<image src="../img/f025.png"></image>
+					</view>
+					<view class="q_08 fl">{{user.email?user.email:''}}</view>
+				</view>
+			</view>
+			<view class="fr q_09">
+				<image src="{{user.companyLogo?user.companyLogo:users.avatarUrl}}"></image>
+			</view>
+		</view>
+	</view>
+
+	<view class="q_10">
+		<view class="q_11" bindtap="auth">
+			<view class="fl">
+				<view class="q_12 fl">
+					<image src="../img/q058.png"></image>
+				</view>
+				<view class="q_13 fl">企业认证</view>
+			</view>
+			<view class="fr">
+				<view class="q_14 fl">{{com_cont}}</view>
+
+			</view>
+		</view>
+		<view class="q_11" bindtap="gangwei" data-id="{{user.id}}">
+			<view class="fl">
+				<view class="q_12 fl">
+					<image src="../img/q059.png"></image>
+				</view>
+				<view class="q_13 fl">招聘岗位</view>
+			</view>
+			<view class="fr">
+
+				<view class="q_15 fl">
+					<image src="../img/f052.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="q_11" bindtap="about">
+			<view class="fl">
+				<view class="q_12 fl">
+					<image src="../img/q060.png"></image>
+				</view>
+				<view class="q_13 fl">关于我们</view>
+			</view>
+			<view class="fr">
+				<view class="q_15 fl">
+					<image src="../img/f052.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="q_11" bindtap="tanchuang_2">
+			<view class="fl">
+				<view class="q_12 fl">
+					<image src="../img/q061.png"></image>
+				</view>
+				<view class="q_13 fl">客服电话</view>
+			</view>
+			<view class="fr">
+				<view class="q_15 fl">
+					<image src="../img/f052.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="q_16" bindtap="qiuzhi">
+			<view class="fl">
+				<view class="q_17 fl">
+					<image src="../img/f062.png"></image>
+				</view>
+				<view class="q_18 fl">切换至求职版</view>
+			</view>
+			<view class="fr">
+				<view class="q_19 fl">
+					<image src="../img/f052.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="q_20" bindtap="tuichu">退出登录</view>
+	</view>
+
+</view>
+
+
+<view class="f_08" style="{{dianhua}}">
+	<view class="f_07">
+		<view class="f_14">
+			<p>请拨打客服电话</p>
+			<span>{{kefuPhone.phone}}</span>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="quxiao2">取消</view>
+			<view class="f_13 fr" bindtap="phone">拨打</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+<toggle id="tog" bind:confirm="confirm" confirmText="确定" cancelText="取消" bind:cancel="cancel" content="{{content}}"></toggle>
+<toggle id="zhuce" bind:confirm="zhuConfirm" title="注册提示"  confirmText="注册" cancelText="取消" bind:cancel="zhuCancel" content="{{zhuContent}}"></toggle>
+<tabbars></tabbars>

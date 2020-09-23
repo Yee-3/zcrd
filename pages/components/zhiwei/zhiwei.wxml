@@ -1,0 +1,37 @@
+<!--pages/components/zhiwei/zhiwei.wxml-->
+<view class="mask" wx:if="{{isAdd}}" style="{{styleT}}" bindtap="hidden"></view>
+<view class="mask1" wx:if="{{isAdd}}" style="{{style}}">
+	<view class="m_top">
+		<!-- <view class="title">职位</view> -->
+		<!-- 遮罩层2 -->
+		<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
+		<view class="mask_02_01" wx:if="{{isTwo}}">
+			<scroll-view class="mask_left" scroll-y="true">
+				<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS}}' style="" data-index='{{index}}' bindtap="toggle1" style="width:220rpx">
+					<image class="img" wx:if="{{index==ind1}}" src="../../img/icon_02.png"></image>
+					{{item.name}}
+					<image class="img1" wx:if="{{index==ind1}}" src="../../img/icon_01.png"></image>
+				</view>
+			</scroll-view>
+
+			<scroll-view class="mask_right" scroll-y="true">
+				<view class="{{index==ind2?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS[ind1].treeDTOS}}' data-id="{{item.id}}" data-index='{{index}}' bindtap="toggle2">
+					{{item.name}}
+					<image class="img2" wx:if="{{index==ind2}}" src="../../img/icon_01.png"></image>
+				</view>
+			</scroll-view>
+
+		</view>
+		<!-- —————— -->
+		<scroll-view class="top_top" scroll-y="true">
+			<view class="{{index==ind?'no':'bot'}}" wx:for='{{zhiList}}' data-index='{{index}}' bindtap="toggle">
+				<image class="img" wx:if="{{index==ind}}" src="../../img/icon_02.png"></image>
+			{{item.name}}
+			</view>
+		</scroll-view>
+	</view>
+	<!-- <view class="m_bottom">
+		<button class="b_left" bindtap="position">取消</button>
+		<button class="b_right">确认</button>
+	</view> -->
+</view>

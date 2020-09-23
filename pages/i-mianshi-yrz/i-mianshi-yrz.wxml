@@ -1,0 +1,151 @@
+<view class="h_01">
+	<!-- 顶部 -->
+	<view class="h_02">
+		<ul>
+			<li>
+				<view class="{{idn==1?'h_04':'h_03'}}" bindtap="toggleTitle" data-index="1">投递列表</view>
+				<view class="{{idn==1?'h_05':''}}"></view>
+			</li>
+			<li>
+				<view class="{{idn==2?'h_04':'h_03'}}" bindtap="toggleTitle" data-index="2">面试状态</view>
+				<view class="{{idn==2?'h_05':''}}"></view>
+			</li>
+			<li>
+				<view class="{{idn==3?'h_04':'h_03'}}" bindtap="toggleTitle" data-index="3">入职状态</view>
+				<view class="{{idn==3?'h_05':''}}"></view>
+			</li>
+		</ul>
+	</view>
+	<!-- 面试状态 -->
+	<view class="h_06" wx:if="{{idn==2||idn==3?true:false}}">
+		<ul>
+			<li class="{{ind==1?'on':''}}">
+				<view class="h_07">
+					<image wx:if="{{idn==1}}" src="../img/f026.png"></image>
+				</view>
+				<view class="h_08" data-index="1" bindtap="toggleType">{{idn==2?'邀面试':'邀入职'}}</view>
+			</li>
+			<li class="{{ind==2?'on':''}}">
+				<view class="h_07">
+					<image wx:if="{{idn==2}}" src="../img/f026.png"></image>
+				</view>
+				<view class="h_08" data-index="2" bindtap="toggleType">{{idn==2?'已同意':'已入职'}}</view>
+			</li>
+			<li class="{{ind==3?'on':''}}">
+				<view class="h_07">
+					<image wx:if="{{idn==3}}" src="../img/f026.png"></image>
+				</view>
+				<view class="h_08" data-index="3" bindtap="toggleType">{{idn==2?'已拒绝':'已拒绝'}}</view>
+			</li>
+		</ul>
+	</view>
+</view>
+
+<view class="h_09">
+	<!-- 待确认面试状态 -->
+	<view class="h_10" wx:for="{{recomList}}"  >
+		<view class="h_11" bindtap="conpanyIn" data-id="{{item.companyId}}">
+			<view class="fl h_12">{{item.title}}</view>
+			<view class="fr h_13" wx:if="{{idn!=1}}">{{((idn==2||idn==3)&&ind==1)?'待确认':((idn==2||idn==3)&&ind==2)?'已同意':((idn==2||idn==3)&&ind==3)?'已取消':false}}</view>
+			<!-- 投递列表显示 -->
+			<view class="fr h_13" wx:if="{{idn==1}}">{{item.moneyName}}</view>
+		</view>
+
+		<view class="h_14" bindtap="conpanyIn" data-id="{{item.companyId}}">
+			<view class="fl h_15">
+				<p>{{item.cityName}}{{item.districtName}}</p><span>|</span>
+				<p>{{item.workExperienceName}}</p><span>|</span>
+				<p>{{item.schoolRecordName}}</p>
+			</view>
+			<view class="fr h_16">{{item.timeVal}}</view>
+		</view>
+		<!-- 公司福利：面试状态-待确认、已取消；入职状态；投递列表 等显示 -->
+		<view class="h_17"  wx:if="{{!(idn==2&&ind==2)}}" bindtap="conpanyIn" data-id="{{item.companyId}}">
+			<button size="mini" style="font-size:24rpx" wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</button>
+		</view>
+
+		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{!(idn==1||(idn==2&&ind==3)||(idn==3&&ind==3))}}">		 
+			<view class="h_19 fl">{{idn==2?'面试时间：':'入职时间：'}}</view>
+			<view class="h_20 fl" style="{{idn==2&&ind==2?'color:#ff4949;':'color:#000'}}">{{idn==2?item.ctrlMemberCompanies.statTime:item.ctrlMemberCompanies.inductionTime}}</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{idn==3&&ind==2}}">
+			<view class="h_19 fl">温馨提示：</view>
+			<view class="h_20 fl" style="color:#909090">请按照约定时间入职</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{(idn==2||idn==3)&&ind==3}}">
+			<view class="h_19 fl">原因：</view>
+			<view class="h_20 fl">{{idn==2?(item.ctrlMemberCompanies.whyStatus==1?'时间原因':'其他原因'):(item.ctrlMemberCompanies.auditType1==1?'时间原因':'其他原因')}}</view>
+			<view class="w-clear"></view>
+		</view>
+		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{(idn==2||idn==3)&&ind==3}}">
+			<view class="h_19 fl">详细：</view>
+			<view class="h_20 fl">{{idn==2?(item.ctrlMemberCompanies.why?item.ctrlMemberCompanies.why:''):(item.ctrlMemberCompanies.whyInduction?item.ctrlMemberCompanies.whyInduction:'')}}</view>
+			<view class="w-clear"></view>
+		</view>
+		<!-- 投递列表显示 -->
+		<view class="j_01" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{idn==1}}">
+			<view class="j_02 fl">
+				<image src="{{item.companyLogo}}"></image>
+			</view>
+			<view class="j_03 fl">{{item.companyName}}</view>
+			<view class="w-clear"></view>
+		</view>
+		<!-- 面试地点：面试状态同意显示 -->
+		<view class="h_22" wx:if="{{idn==2&&ind==2}}">
+			<!-- <view class="h_23">
+				<image src="../img/f027.png"></image>
+			</view> -->
+			<view class="map_container">
+				<map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}'  catchtap="defalu" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' show-location></map>
+			</view>
+			<view class="h_24">
+				<view class="h_27">
+					<view class="h_26 fl">
+						<image src="../img/f029.png"></image>
+					</view>
+					<view class="h_25 fl">
+						<p>面试地点</p><span>（请按照约定时间和地点参加面试）</span>
+					</view>
+				</view>
+				<view class="h_28">地址：{{item.address}}</view>
+			</view>
+			<view class="h_29" catchtap="onGuideTap" data-latitude='{{item.latitude}}' data-longitude='{{item.longitude}}' data-bankName='{{item.address}}'>
+				<image src="../img/f030.png"></image>
+			</view>
+			<view class="h_30">
+				<image src="../img/f028.png"></image>
+			</view>
+		</view>
+		<!-- 面试状态待确认、入职状态待确认显示 -->
+		<view class="h_21" wx:if="{{(idn==2||idn==3)&&ind==1}}">
+			<ul>
+				<li catchtap="tanchuang" data-id="{{item.ctrlMemberCompanies.id}}">取消</li>
+				<li catchtap="tongyi" data-id="{{item.ctrlMemberCompanies.id}}">同意</li>
+			</ul>
+		</view>
+	</view>
+</view>
+
+
+<view class="f_08" style="{{style}}">
+	<view class="f_07">
+		<view class="f_09">
+			<p>原因:</p>
+			<Select id="select" prop-array='{{idn==2?selectArray:ruzhiArray}}' nowText="{{idn==2?'面试时间不合适':'入职时间不合适'}}" bind:myget='getDate'></Select>
+		</view>
+		<view class="f_10">
+			<p>{{valu}}</p>
+			<textarea placeholder="{{value}}" value="{{val}}" data-value="{{value}}" bindinput="blur"></textarea>
+		</view>
+		<view class="f_11">
+			<view class="f_12 fl" bindtap="quxiao2">取消</view>
+			<view class="f_13 fr" bindtap="submit">提交</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+</view>
+<view class="loading-text" wx:if="{{loadingType!=2}}">
+	{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+</view>

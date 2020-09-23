@@ -1,0 +1,138 @@
+<!--index.wxml-->
+
+<view class="a_00">
+	<!-- 弹框 -->
+	<!-- 职位弹框 -->
+	<view class="mask" wx:if="{{isAdd}}"></view>
+	<view class="mask1" wx:if="{{isAdd}}">
+		<view class="m_top">
+			<view class="title">职位</view>
+			<!-- 遮罩层2 -->
+			<!-- 二级弹框 -->
+			<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
+			<view class="mask_02_01" wx:if="{{isTwo}}">
+				<scroll-view class="mask_left" scroll-y="true">
+					<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS}}' data-index='{{index}}' bindtap="toggle1" style="width:170rpx">
+						<image class="img" wx:if="{{index==ind1}}" src="../img/icon_02.png"></image>
+						{{item.name}}
+						<image class="img1" wx:if="{{index==ind1}}" src="../img/icon_01.png"></image>
+					</view>
+				</scroll-view>
+				<!-- 三级弹框 -->
+				<scroll-view class="mask_right" scroll-y="true">
+					<view class="{{index==ind_three?'no':'bot'}}" wx:for='{{zhiList[ind].treeDTOS[ind1].treeDTOS}}' data-index='{{index}}' data-id="{{item.id}}" bindtap="toggle_three">
+						{{item.name}}
+						<image class="img2" wx:if="{{index==ind_three}}" src="../img/icon_01.png"></image>
+					</view>
+				</scroll-view>
+			</view>
+			<!-- —————— -->
+			<!-- 一级弹框 -->
+			<scroll-view class="top_top" scroll-y="true">
+				<view class="{{index==ind?'no':'bot'}}" wx:for='{{zhiList}}' data-index='{{index}}' bindtap="toggle">
+					<image class="img" wx:if="{{index==ind}}" src="../img/icon_02.png"></image>
+					{{item.name}}
+				</view>
+			</scroll-view>
+		</view>
+		<view class="m_bottom">
+			<button class="b_left" bindtap="confirm_zhi">取消</button>
+			<button class="b_right" bindtap="con_zhi">确认</button>
+		</view>
+	</view>
+	<!-- ---end-- -->
+	<!-- --end-- -->
+	<view class="a_01">
+		<view class="a_02">您的期望薪资（月）是多少？</view>
+		<view class="a_03">
+			<ul>
+				<li class='{{num==item.value?"on":""}}' bindtap="active" wx:for="{{money}}" data-num='{{item.value}}'>
+					<p>{{item.label}}</p>
+				</li>
+
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">类型</view>
+		<view class="a_05">
+			<ul>
+				<li class='{{indexs==item.value?"on":""}}' data-index='{{item.value}}' wx:for="{{work_type}}" bindtap="activeOne">
+					<p>{{item.label}}</p>
+				</li>
+
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您期望的职位类别</view>
+		<view class="a_06">
+			<view class="section" bindtap="zhiwei">
+				<view class="picker">{{classValue}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您期望的工作地点</view>
+		<view class="a_06">
+			<view class="section">
+				<view class="picker" bindtap="weizhi">{{mapValue}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="a_04">
+		<view class="a_02">您当前的求职状态</view>
+		<view class="a_07">
+			<ul>
+				<li class='{{num1==item.value?"on":""}}' data-num1='{{item.value}}' wx:for="{{status}}" bindtap="activeTwo">
+					<p>{{item.label}}</p>
+				</li>
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您可接受最快的到岗时间</view>
+		<view class="a_07">
+			<ul>
+				<li class="{{num2==item.value?'on':''}}" wx:for="{{work_time}}" data-num2='{{item.value}}' bindtap="activeThree">
+					<p>{{item.label}}</p>
+				</li>
+				<view class="w-clear"></view>
+			</ul>
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您的名字</view>
+		<view class="a_08">
+			<input placeholder="您的名称"  bindblur="name" data-value="{{value}}" value='{{nameValue}}'  />
+		</view>
+	</view>
+	<view class="a_04">
+		<view class="a_02">您的联系方式</view>
+		<view class="a_08">
+			<input placeholder="请输入手机号" bindblur="jiaoyan" data-value="{{value}}" value='{{phoneValue}}' />
+		</view>
+	</view>
+
+	<view class="a_09">
+		<view class="a_10">
+			<view class="a_12">
+				<image src="../img/f001.png"></image>
+			</view>
+			<view class="a_13">
+				<p>温馨提示</p>
+			</view>
+		</view>
+		<view class="a_11">
+			<p>请保持电话通畅，方便工作人员及时联系您！</p>
+		</view>
+	</view>
+
+	<view class="a_14" bindtap="submit">
+		<p>提交</p>
+	</view>
+</view>

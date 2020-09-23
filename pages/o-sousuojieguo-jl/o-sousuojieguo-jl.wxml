@@ -1,0 +1,82 @@
+<view class="o_01">
+	<view class="top_a">
+		<view class="top_b">
+			<view class="top_f">
+				<image src="../img/f047.png"></image>
+			</view>
+			<view class="top_g" bindtap="weizhi">
+				<p>{{mapValue}}</p>
+			</view>
+			<view class="top_h">
+				<image src="../img/f048.png"></image>
+			</view>
+		</view>
+		<view class="top_c">
+			<view class="top_e">
+				<image src="../img/f057.png"></image>
+			</view>
+			<view class="top_d"><input placeholder="搜索产品、商家或关键词" value="{{name}}" data-value="{{value}}" bindblur="search"/></view>
+		</view>
+	</view>
+</view>
+
+<view class="l_01">
+	<ul>
+		<li bindtap="toggleZong" style="width:30%">
+			<view class="l_02">{{value}}
+				<image class="image" src="../img/f033.png" animation="{{animationCon}}"></image>
+			</view>
+		</li>
+		<zonghe id="zonghe" bind:confirm="togValue"></zonghe>
+		<li bindtap="toggleZhi" style="width:23%">
+			<view class="l_02">职位
+				<image class="image" src="../img/f033.png" animation="{{animationData}}"></image>
+			</view>
+		</li>
+		<zhiwei id="zhiwei" bind:confirm="tog" zhiList="{{zhiList}}"></zhiwei>
+		<li bindtap="toggleSi" style="width:23%">
+			<view class="l_02">公司
+				<image class="image" src="../img/f033.png" animation="{{animationSi}}"></image>
+			</view>
+		</li>
+		<gongsi id="gongsi" comList="{{comList}}" scaleList="{{scaleList}}" bind:confirm="togCom" bind:cancel="comCancel"></gongsi>
+		<li style="width:23%" bindtap="toggleMor">
+			<view class="l_02">更多
+				<image class="image" src="../img/f033.png" animation="{{animationMor}}" ></image>
+			</view>
+		</li>
+		<more id="more" bind:confirm="togMore" bind:cancel="moreCancel" moneyList="{{moneyList}}" expList="{{expList}}" codList="{{codList}}"></more>
+	</ul>
+</view>
+
+<view class="l_05">
+	<view class="h_10" wx:for="{{recomList}}" bindtap="detail" data-id="{{item.id}}">
+		<view class="h_11">
+			<view class="fl h_12">{{item.title}}</view>
+			<view class="fr h_13">{{item.moneyName}}</view>
+		</view>
+		<view class="h_14">
+			<view class="fl h_15">
+				<p>{{item.cityName}}{{item.districtName}}</p><span>|</span>
+				<p>{{item.workExperienceName}}</p><span>|</span>
+				<p>{{item.schoolRecordName}}</p>
+			</view>
+			<view class="fr h_16">{{item.timeVal}}</view>
+		</view>
+		<view class="h_17">
+		<span wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</span>
+		</view>
+		<view class="j_01">
+			<view class="j_02 fl">
+				<image src="{{item.companyLogo}}"></image>
+			</view>
+			<view class="j_03 fl">{{item.companyName}}</view>
+			<view class="o_02 fr">距您{{item.distance}}KM</view>
+			<view class="w-clear"></view>
+		</view>
+	</view>
+
+</view>
+	<view class="loading-text">
+		{{loadingType === 0 ? contentText.contentdown : loadingType === 1 ? contentText.contentrefresh : contentText.contentnomore}}
+	</view>

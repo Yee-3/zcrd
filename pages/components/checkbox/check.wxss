@@ -1,0 +1,94 @@
+/* pages/components/checkbox/check.wxss *//* pages/components/spring-box/spring-box.wxss */
+/* 学历弹框 */
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 99;
+}
+.mask_edu{
+  width: 690rpx;
+  /* height: 380rpx; */
+  position: fixed;
+  left: 30rpx;
+  z-index: 9999;
+  bottom: 40rpx;
+}
+.edu_top{
+  /* height: 260rpx; */
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx;
+  padding-bottom:20rpx ;
+}
+.edu_title{
+  font-size: 25rpx;
+  color: #565656;
+  margin-bottom: 25rpx;
+  /* text-align: center; */
+}
+.no{
+  min-width: 140rpx;
+  min-height: 58rpx;
+  line-height: 58rpx;
+  color: #909090;
+  background: #e5e5e5;
+  font-weight: normal;
+  margin-bottom: 30rpx;
+  font-size:24rpx;
+  /* margin-right: 20rpx; */
+  margin-right: 20rpx;
+}
+button::after{
+  border:none;
+}
+.no1{
+  /* margin-right: 20rpx; */
+  min-width: 140rpx;
+  min-height: 58rpx;
+  font-size:24rpx;
+  line-height: 58rpx;
+  color: #0187ff;
+  font-weight: normal;
+  background: #e7f4ff;
+  margin-bottom: 30rpx;
+  margin-right: 20rpx;
+}
+/* 底部按钮 */
+.m_bottom {
+	height: 100rpx;	
+	/* display: flex;
+	justify-content: space-around; */
+}
+.cancel {
+	/* box-sizing: border-box; */
+	position: absolute;
+	left: 0;
+	min-width: 335rpx;
+	line-height: 100rpx;
+	font-size: 30rpx;
+  color: #aaaaaa;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 15rpx;
+}
+
+.confirm {
+  border-radius: 15rpx;
+  text-align: center;
+	position: absolute;
+	right: 0;
+	min-width: 335rpx;
+	padding: 0;
+	line-height: 100rpx;
+	background-color:#0385ff;
+	/* margin-right: 20rpx; */
+	font-size: 30rpx;
+	color: #fff;
+}

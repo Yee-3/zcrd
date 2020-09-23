@@ -1,0 +1,64 @@
+<view class="m_01">
+	<view class="m_02"><image src="../img/q067.jpg"></image></view>
+	<view class="m_06">
+	<view class="m_03">
+		<view class="m_04 fl"><span>*</span><p>真实姓名</p></view>
+		<view class="m_05 fr"><input placeholder="请输入" data-type="1" value="{{nameVal}}" data-value="{{value}}" bindblur="blur" /></view>
+	</view>
+	<view class="m_03">
+		<view class="m_04 fl"><span>*</span><p>性别</p></view>
+		<view class="m_05 fr">
+			<view class="section" bindtap="hidden">
+				<!-- <picker value="{{index}}" range="{{array}}"> -->
+					<view class="picker">{{six_val}}</view>
+				<!-- </picker> -->
+			</view>
+		</view>
+	</view>
+	<!--性别弹框 -->
+	<view class="mask" wx:if="{{isSix}}"></view>
+	<view class="mask_Mar" wx:if="{{isSix}}">
+		<view class="mar_top">
+			<view class="mar_title">性别</view>
+			<view class="mar_bot" style="padding:0">
+				<button class="{{six==1?'bot1':'bot'}}" data-index="1" bindtap="sixChange">男</button>
+				<button class="{{six==2?'bot1':'bot'}}" data-index="2" bindtap="sixChange">女</button>
+			</view>
+			<view class="but">
+				<button class="queren" size="mini" style="font-weight:normal;" bindtap="con1">确认</button>
+			</view>
+		</view>
+	</view>
+	<!-- ---end---- -->
+	<view class="m_03">
+		<view class="m_04 fl"><span>*</span><p>担任职位</p></view>
+		<view class="m_05 fr"><input placeholder="请输入" data-type="2" value="{{zhiVal}}" data-value="{{value}}" bindblur="blur" /></view>
+	</view>
+	<view class="m_03">
+		<view class="m_04 fl"><span>*</span><p>常用邮箱</p></view>
+		<view class="m_05 fr"><input placeholder="请输入" data-type="3" value="{{emilVal}}" data-value="{{value}}" bindblur="blur"/></view>
+	</view>
+	<view class="m_03">
+		<view class="m_04 fl"><span>*</span><p>联系电话</p></view>
+		<view class="m_05 fr"><input placeholder="请输入" data-type="4" value="{{phoneVal}}" data-value="{{value}}" bindblur="blur" /></view>
+	</view></view>
+</view>
+
+
+<view class="m_07" bindtap="next">下一步</view>
+
+<view class="m_08">
+	<p bindtap="qzduan">前往求职端</p><span>|</span><p bindtap="phone">联系客服</p>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

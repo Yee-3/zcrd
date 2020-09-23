@@ -1,0 +1,454 @@
+.s_01 {
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  /* height: 270rpx; */
+  height: 240rpx;
+}
+
+.s_02 {
+  /* height: 270rpx; */
+  height: 240rpx;
+
+}
+
+.s_03 p {
+  font-size: 28rpx;
+  color: #565656;
+}
+
+.s_03 span {
+  font-size: 28rpx;
+  color: #909090;
+  padding: 0 16rpx;
+}
+
+.s_04 {
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 16rpx;
+}
+
+
+.s_05 {
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  background: #fff;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+  padding: 10rpx 25rpx 20rpx 25rpx;
+  box-sizing: border-box;
+  border-radius: 15rpx;
+}
+
+.s_07 {
+  font-size: 36rpx;
+  color: #333;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.s_08 {
+  margin-top: 26rpx;
+}
+
+.s_08 image {
+  width: 29rpx;
+  height: 27rpx;
+}
+
+.s_09 {
+  height: 60rpx;
+}
+
+.s_10 {
+  line-height: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #909090;
+}
+
+.s_11 {
+  line-height: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+
+.s_12 {
+  margin-top: 22rpx;
+}
+
+.s_12 image {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.s_13 {
+  height: 60rpx;
+}
+
+.s_14 {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+
+.s_15 {
+  margin-top: 14rpx;
+}
+
+.s_15 image {
+  width: 29rpx;
+  height: 27rpx;
+}
+
+.s_16 {
+  font-size: 28rpx;
+  color: #909090;
+}
+
+.s_17 {
+  height: 60rpx;
+}
+
+.s_18 {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 60rpx;
+}
+
+.s_19 {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 60rpx;
+}
+
+.s_21 {
+  font-size: 26rpx;
+  color: #555;
+  line-height: 42rpx;
+}
+
+.s_20 {
+  margin-top: 20rpx;
+  display: -webkit-box;
+  /*关键属性（必须有的）  */
+  -webkit-box-orient: vertical;
+  /*规定子元素的排列方向 */
+  -webkit-line-clamp: 2;
+  /*行数*/
+  /* 实现多余的文字隐藏并用省略号来代表被隐藏的文字    */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.s_22 {
+  text-align: center;
+  margin-top: 16rpx;
+}
+
+.s_22 image {
+  width: 30rpx;
+  height: 17rpx;
+}
+
+.s_23 {
+  margin-top: 10rpx;
+}
+
+.s_23 image {
+  width: 378rpx;
+  height: 236rpx;
+}
+
+.s_24 {
+  width: 690rpx;
+  height: 85rpx;
+  background: #0286ff;
+  line-height: 85rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  margin-top: 50rpx;
+  margin-bottom: 60rpx;
+}
+
+.q_03 {
+  height: 60rpx;
+  /* width:100%; */
+}
+
+.q_04 input {
+  height: 60rpx;
+  line-height: 60rpx;
+  width:400rpx;
+  font-size: 50rpx;
+  color: #000;
+  font-weight: 600;
+}
+
+.q_05 {}
+
+.q_05 image {
+  width: 29rpx;
+  height: 27rpx;
+}
+
+.q_06 {
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+
+.q_07 {
+  margin-top: 7rpx;
+}
+
+.q_07 image {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.q_08 {
+  font-size: 32rpx;
+  color: #000;
+  margin-left: 16rpx;
+}
+
+.q_09 {
+  width: 140rpx;
+  height: 140rpx;
+  
+}
+
+.q_09 image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+
+
+.f_01 {
+  width: 750rpx;
+  height: 120rpx;
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  position: fixed;
+  bottom: 0;
+}
+
+.f_01 ul {
+  width: 690rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 17rpx;
+}
+
+.f_01 ul li {
+  display: block;
+  float: left;
+  width: 335rpx;
+  height: 90rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 90rpx;
+  background: #0286ff;
+  margin-left: 20rpx;
+  border-radius: 15rpx;
+}
+
+.f_01 ul li:first-child {
+  margin-left: 0;
+  background: #e5e5e5;
+  color: #505050;
+}
+
+.hide {
+  display: -webkit-box;
+}
+
+.show {
+  display: block
+}
+
+page {
+  padding-bottom: 150rpx;
+}
+
+/* pages/c-hailiangjianlixq/c-hailiangjianlixq.wxss */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.mask_Mar {
+  position: fixed;
+  left: 100rpx;
+  right: 100rpx;
+  z-index: 9999;
+  top: 80rpx;
+  /* text-align: center; */
+}
+
+.mar_top {
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  /* padding-left: 50rpx; */
+  /* height: 400rpx; */
+  background: #fff;
+  /* width: 650rpx; */
+  margin-bottom: 20rpx;
+  padding-top: 40rpx;
+}
+.mar_bot{
+  padding-left: 20rpx;
+  /* margin-bottom: 40rpx; */
+}
+.but{
+  text-align: center;
+  /* margin-bottom: 38rpx; */
+}
+.mar_title {
+  margin-bottom: 38rpx;
+  font-style: 26rox;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.queren {
+  min-width: 260rpx;
+  min-height: 68rpx;
+  background: #0286ff;
+  color:#fff;
+  line-height: 68rpx;
+  margin-bottom:40rpx;
+
+}
+.e_03{ 
+  margin: 0 40rpx 50rpx 40rpx;
+}
+.e_04{ font-size: 26rpx; color: #000;}
+
+.d_10{}
+.d_10 p{ font-size: 24rpx; color: #c0c0c0;}
+.d_10 span{ display: inline-block; padding: 0 8rpx; font-size: 22rpx; color: #c0c0c0;}
+.no {
+  background: #f5f5f5;
+  color: #909090;
+  font-size: 25rpx;
+  font-weight: normal;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  min-height: 60rpx;
+  line-height: 60rpx;
+  min-width: 180rpx;
+  box-sizing: border-box;
+}
+
+.no1 {
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 25rpx;
+  background: #0286ff;
+  color: #fff;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  min-height:60rpx;
+  line-height: 60rpx;
+  min-width: 180rpx;
+}
+.f_07 {
+  width: 630rpx;
+  height: auto;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 15rpx;
+  padding: 100rpx 0 45rpx 0;
+  box-sizing: border-box;
+  margin-top: 50%;
+}
+
+.f_08 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 20;
+}
+
+.f_11 {
+  width: 530rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+.f_12 {
+  width: 240rpx;
+  height: 80rpx;
+  background: #ececec;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.f_13 {
+  width: 240rpx;
+  height: 80rpx;
+  background: #0286ff;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.f_14 {
+  text-align: center;
+}
+
+.f_14 p {
+  display: block;
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+  margin-bottom: 20rpx;
+
+}
+
+.f_14 span {
+  letter-spacing: 3rpx;
+  font-size: 30rpx;
+  /* color: #0286ff; */
+  /* margin-top: 16rpx;
+   */
+}
+.s_24 {
+  
+  width: 690rpx;
+  height: 85rpx;
+  background: #0286ff;
+  line-height: 85rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  /* margin-bottom: 60rpx; */
+}
