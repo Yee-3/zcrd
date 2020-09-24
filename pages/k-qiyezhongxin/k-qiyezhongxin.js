@@ -139,9 +139,7 @@ Page({
       data: {},
       success(res) {
         if (res.data.code == 200) {
-          wx.setStorageSync('Authorization', '')
-          wx.setStorageSync('companyId', '')
-          wx.removeStorageSync('users')
+          wx.clearStorage()
           wx.showToast({
             title: '您已退出登录'
           })

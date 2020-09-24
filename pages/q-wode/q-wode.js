@@ -86,7 +86,7 @@ Page({
       data: {},
       success(res) {
         if (res.data.code == 200) {
-          wx.setStorageSync('Authorization', '')
+          wx.clearStorage()
           // wx.setStorageSync('userInfo','')
           wx.showToast({
             title: '您已退出登录'

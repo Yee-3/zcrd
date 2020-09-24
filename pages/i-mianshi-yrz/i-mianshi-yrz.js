@@ -43,13 +43,26 @@ Page({
 		scale: 14,
 		markers: [],
 		id: '',
-		refType:'0'
+		refType: '0'
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		// console.log((wx.getStorageSync('Authorization'))
+		// if (!wx.getStorageSync('Authorization')) {
+		// 	wx.showToast({
+		// 		title: '您未登录请登录后重试',
+		// 		icon:'none'
+		// 	})
+		// 	setTimeout(function(){
+		// 		wx.navigateTo({
+		// 			url: '../login/index',
+		// 		})
+		// 	},2500)
+
+		// }
 		this.sel = this.selectComponent("#select");
 		var that = this
 		var val = this.data.ind == 1 ? 'P' : this.data.ind == 2 ? 'Y' : this.data.ind == 3 ? 'N' : ''
@@ -92,8 +105,10 @@ Page({
 				})
 			}
 		})
+
+
 	},
-	defa(){
+	defa() {
 		this.setData({
 			fa
 		})
@@ -109,9 +124,9 @@ Page({
 		}
 	},
 	// 公司详情
-	conpanyIn(e){
+	conpanyIn(e) {
 		wx.navigateTo({
-			url: '../za-xinzeng-qyzsxq/z-xinzeng-qyzsxq?id='+e.currentTarget.dataset.id,
+			url: '../za-xinzeng-qyzsxq/z-xinzeng-qyzsxq?id=' + e.currentTarget.dataset.id,
 		})
 	},
 	//导航
@@ -134,7 +149,7 @@ Page({
 		var that = this
 		this.setData
 		var type = this.data.idn == 2 ? 1 : this.data.idn == 3 ? 2 : ''
-		var way=this.sel.data.ids==1?'1':'0'
+		var way = this.sel.data.ids == 1 ? '1' : '0'
 		this.data.app.http({
 			url: '/index/updateStatus',
 			dengl: true,
@@ -194,15 +209,15 @@ Page({
 				}
 				var arr = res.data.rdata
 				console.log(res)
-        arr.map(function (val, i) {
-          if(val.ctrlMemberCompanies){
-            var date1 = Date.parse(new Date(val.ctrlMemberCompanies.updateTime.replace(/\-/g, "/")))
-            var date = Date.parse(new Date())
-            var day = parseInt((date - date1) / 1000)
-            var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
-            val.timeVal = value
-          }
-        })
+				arr.map(function (val, i) {
+					if (val.ctrlMemberCompanies) {
+						var date1 = Date.parse(new Date(val.ctrlMemberCompanies.updateTime.replace(/\-/g, "/")))
+						var date = Date.parse(new Date())
+						var day = parseInt((date - date1) / 1000)
+						var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+						val.timeVal = value
+					}
+				})
 				that.setData({
 					recomList: res.data.rdata
 				})
@@ -238,15 +253,15 @@ Page({
 			data: data,
 			success(res) {
 				var arr = res.data.rdata
-        arr.map(function (val, i) {
-          if(val.ctrlMemberCompanies){
-            var date1 = Date.parse(new Date(val.ctrlMemberCompanies.updateTime.replace(/\-/g, "/")))
-            var date = Date.parse(new Date())
-            var day = parseInt((date - date1) / 1000)
-            var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
-            val.timeVal = value
-          }
-        })
+				arr.map(function (val, i) {
+					if (val.ctrlMemberCompanies) {
+						var date1 = Date.parse(new Date(val.ctrlMemberCompanies.updateTime.replace(/\-/g, "/")))
+						var date = Date.parse(new Date())
+						var day = parseInt((date - date1) / 1000)
+						var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+						val.timeVal = value
+					}
+				})
 				that.setData({
 					recomList: that.data.recomList.concat(res.data.rdata)
 				})
@@ -269,7 +284,7 @@ Page({
 		this.setData({
 			style: 'display:block',
 			id: e.currentTarget.dataset.id,
-			refType:0
+			refType: 0
 		})
 	},
 
@@ -280,12 +295,12 @@ Page({
 		})
 	},
 	getDate: function (e) {
-		var that=this
+		var that = this
 		this.setData({
-			refType:e.detail.id
+			refType: e.detail.id
 		})
-		if(this.data.idn==2){
-			if (this.data.refType==0) {
+		if (this.data.idn == 2) {
+			if (this.data.refType == 0) {
 				that.setData({
 					value: '请您写下您觉得合适面试的时间（不少于三个）',
 					valu: '请写下合适的面试时间：'
@@ -296,8 +311,8 @@ Page({
 					valu: '请输入原因',
 				})
 			}
-		}else if(this.data.idn==3){
-			if (this.data.refType== 0) {
+		} else if (this.data.idn == 3) {
+			if (this.data.refType == 0) {
 				that.setData({
 					value: '请您写下您觉得合适入职的时间（不少于三个）',
 					valu: '请写下合适的入职时间：'
@@ -309,7 +324,7 @@ Page({
 				})
 			}
 		}
-	
+
 
 	},
 	blur(e) {
@@ -442,8 +457,8 @@ Page({
 		})
 	},
 	ScrollLower: function () {
-   
-  },
+
+	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
@@ -489,7 +504,7 @@ Page({
 		if (idn == 1) {
 			var data = {
 				limit: 10,
-				page: that.data.currentPage+1,
+				page: that.data.currentPage + 1,
 				type: 2,
 				signUp: 'Y'
 			}
@@ -498,7 +513,7 @@ Page({
 			if (ind == 1) {
 				var data = {
 					limit: 10,
-					page: that.data.currentPage+1,
+					page: that.data.currentPage + 1,
 					type: 2,
 					interview: 'P'
 				}
@@ -506,7 +521,7 @@ Page({
 			} else if (ind == 2) {
 				var data = {
 					limit: 10,
-					page: that.data.currentPage+1,
+					page: that.data.currentPage + 1,
 					type: 2,
 					interview: 'Y'
 				}
@@ -514,7 +529,7 @@ Page({
 			} else {
 				var data = {
 					limit: 10,
-					page: that.data.currentPage+1,
+					page: that.data.currentPage + 1,
 					type: 2,
 					interview: 'N'
 				}
@@ -524,7 +539,7 @@ Page({
 			if (ind == 1) {
 				var data = {
 					limit: 10,
-					page: that.data.currentPage+1,
+					page: that.data.currentPage + 1,
 					type: 2,
 					entry: 'P'
 				}
@@ -532,7 +547,7 @@ Page({
 			} else if (ind == 2) {
 				var data = {
 					limit: 10,
-					page: that.data.currentPage+1,
+					page: that.data.currentPage + 1,
 					type: 2,
 					entry: 'Y'
 				}
@@ -540,7 +555,7 @@ Page({
 			} else {
 				var data = {
 					limit: 10,
-					page: that.data.currentPage+1,
+					page: that.data.currentPage + 1,
 					type: 2,
 					entry: 'N'
 				}
