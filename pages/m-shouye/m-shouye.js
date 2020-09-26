@@ -63,9 +63,9 @@ Page({
   onLoad: function (options) {
     // this.getLocation()
     let that = this,
-      cityOrTime = wx.getStorageSync('locatecity') || {},
-      time = new Date().getTime(),
-      city = '';
+    cityOrTime = wx.getStorageSync('locatecity') || {},
+    time = new Date().getTime(),
+    city = '';
     if (!cityOrTime.time || (time - cityOrTime.time > 1800000)) { //每隔30分钟请求一次定位
       that.getLocation();
     } else { //如果未满30分钟，那么直接从本地缓存里取值
@@ -1070,7 +1070,25 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '职面-用实效做招聘，省去繁琐过程',
+      desc: '',
+      imageUrl: '../img/share2.jpg', // 可以更换分享的图片
+      success: function (res) {
+        // 转发成功
+        wx.showToast({
+          title: '分享成功',
+          icon: "none"
+        });
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '分享失败',
+          icon: "none"
+        })
+      }
+  }
   },
 
 

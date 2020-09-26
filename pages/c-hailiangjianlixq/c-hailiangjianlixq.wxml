@@ -6,9 +6,9 @@
 		</view>
 		<view class="q_06">
 			<view class="s_03">
-				<p>{{detCon.ctrlResumeDTO.age+'岁'}}</p><span>|</span>
-				<p>{{detCon.ctrlResumeDTO.schoolName}}</p><span>|</span>
-				<p>{{detCon.ctrlResumeDTO.worktypeName}}</p>
+				<p>{{detCon.ctrlResumeDTO.age?detCon.ctrlResumeDTO.age+'岁':''}}</p><span wx:if="{{detCon.ctrlResumeDTO.schoolName}}">|</span>
+				<p>{{detCon.ctrlResumeDTO.schoolName?detCon.ctrlResumeDTO.schoolName:''}}</p><span wx:if="{{ctrlResumeDTO.worktypeName}}">|</span>
+				<p>{{detCon.ctrlResumeDTO.worktypeName?detCon.ctrlResumeDTO.worktypeName:''}}</p>
 			</view>
 			<!-- <view class="s_04">手机号码：{{detCon.ctrlResumeDTO.phone}}</view> -->
 			<view class="s_04">求职状态：{{detCon.ctrlResumeDTO.statusName}}</view>

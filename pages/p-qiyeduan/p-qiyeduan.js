@@ -257,6 +257,24 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '职面-用实效做招聘，省去繁琐过程',
+      desc: '',
+      imageUrl: '../img/share2.jpg', // 可以更换分享的图片
+      success: function (res) {
+        // 转发成功
+        wx.showToast({
+          title: '分享成功',
+          icon: "none"
+        });
+      },
+      fail: function (res) {
+        // 转发失败
+        wx.showToast({
+          title: '分享失败',
+          icon: "none"
+        })
+      }
+  }
   }
 })
