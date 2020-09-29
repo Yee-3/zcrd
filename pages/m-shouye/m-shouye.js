@@ -88,10 +88,9 @@ Page({
     this.data.app.http({
       url: '/index/getResumes',
       data: {},
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method:'POST',
       success(res) {
-        console.log(res,4443432)
         that.setData({
           isBot:res.data.rdata
         })

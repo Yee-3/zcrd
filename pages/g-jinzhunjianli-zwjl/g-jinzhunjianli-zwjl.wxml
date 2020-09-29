@@ -37,13 +37,13 @@
 				</view>
 			</view>
 			<view class="fr g_03">
-				<view class="g_02">
+				<view class="g_02"  wx:if="{{!item.isRead=='Y'}}">
 					<view class="g_04">
 						<image src="../img/f03.png"></image>
 					</view>
 					<view class="g_05">新</view>
 				</view>
-				<view class="g_01">22小时前活跃</view>
+				<view class="g_01">{{item.timeVal}}活跃</view>
 			</view>
 			<view class="w-clear"></view>
 		</view>

@@ -102,6 +102,20 @@
           "pathName": "pages/login/index",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/o-qiyezhuce/o-qiyezhuce",
+          "pathName": "pages/o-qiyezhuce/o-qiyezhuce",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/p-qiyeduan/p-qiyeduan",
+          "pathName": "pages/p-qiyeduan/p-qiyeduan",
+          "query": "",
+          "scene": null
         }
       ]
     }
