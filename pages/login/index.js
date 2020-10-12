@@ -106,13 +106,13 @@ Page({
                         wx.reLaunch({
                           url: '../m-shouye/m-shouye'
                         })
-                      }, 1000)
+                      }, 200)
                     } else {
                       setTimeout(function () {
                         wx.reLaunch({
                           url: '../p-qiyeduan/p-qiyeduan'
                         })
-                      }, 500)
+                      }, 200)
                     }
                   }else{
                     console.log(res)

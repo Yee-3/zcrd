@@ -8,7 +8,7 @@
 				<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
 				<view class="mask_02_01" wx:if="{{isTwo}}">
 					<scroll-view class="mask_left" scroll-y="true">
-						<view class="{{index==ind1?'no':'bot'}}" wx:for='{{content[ind].treeDTOS}}' style="" data-index='{{index}}' bindtap="toggle1" style="width:220rpx">
+						<view class="{{index==ind1?'no':'bot'}}" wx:for='{{content[ind].treeDTOS}}' data-index='{{index}}' bindtap="toggle1" style="width:150rpx">
 							<image class="img" wx:if="{{index==ind1}}" src="../../img/icon_02.png"></image>
 						{{item.name}}
 							<image class="img1" wx:if="{{index==ind1}}" src="../../img/icon_01.png"></image>

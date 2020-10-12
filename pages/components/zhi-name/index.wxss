@@ -99,11 +99,28 @@
 }
 
 .bot {
+
 	height: 100rpx;
 	line-height: 100rpx;
 	font-size: 25rpx;
 	line-height: 84rpx;
 	padding-left: 30rpx;
+	overflow: hidden;
+	white-space :nowrap;
+	text-overflow :ellipsis;
+}
+
+.no {
+
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size: 25rpx;
+	line-height: 84rpx;
+	padding-left: 30rpx;
+	color: #0385ff;
+	overflow: hidden;
+	white-space :nowrap;
+	text-overflow :ellipsis;
 }
 
 .top_top {
@@ -134,14 +151,6 @@
 	justify-content: space-around; */
 }
 
-.no {
-	height: 100rpx;
-	line-height: 100rpx;
-	font-size: 25rpx;
-	line-height: 84rpx;
-	padding-left: 30rpx;
-	color: #0385ff;
-}
 
 .cancel {
 	/* box-sizing: border-box; */
