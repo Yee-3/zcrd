@@ -51,6 +51,14 @@ Page({
             val.timeVal = value
           }
         })
+        if(res.data.rdata.ctrlBannerList.length>0){
+            var arrs=res.data.rdata.ctrlBannerList
+            arrs.map(function(val,i){
+              if(val.url.indexOf('http')){
+                val.url=that.data.app.baseUrl+val.url
+              }
+            })
+        }
         that.setData({
           imgList: res.data.rdata.ctrlBannerList,
           recomList: res.data.rdata.ctrlResumeList,

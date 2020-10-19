@@ -116,12 +116,6 @@
           "pathName": "pages/p-qiyeduan/p-qiyeduan",
           "query": "",
           "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/a-gangweifabu/a-gangweifabu",
-          "pathName": "pages/a-gangweifabu/a-gangweifabu",
-          "scene": null
         }
       ]
     }

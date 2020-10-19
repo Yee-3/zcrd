@@ -39,7 +39,7 @@ App({
 
   globalData: {
     userInfo: null,
-    baseUrl: 'http://123.56.114.88:8089',
+    baseUrl: 'http://123.56.114.88:8088',
     http(obj) {
       // console.log(webUrl)
       // var webUrl='http://192.168.100.182:8089'
