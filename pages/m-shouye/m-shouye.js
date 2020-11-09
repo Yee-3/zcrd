@@ -118,7 +118,7 @@ Page({
     wx.showNavigationBarLoading()
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method: 'POST',
       data: {
         limit: 10,
@@ -233,7 +233,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method: 'POST',
       data: {
         limit: 10,
@@ -285,7 +285,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: false,
+        dengl: wx.getStorageSync('Authorization')?true:false,
         method: 'POST',
         data: {
           limit: 10,
@@ -568,7 +568,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method: 'POST',
       data: {
         limit: 10,
@@ -620,7 +620,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: false,
+        dengl: wx.getStorageSync('Authorization')?true:false,
         method: 'POST',
         data: {
           limit: 10,
@@ -679,7 +679,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: false,
+        dengl: wx.getStorageSync('Authorization')?true:false,
         method: 'POST',
         data: {
           limit: 10,
@@ -758,7 +758,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method: 'POST',
       data: {
         limit: 10,
@@ -812,7 +812,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: false,
+        dengl: wx.getStorageSync('Authorization')?true:false,
         method: 'POST',
         data: {
           limit: 10,
@@ -891,7 +891,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method: 'POST',
       data: {
         limit: 10,
@@ -946,7 +946,7 @@ Page({
     wx.showNavigationBarLoading()
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: false,
+      dengl: wx.getStorageSync('Authorization')?true:false,
       method: 'POST',
       data: data,
       success(res) {

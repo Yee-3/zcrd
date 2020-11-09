@@ -59,7 +59,6 @@ Page({
   //登录
   getPerson(options) {
     let _this = this;
-   console.log('执行',options)
     const app = getApp().globalData
     // wx.showLoading({
     //   title: '登录中...',

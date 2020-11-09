@@ -39,11 +39,11 @@ App({
 
   globalData: {
     userInfo: null,
-    baseUrl: 'http://123.56.114.88:8088',
+    baseUrl: 'https://zcrdhr.com',
     http(obj) {
       // console.log(webUrl)
       // var webUrl='http://192.168.100.182:8089'
-      var webUrl = 'http://123.56.114.88:8089'
+      var webUrl = 'https://zhimianyingcai.com'
       if (obj.dengl) {
         if (obj.type) {
           obj.data.type = obj.type
