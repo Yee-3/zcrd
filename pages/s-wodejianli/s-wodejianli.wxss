@@ -138,11 +138,11 @@
   font-size: 26rpx;
   color: #555;
   line-height: 42rpx;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
+  /* overflow: hidden; */
+  /* -webkit-box-orient: vertical; */
+  /* text-overflow: ellipsis; */
+  /* display: -webkit-box; */
+  /* -webkit-line-clamp: 2; */
 }
 
 .s_20 {

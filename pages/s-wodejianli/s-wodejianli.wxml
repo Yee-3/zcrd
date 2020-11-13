@@ -55,7 +55,7 @@
 
 <view class="{{isF?'s_05':'s_05 hidden'}}">
 	<view class="s_22" bindtap="change" wx:if="{{hidd}}" style="padding-bottom: 15rpx;">
-		<image src="{{!isF?'../img/f064-01.png':'../img/f064.png'}}"></image>
+		<image src="{{!isF?'../img/f064.png':'../img/f064-01.png'}}"></image>
 	</view>
 	<view class="s_06">
 		<view class="fl s_07">工作经历</view>
@@ -84,7 +84,7 @@
 
 <view class="{{isX?'s_05':'s_05 hid_02'}}">
 	<view class="s_22" wx:if="{{hidd1}}" style="padding-bottom: 15rpx;" bindtap="change1">
-		<image src="{{!isX?'../img/f064-01.png':'../img/f064.png'}}"></image>
+		<image src="{{!isX?'../img/f064.png':'../img/f064-01.png'}}"></image>
 	</view>
 
 	<view class="s_06">

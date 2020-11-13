@@ -33,11 +33,11 @@
 }
 
 .s_05 .hi {
-  overflow: hidden;
+  /* overflow: hidden;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 2; */
 }
 
 .s_03 span {
