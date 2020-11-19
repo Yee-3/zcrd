@@ -22,10 +22,11 @@ page{ background: #f5f5f5;}
 .d_10 span{ display: inline-block; padding: 0 8rpx; font-size: 22rpx; color: #c0c0c0;}
 
 .d_12{ margin-top: 20rpx; padding-right: 20rpx; box-sizing: border-box;}
-.d_12 .d_13:not(:first-child){
+.d_12s .d_13:not(:first-child){
   margin-left: 37rpx;
+  margin-top: 20rpx;
 }
-.d_13{ margin-top: 20rpx;}
+/* .d_13{ margin-top: 20rpx;} */
 .d_14{ width: 37rpx; height: 37rpx;}
 .d_14 image{ width: 37rpx; height: 37rpx; display: block;}
 .d_15{ margin-left: 14rpx;}

@@ -17,7 +17,8 @@ Page({
     imgList: [],
     companyId: '',
     kefuPhone: {},
-    isHz: false
+    isHz: false,
+    maxHeight: ''
   },
 
   /**
@@ -51,18 +52,29 @@ Page({
             val.timeVal = value
           }
         })
-        if(res.data.rdata.ctrlBannerList.length>0){
-            var arrs=res.data.rdata.ctrlBannerList
-            arrs.map(function(val,i){
-              if(val.url.indexOf('http')){
-                val.url=that.data.app.baseUrl+val.url
-              }
-            })
+        if (res.data.rdata.ctrlBannerList.length > 0) {
+          var arrs = res.data.rdata.ctrlBannerList
+          arrs.map(function (val, i) {
+            if (val.url.indexOf('http')) {
+              val.url = that.data.app.baseUrl + val.url
+            }
+          })
         }
         that.setData({
           imgList: res.data.rdata.ctrlBannerList,
           recomList: res.data.rdata.ctrlResumeList,
         })
+        let query = wx.createSelectorQuery();
+        query.select('.d_13').boundingClientRect(rect => {
+          let clientHeight = rect.height;
+          let clientWidth = rect.width;
+          let ratio = 750 / clientWidth;
+          let height = clientHeight * ratio;
+          that.setData({
+            maxHeight: height * 2
+          })
+          console.log(height);
+        }).exec();
         if (res.data.rdata.ctrlResumeList.length < 10) {
           that.setData({
             loadingType: 2
@@ -283,6 +295,6 @@ Page({
           icon: "none"
         })
       }
-  }
+    }
   }
 })

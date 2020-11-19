@@ -26,7 +26,8 @@ Page({
     title_type: '',
     morType: false,
     zwType: false,
-    url:''
+    url: '',
+    maxHeight:''
   },
 
   /**
@@ -44,11 +45,11 @@ Page({
         title: '即刻入职'
       })
       this.setData({
-        url:'/indexCom/getImmediate'
+        url: '/indexCom/getImmediate'
       })
     } else {
       this.setData({
-        url:'/indexCom/getTalent'
+        url: '/indexCom/getTalent'
       })
     }
     this.reword(data)
@@ -114,7 +115,7 @@ Page({
         }
         var arr = res.data.rdata
         arr.map(function (val, i) {
-          if(val.lastLogin){
+          if (val.lastLogin) {
             var date1 = Date.parse(new Date(val.lastLogin.replace(/\-/g, "/")))
             var date = Date.parse(new Date())
             var day = parseInt((date - date1) / 1000)
@@ -130,12 +131,22 @@ Page({
         that.setData({
           recomList: res.data.rdata
         })
-
+        let query = wx.createSelectorQuery();
+        query.select('.d_13').boundingClientRect(rect => {
+          let clientHeight = rect.height;
+          let clientWidth = rect.width;
+          let ratio = 750 / clientWidth;
+          let height = clientHeight * ratio;
+          that.setData({
+            maxHeight: height * 2
+          })
+          console.log(height);
+        }).exec();
         if (res.data.rdata.length < 10) {
           that.setData({
             loadingType: 2
           })
-        }else{
+        } else {
           that.setData({
             loadingType: 0
           })
@@ -167,7 +178,7 @@ Page({
       success(res) {
         var arr = res.data.rdata
         arr.map(function (val, i) {
-          if(val.lastLogin){
+          if (val.lastLogin) {
             var date1 = Date.parse(new Date(val.lastLogin.replace(/\-/g, "/")))
             var date = Date.parse(new Date())
             var day = parseInt((date - date1) / 1000)
@@ -182,7 +193,7 @@ Page({
         function jiance(x) {
           return x < 10 ? '0' + x : x
         }
-       
+
         if (res.data.rdata.length < 10) {
           that.setData({
             loadingType: 2
@@ -365,7 +376,7 @@ Page({
       }
       this.reword(data)
       this.setData({
-        zwType:false
+        zwType: false
       })
     }
   },
@@ -397,7 +408,7 @@ Page({
 
   },
   toggleMor() {
-    var that=this
+    var that = this
     if (this.zhiwei.data.isAdd) {
       that.toggleZhi()
     }
@@ -458,7 +469,7 @@ Page({
   },
   detail(e) {
     wx.navigateTo({
-      url: '../c-hailiangjianlixq/c-hailiangjianlixq?id='+e.currentTarget.dataset.id,
+      url: '../c-hailiangjianlixq/c-hailiangjianlixq?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
@@ -504,7 +515,7 @@ Page({
     if (this.data.zwType) {
       var data = {
         limit: 10,
-        page: this.data.currentPage+1,
+        page: this.data.currentPage + 1,
         position: this.zhiwei.data.id,
         sort: this.zonghe.data.ind
       }
@@ -513,21 +524,21 @@ Page({
     } else if (this.data.morType) {
       var data = {
         limit: 10,
-        page: this.data.currentPage+1,
+        page: this.data.currentPage + 1,
         school: this.more.data.ind7 ? this.more.data.ind7 : '',
         workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
         money: this.more.data.ind5 ? this.more.data.ind5 : '',
         sort: this.zonghe.data.ind
       }
       this.jiazai(data)
-    }else{
+    } else {
       var that = this,
         data = {
           limit: 10,
-          page: that.data.currentPage+1,
+          page: that.data.currentPage + 1,
           sort: this.zonghe.data.ind
         }
-      this.jiazai(data)    
+      this.jiazai(data)
     }
   },
 

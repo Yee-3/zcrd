@@ -205,8 +205,8 @@ Page({
           imgbox[picid] = tempFilePaths[0];
         }
         // console.log(imgbox)
-        var webUrl = 'http://123.56.114.88:8088/'
-        var baseUrl = 'http://123.56.114.88:8089'
+        var webUrl = 'https://zcrdhr.com/'
+        var baseUrl = 'https://zhimianyingcai.com'
         // tempFilePath可以作为img标签的src属性显示图片
         imgbox.map(function (val, i) {
           wx.uploadFile({
@@ -342,8 +342,8 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
-        var webUrl = 'http://123.56.114.88:8088/'
-        var baseUrl = 'http://123.56.114.88:8089'
+        var webUrl = 'https://zcrdhr.com/'
+        var baseUrl = 'https://zhimianyingcai.com'
         wx.uploadFile({
           url: baseUrl + '/Other/upload',
           filePath: res.tempFilePaths[0],
@@ -379,8 +379,8 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         console.log(res)
-        var webUrl = 'http://123.56.114.88:8088/'
-        var baseUrl = 'http://123.56.114.88:8089'
+        var webUrl = 'https://zcrdhr.com/'
+        var baseUrl = 'https://zhimianyingcai.com'
         wx.uploadFile({
           url: baseUrl + '/Other/upload',
           filePath: res.tempFilePaths[0],

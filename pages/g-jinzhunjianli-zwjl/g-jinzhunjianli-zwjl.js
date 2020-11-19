@@ -14,8 +14,9 @@ Page({
       contentrefresh: "正在加载...",
       contentnomore: "我也是有底线的~"
     },
-    titleCon:{},
-    id:''
+    titleCon: {},
+    id: '',
+    maxHeight: ''
   },
 
   /**
@@ -23,10 +24,10 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    if(options){
+    if (options) {
       this.setData({
-        titleCon:options,
-        id:options.id
+        titleCon: options,
+        id: options.id
       })
     }
     wx.showNavigationBarLoading()
@@ -39,23 +40,33 @@ Page({
         limit: 10,
         page: 1,
         // positionId: '842059342b88455bab2c62a22c404ca4'
-        positionId:options.id
+        positionId: options.id
       },
       success(res) {
-        var arr = res.data.rdata==null?arr=[]:res.data.rdata
-        if(arr.length>0){
+        var arr = res.data.rdata == null ? arr = [] : res.data.rdata
+        if (arr.length > 0) {
           arr.map(function (val, i) {
-              var date1 = Date.parse(new Date(val.lastLogin))
-              var date = Date.parse(new Date())
-              var day = parseInt((date - date1) / 1000)
-              var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
-              val.timeVal = value
+            var date1 = Date.parse(new Date(val.lastLogin))
+            var date = Date.parse(new Date())
+            var day = parseInt((date - date1) / 1000)
+            var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+            val.timeVal = value
           })
         }
-        
-       
+
+
         that.setData({
           conList: res.data.rdata
+        })
+        let query = wx.createSelectorQuery();
+        query.select('.d_13').boundingClientRect(rect => {
+          let clientHeight = rect.height;
+          let clientWidth = rect.width;
+          let ratio = 750 / clientWidth;
+          let height = clientHeight * ratio;
+          that.setData({
+            maxHeight: height * 2
+          })
         })
         if (arr < 10) {
           that.setData({
@@ -74,7 +85,7 @@ Page({
   },
   detail(e) {
     wx.navigateTo({
-      url: '../f-jinzhunjianlixq/f-jinzhunjianlixq?id='+e.currentTarget.dataset.id+'&positId='+this.data.titleCon.id+'&pushId='+e.currentTarget.dataset.pushid,
+      url: '../f-jinzhunjianlixq/f-jinzhunjianlixq?id=' + e.currentTarget.dataset.id + '&positId=' + this.data.titleCon.id + '&pushId=' + e.currentTarget.dataset.pushid,
     })
   },
   /**
@@ -138,10 +149,10 @@ Page({
         positionId: that.data.id
       },
       success(res) {
-       
+
         var arr = res.data.rdata
         var myDate = new Date()
-      
+
         if (arr.length > 0) {
           arr.map(function (val, i) {
             var arrs = val.resumeData.ctrlWorkDTOS
@@ -159,7 +170,7 @@ Page({
                 var val = (monthCount / 12).toString().split(".")
                 var value = (val[0] == 0 ? '' : val[0] + '年') + (val[1] ? val[1] + '个月' : '')
                 vals.timeVal = value
-           
+
               })
             }
           })

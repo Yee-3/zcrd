@@ -9,8 +9,9 @@
 		<view class="q_06">
 			<view class="s_03">
 				<p>{{resume.ctrlResumeDTO.age?resume.ctrlResumeDTO.age+'岁':'年龄'}}</p><span>|</span>
-				<p>{{resume.ctrlResumeDTO.schoolName?resume.ctrlResumeDTO.schoolName:'学历'}}</p><span>|</span>
-				<p>{{resume.ctrlResumeDTO.worktypeName?resume.ctrlResumeDTO.worktypeName:'工作类型'}}</p>
+				<p>{{resume.ctrlResumeDTO.schoolName?resume.ctrlResumeDTO.schoolName:'学历'}}</p>
+				<!-- <span>|</span>
+				<p>{{resume.ctrlResumeDTO.worktypeName?resume.ctrlResumeDTO.worktypeName:'工作类型'}}</p> -->
 			</view>
 			<view class="s_04">手机号码：{{resume.ctrlResumeDTO.phone}}</view>
 			<view class="s_04">求职状态：{{resume.ctrlResumeDTO.statusName}}</view>

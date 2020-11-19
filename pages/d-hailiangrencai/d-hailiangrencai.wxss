@@ -14,8 +14,9 @@ page {
   top: 0;
   left: 0;
 }
-.d_12 .d_13:not(:first-child){
+.d_12s .d_13:not(:first-child){
   margin-left: 37rpx;
+  margin-top: 20rpx;
 }
 .l_01 ul li {
   float: left;
@@ -132,7 +133,7 @@ page {
 }
 
 .d_13 {
-  margin-top: 20rpx;
+  /* margin-top: 20rpx; */
 }
 
 .d_14 {

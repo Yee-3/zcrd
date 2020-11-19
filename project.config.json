@@ -45,17 +45,10 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
     "game": {
-      "currentL": -1,
       "list": []
     },
     "gamePlugin": {
@@ -110,6 +103,17 @@
           "name": "pages/p-qiyeduan/p-qiyeduan",
           "pathName": "pages/p-qiyeduan/p-qiyeduan",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/p-qiyeduan/p-qiyeduan",
+          "pathName": "pages/p-qiyeduan/p-qiyeduan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/d-hailiangrencai/d-hailiangrencai",
+          "pathName": "pages/d-hailiangrencai/d-hailiangrencai",
           "scene": null
         }
       ]

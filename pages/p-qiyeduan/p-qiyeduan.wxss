@@ -192,10 +192,11 @@ page {
 }
 
 .d_13 {
-  margin-top: 20rpx;
+  /* margin-top: 20rpx; */
 }
-.d_12 .d_13:not(:first-child){
+.d_12s .d_13:not(:first-child){
   margin-left: 37rpx;
+  margin-top: 20rpx;
 }
 .d_14 {
   width: 37rpx;
@@ -207,7 +208,9 @@ page {
   height: 37rpx;
   display: block;
 }
-
+/* .sss_88{
+  height: maxHeight;
+} */
 .d_15 {
   margin-left: 14rpx;
 }
