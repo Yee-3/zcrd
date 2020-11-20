@@ -28,9 +28,23 @@
   color: #333;
   margin-top: 16rpx;
 }
+.hid_02 {
+  overflow: hidden;
+  height: 368rpx;
+}
 
+.hidden {
+  overflow: hidden;
+  height: 430rpx;
+
+}
+
+.s_05 .hi:last-child {
+  margin-bottom: 45rpx;
+}
 
 .s_05 {
+  position: relative;
   width: 690rpx;
   margin: 0 auto;
   margin-top: 30rpx;
@@ -133,25 +147,42 @@
 
 .s_20 {
   margin-top: 20rpx;
-  display: -webkit-box;
+  /* display: -webkit-box; */
   /*关键属性（必须有的）  */
-  -webkit-box-orient: vertical;
+  /* -webkit-box-orient: vertical; */
   /*规定子元素的排列方向 */
-  -webkit-line-clamp: 2;
+  /* -webkit-line-clamp: 2; */
   /*行数*/
   /* 实现多余的文字隐藏并用省略号来代表被隐藏的文字    */
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis;/ */
+}
+.hid_02 {
   overflow: hidden;
-  text-overflow: ellipsis;
+  height: 368rpx;
+}
+
+.hidden {
+  overflow: hidden;
+  height: 430rpx;
+
 }
 
 .s_22 {
   text-align: center;
   margin-top: 16rpx;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 15rx;
+  width: 100%;
+  background-color: #fff;
 }
 
 .s_22 image {
   width: 30rpx;
   height: 17rpx;
+  padding-right: 25rpx;
+
 }
 
 .s_23 {

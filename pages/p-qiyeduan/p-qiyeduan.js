@@ -73,7 +73,6 @@ Page({
           that.setData({
             maxHeight: height * 2
           })
-          console.log(height);
         }).exec();
         if (res.data.rdata.ctrlResumeList.length < 10) {
           that.setData({

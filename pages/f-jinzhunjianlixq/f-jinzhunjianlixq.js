@@ -19,12 +19,17 @@ Page({
     resumeId: '',
     positionId: '',
     isXuan: true,
+    isF: false,
+    isX: false,
+    hidd: true,
+    hidd1: true,
     itIndex: 'X',
     isZhuce: '',
     isType: '',
     neorong: '您还未注册企业信息，请注册企业信息！',
     kefuPhone: {},
-    pushId: ''
+    pushId: '',
+    maxHeight: ''
   },
 
   /**
@@ -100,34 +105,62 @@ Page({
       },
       success(res) {
         if (res.data.rdata) {
-          var timer = res.data.rdata.ctrlWorkDTOS
-          var xiangTime = res.data.rdata.ctrlProjectDTOS
-          var schoolTime = res.data.rdata.ctrlSchoolDTOS
-          timer.map(function (val, i) {
-            var startTime = val.startTime.substring(0, 7).replace(/-/g, '/')
-            var endTime = val.endTime.substring(0, 7).replace(/-/g, '/')
-            val.time = [startTime, endTime]
-          })
-
-          xiangTime.map(function (val, i) {
-            var startTime = val.startTime.substring(0, 7).replace(/-/g, '/')
-            var endTime = val.endTime.substring(0, 7).replace(/-/g, '/')
-            val.time = [startTime, endTime]
-          })
-
-          schoolTime.map(function (val, i) {
-            var startTime = val.startTime.substring(0, 7).replace(/-/g, '/')
-            var endTime = val.endTime.substring(0, 7).replace(/-/g, '/')
-            val.time = [startTime, endTime]
-          })
-          var arr = res.data.rdata.ctrlBookDTOS
-          arr.map(function (val, i) {
-            var time = val.time.substring(0, 4) + '年' + val.time.substring(5, 7) + '月'
-            val.times = time
-          })
+          var arr = res.data.rdata.ctrlWorkDTOS
+          var arr1 = res.data.rdata.ctrlProjectDTOS
+          var arr2 = res.data.rdata.ctrlSchoolDTOS
+          var arr3 = res.data.rdata.ctrlBookDTOS
+          if (res.data.rdata.ctrlWorkDTOS.length <= 1) {
+            that.setData({
+              hidd: false,
+              isF: true
+            })
+          } else {
+            that.setData({
+              hidd: true,
+              isF: false
+            })
+          }
+          if (res.data.rdata.ctrlProjectDTOS.length <= 1) {
+            that.setData({
+              hidd1: false,
+              isX: true
+            })
+          } else {
+            that.setData({
+              hidd1: true,
+              isX: false
+            })
+          }
+          if (arr.length > 0) {
+            arr.map(function (val, i) {
+              var startTime = val.startTime.substring(0, 7).replace('-', '/')
+              var endTime = val.endTime.substring(0, 7).replace('-', '/')
+              val.valTime = startTime + '~' + endTime
+            })
+          }
+          if (arr1.length > 0) {
+            arr1.map(function (val, i) {
+              var startTime = val.startTime.substring(0, 7).replace('-', '/')
+              var endTime = val.endTime.substring(0, 7).replace('-', '/')
+              val.valTime = startTime + '~' + endTime
+            })
+          }
+          if (arr2.length > 0) {
+            arr2.map(function (val, i) {
+              var startTime = val.startTime.substring(0, 7).replace('-', '/')
+              var endTime = val.endTime.substring(0, 7).replace('-', '/')
+              val.valTime = startTime + '~' + endTime
+            })
+          }
+          if (arr3.length > 0) {
+            arr3.map(function (val, i) {
+              if (val.time) {
+                var time = val.time.substring(0, 4) + '年' + val.time.substring(5, 7) + '月'
+                val.valTime = time
+              }
+            })
+          }
         }
-
-
         that.setData({
           content: res.data.rdata,
           resumeId: res.data.rdata.ctrlResumeDTO.id
@@ -147,6 +180,7 @@ Page({
       }
     })
   },
+  
   change: function (e) {
     var f = this.data.isF
     this.setData({
@@ -210,7 +244,7 @@ Page({
         pushId: this.data.pushId
       },
       success(res) {
-        if(res.data.code==200){
+        if (res.data.code == 200) {
           wx.navigateBack({
             success(res) {
               var page = getCurrentPages().pop();

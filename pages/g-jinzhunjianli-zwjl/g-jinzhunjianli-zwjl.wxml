@@ -53,7 +53,7 @@
 			</view>
 			<view class="w-clear"></view>
 		</view>
-		<view class="d_12" style="{{item.ctrlWorkDTOS.length>=2?'overflow:hidden;height:'+maxHeight+'rpx;':''}}">
+		<view class="d_12" style="{{item.resumeData.ctrlWorkDTOS.length>=2?'overflow:hidden;height:'+maxHeight+'rpx;':''}}">
 			<view class="fl d_14" wx:if="{{item.resumeData.ctrlWorkDTOS.length>0}}">
 				<image src="../img/f0021.png"></image>
 			</view>

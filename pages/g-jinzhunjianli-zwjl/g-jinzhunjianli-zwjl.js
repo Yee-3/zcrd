@@ -54,10 +54,10 @@ Page({
           })
         }
 
-
         that.setData({
           conList: res.data.rdata
         })
+        console.log(23764682387)
         let query = wx.createSelectorQuery();
         query.select('.d_13').boundingClientRect(rect => {
           let clientHeight = rect.height;
@@ -67,7 +67,7 @@ Page({
           that.setData({
             maxHeight: height * 2
           })
-        })
+        }).exec()
         if (arr < 10) {
           that.setData({
             loadingType: 2
