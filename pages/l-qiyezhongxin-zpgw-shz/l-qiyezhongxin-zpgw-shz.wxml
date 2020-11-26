@@ -54,10 +54,10 @@
 		</view>
 		<view class="h_14">
 			<view class="fl h_15">
-				<p>{{item.address}}</p><span>|</span>
-				<p>{{item.workExperience}}</p><span>|</span>
-				<p>{{item.schoolRecord}}</p><span>|</span>
-				<p>{{item.num+'人'}}</p><span>|</span>
+				<p>{{item.address?item.address:''}}</p><span wx:if="{{item.address}}">|</span>
+				<p>{{item.workExperience?item.workExperience:''}}</p><span wx:if="{{item.workExperience}}">|</span>
+				<p>{{item.schoolRecord?item.schoolRecord:''}}</p><span wx:if="{{item.schoolRecord}}">|</span>
+				<p>{{item.num?item.num+'人':''}}</p><span wx:if="{{item.num}}">|</span>
 				<p>{{item.serviceType==1?'到面试':item.serviceType==2?'到岗式':'管家式'}}</p>
 			</view>
 			<view class="fr h_16">{{item.updateStr}}</view>
