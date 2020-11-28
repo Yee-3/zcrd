@@ -45,7 +45,6 @@ Page({
       dengl: true,
       data: {},
       success(res) {
-        console.log(res.data.rdata)
         if (res.data.rdata) {
           var timer = res.data.rdata.ctrlWorkDTOS
           var time = []

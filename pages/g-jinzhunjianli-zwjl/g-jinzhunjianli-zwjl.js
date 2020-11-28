@@ -30,6 +30,15 @@ Page({
         id: options.id
       })
     }
+    this.load()
+    },
+  detail(e) {
+    wx.navigateTo({
+      url: '../f-jinzhunjianlixq/f-jinzhunjianlixq?id=' + e.currentTarget.dataset.id + '&positId=' + this.data.titleCon.id + '&pushId=' + e.currentTarget.dataset.pushid,
+    })
+  },
+  load(){
+    var that=this
     wx.showNavigationBarLoading()
     this.data.app.http({
       type: true,
@@ -39,8 +48,7 @@ Page({
       data: {
         limit: 10,
         page: 1,
-        // positionId: '842059342b88455bab2c62a22c404ca4'
-        positionId: options.id
+        positionId: this.data.id
       },
       success(res) {
         var arr = res.data.rdata == null ? arr = [] : res.data.rdata
@@ -57,7 +65,6 @@ Page({
         that.setData({
           conList: res.data.rdata
         })
-        console.log(23764682387)
         let query = wx.createSelectorQuery();
         query.select('.d_13').boundingClientRect(rect => {
           let clientHeight = rect.height;
@@ -82,11 +89,7 @@ Page({
       }
 
     })
-  },
-  detail(e) {
-    wx.navigateTo({
-      url: '../f-jinzhunjianlixq/f-jinzhunjianlixq?id=' + e.currentTarget.dataset.id + '&positId=' + this.data.titleCon.id + '&pushId=' + e.currentTarget.dataset.pushid,
-    })
+ 
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -140,13 +143,13 @@ Page({
     })
     wx.showNavigationBarLoading()
     this.data.app.http({
-      url: '/index/getPosition',
+      url: '/indexCom/getAccurateResumeList',
       dengl: true,
       method: 'POST',
       data: {
         limit: 10,
         page: that.data.currentPage,
-        positionId: that.data.id
+        positionId: this.data.id
       },
       success(res) {
 

@@ -1,13 +1,13 @@
 <view class="g_10">
 	<view class="g_11">
-		<view class="fl g_12">{{titleCon.name}}</view>
-		<view class="fr g_13">{{titleCon.num}}</view>
+		<view class="fl g_12">{{titleCon.name?titleCon.name:''}}</view>
+		<view class="fr g_13">{{titleCon.num?titleCon.num:''}}</view>
 		<view class="w-clear"></view>
 	</view>
 	<view class="g_17">
 		<view class="fl g_14">
-			<p>{{titleCon.address}}</p>
-			<p>{{titleCon.money}}</p>
+			<p>{{titleCon.address?titleCon.address:''}}</p>
+			<p>{{titleCon.money?titleCon.money:''}}</p>
 		</view>
 		<view class="fr g_15">应聘简历</view>
 		<view class="w-clear"></view>
@@ -27,8 +27,8 @@
 				</view>
 				<view class="fl d_06">
 					<view class="d_07">
-						<view class="fl d_08">{{item.resumeData.name}}</view>
-						<view class="fl d_091">{{item.resumeData.ctrlObjectiveDTOS[0].positionName}}</view>
+						<view class="fl d_08">{{item.resumeData.name?item.resumeData.name:''}}</view>
+						<view class="fl d_091">{{item.resumeData.ctrlObjectiveDTOS[0].positionName?item.resumeData.ctrlObjectiveDTOS[0].positionName:''}}</view>
 						<view class="w-clear"></view>
 					</view>
 					<view class="d_10">
@@ -43,7 +43,7 @@
 				</view>
 			</view>
 			<view class="fr g_03">
-				<view class="g_02" wx:if="{{!item.isRead=='Y'}}">
+				<view class="g_02" wx:if="{{item.isRead=='N'}}">
 					<view class="g_04">
 						<image src="../img/f03.png"></image>
 					</view>

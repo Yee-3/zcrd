@@ -180,7 +180,7 @@ Page({
       }
     })
   },
-  
+
   change: function (e) {
     var f = this.data.isF
     this.setData({
@@ -249,7 +249,10 @@ Page({
             success(res) {
               var page = getCurrentPages().pop();
               if (page == undefined || page == null) return;
-              page.onLoad();
+              page.setData({
+                currentPage: 1
+              })
+              page.load();
             }
           })
         }
@@ -297,7 +300,7 @@ Page({
         data: {
           companyId: that.data.id,
           positionId: that.data.positionId,
-          time: `${e.detail.value[0]}-${e.detail.value[1]}-${e.detail.value[2]}-${e.detail.value[3]}-${e.detail.value[4]}`,
+          time: `${e.detail.value[0]}-${e.detail.value[1]}-${e.detail.value[2]} ${e.detail.value[3]}:${e.detail.value[4]}:00`,
           resumeId: that.data.resumeId,
           pushId: this.data.pushId
         },
@@ -306,7 +309,21 @@ Page({
           if (res.data.code == 200) {
             wx.showToast({
               title: '邀请成功',
+              duration: 2000
             })
+            setTimeout(function () {
+              wx.navigateBack({
+                success(res) {
+                  var page = getCurrentPages().pop();
+                  if (page == undefined || page == null) return;
+                  page.setData({
+                    currentPage: 1
+                  })
+                  page.load();
+                }
+              })
+            }, 2000)
+
           } else {
             wx.showToast({
               title: '已邀请，请勿重复邀请',

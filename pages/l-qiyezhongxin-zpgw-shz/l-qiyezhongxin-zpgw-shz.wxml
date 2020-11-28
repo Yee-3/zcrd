@@ -60,7 +60,7 @@
 				<p>{{item.num?item.num+'人':''}}</p><span wx:if="{{item.num}}">|</span>
 				<p>{{item.serviceType==1?'到面试':item.serviceType==2?'到岗式':'管家式'}}</p>
 			</view>
-			<view class="fr h_16">{{item.updateStr}}</view>
+			<view class="fr h_16">{{item.updateStr?item.updateStr:''}}</view>
 		</view>
 		<view class="h_17"><span wx:for="{{item.wel}}" wx:for-index="index2" wx:for-item="ite">{{ite}}</span></view>
 		<view class="l_02" wx:if="{{idn==3}}">
