@@ -49,7 +49,7 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
+	onLoad: function(options) {
 		// console.log((wx.getStorageSync('Authorization'))
 		// if (!wx.getStorageSync('Authorization')) {
 		// 	wx.showToast({
@@ -96,7 +96,7 @@ Page({
 		// 获取当前位置地图
 		wx.getLocation({
 			type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-			success: function (res) {
+			success: function(res) {
 				//赋值经纬度
 				that.setData({
 					latitude: res.latitude,
@@ -130,7 +130,7 @@ Page({
 		})
 	},
 	//导航
-	onGuideTap: function (event) {
+	onGuideTap: function(event) {
 		var lat = Number(event.currentTarget.dataset.latitude);
 		var lon = Number(event.currentTarget.dataset.longitude);
 		var bankName = event.currentTarget.dataset.bankname;
@@ -209,13 +209,22 @@ Page({
 				}
 				var arr = res.data.rdata
 				console.log(res)
-				arr.map(function (val, i) {
+				arr.map(function(val, i) {
 					if (val.ctrlMemberCompanies) {
 						var date1 = Date.parse(new Date(val.ctrlMemberCompanies.updateTime.replace(/\-/g, "/")))
 						var date = Date.parse(new Date())
 						var day = parseInt((date - date1) / 1000)
-						var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+						var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' :
+							parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day /
+								60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(
+								day / 60 / 60 / 24 / 30) + '月前'
 						val.timeVal = value
+					}
+					if (val.welfareName.length > 5) {
+						val.welfareName.splice(5)
+					}
+					if (val.companyLogo.indexOf('http')) {
+						val.companyLogo = that.data.app.baseUrl + val.companyLogo
 					}
 				})
 				that.setData({
@@ -253,13 +262,22 @@ Page({
 			data: data,
 			success(res) {
 				var arr = res.data.rdata
-				arr.map(function (val, i) {
+				arr.map(function(val, i) {
 					if (val.ctrlMemberCompanies) {
 						var date1 = Date.parse(new Date(val.ctrlMemberCompanies.updateTime.replace(/\-/g, "/")))
 						var date = Date.parse(new Date())
 						var day = parseInt((date - date1) / 1000)
-						var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+						var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' :
+							parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day /
+								60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(
+								day / 60 / 60 / 24 / 30) + '月前'
 						val.timeVal = value
+					}
+					if (val.welfareName.length > 5) {
+						val.welfareName.splice(5)
+					}
+					if (val.companyLogo.indexOf('http')) {
+						val.companyLogo = that.data.app.baseUrl + val.companyLogo
 					}
 				})
 				that.setData({
@@ -280,7 +298,7 @@ Page({
 			}
 		})
 	},
-	tanchuang: function (e) {
+	tanchuang: function(e) {
 		this.setData({
 			style: 'display:block',
 			id: e.currentTarget.dataset.id,
@@ -288,13 +306,13 @@ Page({
 		})
 	},
 
-	quxiao2: function () {
+	quxiao2: function() {
 		this.setData({
 			style: 'display:none',
 			val: ''
 		})
 	},
-	getDate: function (e) {
+	getDate: function(e) {
 		var that = this
 		this.setData({
 			refType: e.detail.id
@@ -456,48 +474,48 @@ Page({
 			ind1: e.currentTarget.dataset.index
 		})
 	},
-	ScrollLower: function () {
+	ScrollLower: function() {
 
 	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
-	onReady: function () {
+	onReady: function() {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
-	onShow: function () {
+	onShow: function() {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面隐藏
 	 */
-	onHide: function () {
+	onHide: function() {
 
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
-	onUnload: function () {
+	onUnload: function() {
 
 	},
 
 	/**
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
-	onPullDownRefresh: function () {
+	onPullDownRefresh: function() {
 
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
-	onReachBottom: function () {
+	onReachBottom: function() {
 		var that = this,
 			idn = this.data.idn,
 			ind = this.data.ind
@@ -567,7 +585,7 @@ Page({
 	/**
 	 * 用户点击右上角分享
 	 */
-	onShareAppMessage: function () {
+	onShareAppMessage: function() {
 
 	}
 })

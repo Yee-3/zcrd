@@ -238,20 +238,20 @@
 			</view>
 			<view class="h_14">
 				<view class="fl h_15">
-					<p>{{item.cityName}}{{item.districtName}}</p><span>|</span>
-					<p>{{item.workExperienceName}}</p><span>|</span>
+					<p>{{item.cityName}}{{item.districtName}}</p><span wx:if="{{item.workExperienceName||(item.districtName&&item.cityName)}}">|</span>
+					<p>{{item.workExperienceName}}</p><span wx:if="{{item.schoolRecordName}}">|</span>
 					<p>{{item.schoolRecordName}}</p>
 				</view>
 				<view class="fr h_16">{{item.timeVal}}</view>
 			</view>
-			<view class="h_17">
+			<view class="span-item">
 				<span wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</span>
 			</view>
 			<view class="j_01">
 				<view class="j_02 fl">
-					<image src="{{item.companyLogo}}"></image>
+					<image src="{{item.companyLogo?item.companyLogo:'../img/f023.png'}}"></image>
 				</view>
-				<view class="j_03 fl">{{item.companyName}}</view>
+				<view class="j_03 fl">{{item.companyName?item.companyName:''}}</view>
 				<view class="w-clear"></view>
 			</view>
 		</view>

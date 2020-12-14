@@ -21,8 +21,8 @@
 		<view class="mar_top">
 			<view class="mar_title">性别</view>
 			<view class="mar_bot" style="padding:0">
-				<button class="{{six==1?'bot1':'bot'}}" data-index="1" bindtap="sixChange">男</button>
-				<button class="{{six==2?'bot1':'bot'}}" data-index="2" bindtap="sixChange">女</button>
+				<button class="{{six==0?'bot1':'bot'}}" data-index="0" bindtap="sixChange">男</button>
+				<button class="{{six==1?'bot1':'bot'}}" data-index="1" bindtap="sixChange">女</button>
 			</view>
 			<view class="but">
 				<button class="queren" size="mini" style="font-weight:normal;" bindtap="con1">确认</button>

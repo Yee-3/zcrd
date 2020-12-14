@@ -32,8 +32,8 @@
 						<view class="w-clear"></view>
 					</view>
 					<view class="d_10">
-						<p>{{item.resumeData.workTimeName?item.resumeData.workTimeName:''}}</p><span
-							wx:if="{{item.resumeData.schoolName}}">|</span>
+						<p>{{item.resumeData.age?item.resumeData.age:''}}</p><span
+							wx:if="{{item.resumeData.age}}">|</span>
 						<p>{{item.resumeData.schoolName?item.resumeData.schoolName:''}}</p><span
 							wx:if="{{item.resumeData.ctrlObjectiveDTOS[0].address}}">|</span>
 						<p>{{item.resumeData.ctrlObjectiveDTOS[0].address?item.resumeData.ctrlObjectiveDTOS[0].address:''}}</p><span

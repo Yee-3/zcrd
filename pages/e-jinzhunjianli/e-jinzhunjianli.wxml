@@ -5,7 +5,7 @@
 			<view class="d_10">
 				<p>{{item.city}}</p><span>|</span>
 				<p>{{item.money}}</p><span>|</span>
-				<p>{{item.serviceType=='1'?'到岗式':item.serviceType=='2'?'到面式':'管家式'}}</p><span>|</span>
+				<p>{{item.serviceType=='1'?'到面式':item.serviceType=='2'?'到岗式':'管家式'}}</p><span>|</span>
 				<p>{{item.num}}人</p>
 			</view>
 		</view>

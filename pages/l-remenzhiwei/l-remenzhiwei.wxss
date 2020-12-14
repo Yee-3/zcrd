@@ -125,6 +125,7 @@ page {
 }
 .j_01 {
 	padding: 0 20rpx 20rpx 20rpx;
+	margin-top:30rpx ;
 }
 
 .j_02 image {

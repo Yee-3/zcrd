@@ -69,7 +69,7 @@
 						<view class="w-clear"></view>
 					</view>
 					<view class="d_10">
-						<p>{{item.workTimeName?item.workTimeName:''}}</p><span wx:if="{{item.schoolName}}">|</span>
+						<p>{{item.age?item.age:''}}</p><span wx:if="{{item.age}}">|</span>
 						<p>{{item.schoolName?item.schoolName:''}}</p><span wx:if="{{item.ctrlObjectiveDTOS[0].address}}">|</span>
 						<p>{{item.ctrlObjectiveDTOS[0].address?item.ctrlObjectiveDTOS[0].address:''}}</p><span wx:if="{{item.ctrlObjectiveDTOS[0].moneyName}}">|</span>
 						<p>{{item.ctrlObjectiveDTOS[0].moneyName?item.ctrlObjectiveDTOS[0].moneyName:''}}</p>

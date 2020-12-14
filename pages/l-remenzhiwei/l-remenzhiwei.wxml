@@ -33,7 +33,8 @@
 				<view class="mask_02" wx:if="{{isTwo}}" bindtap="hide"></view>
 				<view class="mask_02_01" wx:if="{{isTwo}}">
 					<scroll-view class="mask_left" scroll-y="true">
-						<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zwList[ind].treeDTOS}}' style="" data-index='{{index}}' bindtap="toggle1" style="width:220rpx">
+						<view class="{{index==ind1?'no':'bot'}}" wx:for='{{zwList[ind].treeDTOS}}' style="" data-index='{{index}}'
+							bindtap="toggle1" style="width:220rpx">
 							<image class="img" wx:if="{{index==ind1}}" src="../img/icon_02.png"></image>
 							{{item.name}}
 							<image class="img1" wx:if="{{index==ind1}}" src="../img/icon_01.png"></image>
@@ -41,7 +42,8 @@
 					</scroll-view>
 
 					<scroll-view class="mask_right" scroll-y="true">
-						<view class="{{index==ind2?'no':'bot'}}" wx:for='{{zwList[ind].treeDTOS[ind1].treeDTOS}}' data-id="{{item.id}}" data-index='{{index}}' bindtap="toggle2">
+						<view class="{{index==ind2?'no':'bot'}}" wx:for='{{zwList[ind].treeDTOS[ind1].treeDTOS}}'
+							data-id="{{item.id}}" data-index='{{index}}' bindtap="toggle2">
 							{{item.name}}
 							<image class="img2" wx:if="{{index==ind2}}" src="../img/icon_01.png"></image>
 						</view>
@@ -75,13 +77,15 @@
 				<view class="top_t">
 					<view class="t_title">公司性质</view>
 					<scroll-view class="scr_02" scroll-y="true">
-						<button class="{{item.value==ind3?'no1':'bott'}}" size="mini" wx:for="{{gxzList}}" data-index='{{item.value}}' bindtap="toggle3" style="font-size:25rpx">{{item.label}}</button>
+						<button class="{{item.value==ind3?'no1':'bott'}}" size="mini" wx:for="{{gxzList}}"
+							data-index='{{item.value}}' bindtap="toggle3" style="font-size:25rpx">{{item.label}}</button>
 					</scroll-view>
 				</view>
 				<view class="top_bb">
 					<view class="t_title">公司规模</view>
 					<scroll-view class="scr_01" scroll-y="true">
-						<button class="{{item.value==ind4?'no1':'bott'}}" size="mini" wx:for="{{ggmList}}" data-index='{{item.value}}' bindtap="toggle4" style="font-size:25rpx">{{item.label}}</button>
+						<button class="{{item.value==ind4?'no1':'bott'}}" size="mini" wx:for="{{ggmList}}"
+							data-index='{{item.value}}' bindtap="toggle4" style="font-size:25rpx">{{item.label}}</button>
 					</scroll-view>
 				</view>
 			</view>
@@ -103,19 +107,24 @@
 				<view class="top3_t">
 					<view class="t3_title">薪资范围</view>
 					<scroll-view class="scr3_02" scroll-y="true">
-						<button class="{{item.value==ind5?'no1':'bott'}}" size="mini" wx:for="{{mnyList}}" data-index='{{item.value}}' bindtap="toggle5" style="font-size:25rpx;min-width:160rpx">{{item.label}}</button>
+						<button class="{{item.value==ind5?'no1':'bott'}}" size="mini" wx:for="{{mnyList}}"
+							data-index='{{item.value}}' bindtap="toggle5"
+							style="font-size:25rpx;min-width:160rpx">{{item.label}}</button>
 					</scroll-view>
 				</view>
 				<view class="top3_bb">
 					<view class="t3_title">工作经验</view>
 					<scroll-view class="scr3_01" scroll-y="true">
-						<button class="{{item.value==ind6?'no1':'bott'}}" size="mini" wx:for="{{expList}}" data-index='{{item.value}}' bindtap="toggle6" style="font-size:25rpx;min-width:160rpx">{{item.label}}</button>
+						<button class="{{item.value==ind6?'no1':'bott'}}" size="mini" wx:for="{{expList}}"
+							data-index='{{item.value}}' bindtap="toggle6"
+							style="font-size:25rpx;min-width:160rpx">{{item.label}}</button>
 					</scroll-view>
 				</view>
 				<view class="top3_three">
 					<view class="t3_title">学历要求</view>
 					<scroll-view class="scr3_03" scroll-y="true">
-						<button class="{{item.value==ind7?'no1':'bott'}}" size="mini" wx:for="{{codList}}" data-index='{{item.value}}' bindtap="toggle7" style="font-size:25rpx">{{item.label}}</button>
+						<button class="{{item.value==ind7?'no1':'bott'}}" size="mini" wx:for="{{codList}}"
+							data-index='{{item.value}}' bindtap="toggle7" style="font-size:25rpx">{{item.label}}</button>
 					</scroll-view>
 				</view>
 			</view>
@@ -131,25 +140,26 @@
 <view class="l_05">
 	<view class="h_10" bindtap="detail" wx:for="{{recomList}}" data-id="{{item.id}}">
 		<view class="h_11">
-			<view class="fl h_12">{{item.title}}</view>
-			<view class="fr h_13">{{item.moneyName}}</view>
+			<view class="fl h_12">{{item.title?item.title:''}}</view>
+			<view class="fr h_13">{{item.moneyName?item.moneyName:''}}</view>
 		</view>
 		<view class="h_14">
 			<view class="fl h_15">
-				<p>{{item.cityName?item.cityName:''}}{{item.districtName?item.districtName:''}}</p><span wx:if="{{item.cityName&&item.districtName}}">|</span>
-				<p>{{item.workExperienceName?item.workExperienceName:''}}</p><span>|</span>
+				<p>{{item.cityName?item.cityName:''}}{{item.districtName?item.districtName:''}}</p><span
+					wx:if="{{item.cityName&&item.districtName}}">|</span>
+				<p>{{item.workExperienceName?item.workExperienceName:''}}</p><span wx:if="{{item.schoolRecordName}}">|</span>
 				<p>{{item.schoolRecordName?item.schoolRecordName:''}}</p>
 			</view>
-			<view class="fr h_16">{{item.timeVal}}</view>
+			<view class="fr h_16">{{item.timeVal?item.timeVal:''}}</view>
 		</view>
-		<view class="h_17">
-			<button size="mini" style="font-size:24rpx" wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</button>
+		<view class="span-item">
+			<span wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</span>
 		</view>
 		<view class="j_01">
 			<view class="j_02 fl">
-				<image src="{{item.companyLogo}}"></image>
+				<image src="{{item.companyLogo?item.companyLogo:'../img/f023.png'}}"></image>
 			</view>
-			<view class="j_03 fl">{{item.companyName}}</view>
+			<view class="j_03 fl">{{item.companyName?item.companyName:''}}</view>
 			<view class="w-clear"></view>
 		</view>
 	</view>

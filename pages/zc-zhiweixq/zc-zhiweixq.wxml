@@ -29,7 +29,7 @@
 	</view>
 	<view class="z_03" bindtap="detail" data-comId="{{detaCont.companyId}}">
 		<view class="z_04 fl">
-			<image src="{{detaCont.companyLogo}}"></image>
+			<image src="{{detaCont.companyLogo?detaCont.companyLogo:'../img/f023.png'}}"></image>
 		</view>
 		<view class="z_05 fl">
 			<view class="z_06">{{detaCont.companyName}}</view>

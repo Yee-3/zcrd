@@ -6,7 +6,7 @@ Page({
    */
   data: {
     isSix: false,
-    six: '1',
+    six: '0',
     six_val: '请选择',
     nameVal:'',
     zhiVal:'',
@@ -35,7 +35,7 @@ Page({
           that.setData({
             nameVal:cont.name,
             six:cont.sex,
-            six_val:cont.sex==1?'男':'女',
+            six_val:cont.sex==0?'男':'女',
             zhiVal:cont.position,
             emilVal:cont.email,
             phoneVal:cont.phone,
@@ -73,7 +73,7 @@ Page({
   },
   con1() {
     this.hidden()
-    if (this.data.six == 1) {
+    if (this.data.six == 0) {
       this.setData({
         six_val: '男'
       })

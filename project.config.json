@@ -58,62 +58,26 @@
       "list": [
         {
           "id": -1,
-          "name": "pages/i-mianshi-yrz/i-mianshi-yrz",
-          "pathName": "pages/i-mianshi-yrz/i-mianshi-yrz",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/p-qiyeduan/p-qiyeduan",
-          "pathName": "pages/p-qiyeduan/p-qiyeduan",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/q-wode/q-wode",
-          "pathName": "pages/q-wode/q-wode",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
-          "name": "pages/m-shouye/m-shouye",
-          "pathName": "pages/m-shouye/m-shouye",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
           "name": "pages/login/index",
           "pathName": "pages/login/index",
           "query": "",
           "scene": null
         },
         {
-          "id": -1,
-          "name": "pages/o-qiyezhuce/o-qiyezhuce",
-          "pathName": "pages/o-qiyezhuce/o-qiyezhuce",
-          "query": "",
-          "scene": null
-        },
-        {
-          "id": -1,
           "name": "pages/p-qiyeduan/p-qiyeduan",
           "pathName": "pages/p-qiyeduan/p-qiyeduan",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/p-qiyeduan/p-qiyeduan",
-          "pathName": "pages/p-qiyeduan/p-qiyeduan",
+          "name": "pages/m-shouye/m-shouye",
+          "pathName": "pages/m-shouye/m-shouye",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/d-hailiangrencai/d-hailiangrencai",
-          "pathName": "pages/d-hailiangrencai/d-hailiangrencai",
+          "name": "pages/p-qiyeduan/p-qiyeduan",
+          "pathName": "pages/p-qiyeduan/p-qiyeduan",
           "query": "",
           "scene": null
         }

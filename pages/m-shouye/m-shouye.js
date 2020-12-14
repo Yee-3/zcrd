@@ -55,7 +55,7 @@ Page({
     work: {},
     style: 'display:none',
     isBot: false,
-    isTs:false,
+    isTs: false,
   },
   /**
    * 生命周期函数--监听页面加载
@@ -63,9 +63,9 @@ Page({
   onLoad: function (options) {
     // this.getLocation()
     let that = this,
-    cityOrTime = wx.getStorageSync('locatecity') || {},
-    time = new Date().getTime(),
-    city = '';
+      cityOrTime = wx.getStorageSync('locatecity') || {},
+      time = new Date().getTime(),
+      city = '';
     if (!cityOrTime.time || (time - cityOrTime.time > 1800000)) { //每隔30分钟请求一次定位
       that.getLocation();
     } else { //如果未满30分钟，那么直接从本地缓存里取值
@@ -78,11 +78,11 @@ Page({
       data: {},
       dengl: false,
       success(res) {
-        if(res.data.rdata.ctrlBannerList.length>0){
-          var arr=res.data.rdata.ctrlBannerList
-          arr.map(function(val,i){
-            if(val.url.indexOf('http')){
-              val.url=that.data.app.baseUrl+val.url
+        if (res.data.rdata.ctrlBannerList.length > 0) {
+          var arr = res.data.rdata.ctrlBannerList
+          arr.map(function (val, i) {
+            if (val.url.indexOf('http')) {
+              val.url = that.data.app.baseUrl + val.url
             }
           })
         }
@@ -96,11 +96,11 @@ Page({
     this.data.app.http({
       url: '/index/getResumes',
       data: {},
-      dengl: wx.getStorageSync('Authorization')?true:false,
-      method:'POST',
+      dengl: wx.getStorageSync('Authorization') ? true : false,
+      method: 'POST',
       success(res) {
         that.setData({
-          isBot:res.data.rdata
+          isBot: res.data.rdata
         })
       }
     })
@@ -118,7 +118,7 @@ Page({
     wx.showNavigationBarLoading()
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: wx.getStorageSync('Authorization')?true:false,
+      dengl: wx.getStorageSync('Authorization') ? true : false,
       method: 'POST',
       data: {
         limit: 10,
@@ -132,12 +132,18 @@ Page({
         var arr = res.data.rdata
         var myDate = new Date()
         arr.map(function (val, i) {
+          console.log(val)
           var date1 = Date.parse(new Date(val.createTime.replace(/\-/g, "/")))
           var date = Date.parse(new Date())
           var day = parseInt((date - date1) / 1000)
           var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+          if (val.companyLogo.indexOf('http')) {
+            val.companyLogo = that.data.app.baseUrl + val.companyLogo
+          }
+          if (val.welfareName.length > 5) {
+            val.welfareName.splice(5)
+          }
           val.timeVal = value
-
         })
         that.setData({
           recomList: res.data.rdata,
@@ -233,7 +239,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: wx.getStorageSync('Authorization')?true:false,
+      dengl: wx.getStorageSync('Authorization') ? true : false,
       method: 'POST',
       data: {
         limit: 10,
@@ -253,7 +259,12 @@ Page({
           var day = parseInt((date - date1) / 1000)
           var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
           val.timeVal = value
-
+          if (val.companyLogo.indexOf('http')) {
+            val.companyLogo = that.data.app.baseUrl + val.companyLogo
+          }
+          if (val.welfareName.length > 5) {
+            val.welfareName.splice(5)
+          }
         })
         that.setData({
           recomList: res.data.rdata
@@ -272,7 +283,7 @@ Page({
       }
     })
   },
- 
+
   cancel() {
     this.position3()
     var that = this
@@ -285,7 +296,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: wx.getStorageSync('Authorization')?true:false,
+        dengl: wx.getStorageSync('Authorization') ? true : false,
         method: 'POST',
         data: {
           limit: 10,
@@ -305,7 +316,12 @@ Page({
             var day = parseInt((date - date1) / 1000)
             var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
             val.timeVal = value
-
+            if (val.companyLogo.indexOf('http')) {
+              val.companyLogo = that.data.app.baseUrl + val.companyLogo
+            }
+            if (val.welfareName.length > 5) {
+              val.welfareName.splice(5)
+            }
           })
           that.setData({
             recomList: res.data.rdata
@@ -342,10 +358,10 @@ Page({
       url: '../d-gaoduanzhiwei/d-gaoduanzhiwei'
     })
   },
-  confirm_ts(){
-    var ts=this.data.isTs
+  confirm_ts() {
+    var ts = this.data.isTs
     this.setData({
-      isTs:!ts
+      isTs: !ts
     })
   },
   hotspot() {
@@ -503,12 +519,12 @@ Page({
     var work = that.data.work
     this.data.app.http({
       url: '/index/getResumes',
-      dengl: false,
+      dengl: true,
       method: 'POST',
       success(res) {
         if (res.data.rdata == true) {
           that.setData({
-            isTs:true
+            isTs: true
           })
         } else {
           that.setData({
@@ -568,7 +584,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: wx.getStorageSync('Authorization')?true:false,
+      dengl: wx.getStorageSync('Authorization') ? true : false,
       method: 'POST',
       data: {
         limit: 10,
@@ -588,6 +604,12 @@ Page({
           var day = parseInt((date - date1) / 1000)
           var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
           val.timeVal = value
+          if (val.companyLogo.indexOf('http')) {
+            val.companyLogo = that.data.app.baseUrl + val.companyLogo
+          }
+          if (val.welfareName.length > 5) {
+            val.welfareName.splice(5)
+          }
         })
         that.setData({
           recomList: res.data.rdata
@@ -620,7 +642,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: wx.getStorageSync('Authorization')?true:false,
+        dengl: wx.getStorageSync('Authorization') ? true : false,
         method: 'POST',
         data: {
           limit: 10,
@@ -640,6 +662,12 @@ Page({
             var day = parseInt((date - date1) / 1000)
             var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
             val.timeVal = value
+            if (val.companyLogo.indexOf('http')) {
+              val.companyLogo = that.data.app.baseUrl + val.companyLogo
+            }
+            if (val.welfareName.length > 5) {
+              val.welfareName.splice(5)
+            }
           })
           that.setData({
             recomList: res.data.rdata
@@ -679,7 +707,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: wx.getStorageSync('Authorization')?true:false,
+        dengl: wx.getStorageSync('Authorization') ? true : false,
         method: 'POST',
         data: {
           limit: 10,
@@ -700,7 +728,12 @@ Page({
             var day = parseInt((date - date1) / 1000)
             var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
             val.timeVal = value
-
+            if (val.companyLogo.indexOf('http')) {
+              val.companyLogo = that.data.app.baseUrl + val.companyLogo
+            }
+            if (val.welfareName.length > 5) {
+              val.welfareName.splice(5)
+            }
           })
           that.setData({
             recomList: res.data.rdata
@@ -758,7 +791,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: wx.getStorageSync('Authorization')?true:false,
+      dengl: wx.getStorageSync('Authorization') ? true : false,
       method: 'POST',
       data: {
         limit: 10,
@@ -779,6 +812,12 @@ Page({
           var day = parseInt((date - date1) / 1000)
           var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
           val.timeVal = value
+          if (val.companyLogo.indexOf('http')) {
+            val.companyLogo = that.data.app.baseUrl + val.companyLogo
+          }
+          if (val.welfareName.length > 5) {
+            val.welfareName.splice(5)
+          }
         })
         that.setData({
           recomList: res.data.rdata
@@ -812,7 +851,7 @@ Page({
       })
       this.data.app.http({
         url: '/index/getPosition',
-        dengl: wx.getStorageSync('Authorization')?true:false,
+        dengl: wx.getStorageSync('Authorization') ? true : false,
         method: 'POST',
         data: {
           limit: 10,
@@ -834,6 +873,12 @@ Page({
             var day = parseInt((date - date1) / 1000)
             var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
             val.timeVal = value
+            if (val.companyLogo.indexOf('http')) {
+              val.companyLogo = that.data.app.baseUrl + val.companyLogo
+            }
+            if (val.welfareName.length > 5) {
+              val.welfareName.splice(5)
+            }
           })
           that.setData({
             recomList: res.data.rdata
@@ -891,7 +936,7 @@ Page({
     }
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: wx.getStorageSync('Authorization')?true:false,
+      dengl: wx.getStorageSync('Authorization') ? true : false,
       method: 'POST',
       data: {
         limit: 10,
@@ -913,6 +958,12 @@ Page({
           var day = parseInt((date - date1) / 1000)
           var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
           val.timeVal = value
+          if (val.companyLogo.indexOf('http')) {
+            val.companyLogo = that.data.app.baseUrl + val.companyLogo
+          }
+          if (val.welfareName.length > 5) {
+            val.welfareName.splice(5)
+          }
         })
         that.setData({
           recomList: res.data.rdata
@@ -946,7 +997,7 @@ Page({
     wx.showNavigationBarLoading()
     this.data.app.http({
       url: '/index/getPosition',
-      dengl: wx.getStorageSync('Authorization')?true:false,
+      dengl: wx.getStorageSync('Authorization') ? true : false,
       method: 'POST',
       data: data,
       success(res) {
@@ -961,6 +1012,12 @@ Page({
           var day = parseInt((date - date1) / 1000)
           var value = day < 60 ? day + '秒前' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
           val.timeVal = value
+          if (val.companyLogo.indexOf('http')) {
+            val.companyLogo = that.data.app.baseUrl + val.companyLogo
+          }
+          if (val.welfareName.length > 5) {
+            val.welfareName.splice(5)
+          }
         })
         that.setData({
           recomList: that.data.recomList.concat(res.data.rdata)
@@ -1095,7 +1152,7 @@ Page({
           icon: "none"
         })
       }
-  }
+    }
   },
 
 

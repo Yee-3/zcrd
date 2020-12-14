@@ -60,21 +60,21 @@
 			<view class="fr h_16">{{item.timeVal}}</view>
 		</view>
 		<!-- 公司福利：面试状态-待确认、已取消；入职状态；投递列表 等显示 -->
-		<view class="h_17"  wx:if="{{!(idn==2&&ind==2)}}" bindtap="conpanyIn" data-id="{{item.companyId}}">
-			<button size="mini" style="font-size:24rpx" wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</button>
+		<view class="span-item"  wx:if="{{!(idn==2&&ind==2)}}" bindtap="conpanyIn" data-id="{{item.companyId}}">
+			<span wx:for="{{item.welfareName}}" wx:for-index="ind" wx:for-item="ite">{{ite}}</span>
 		</view>
 
-		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{!(idn==1||(idn==2&&ind==3)||(idn==3&&ind==3))}}">		 
+		<view class="h_18 mar-top" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{!(idn==1||(idn==2&&ind==3)||(idn==3&&ind==3))}}">		 
 			<view class="h_19 fl">{{idn==2?'面试时间：':'入职时间：'}}</view>
 			<view class="h_20 fl" style="{{idn==2&&ind==2?'color:#ff4949;':'color:#000'}}">{{idn==2?item.ctrlMemberCompanies.statTime:item.ctrlMemberCompanies.inductionTime}}</view>
 			<view class="w-clear"></view>
 		</view>
-		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{idn==3&&ind==2}}">
+		<view class="h_18 " bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{idn==3&&ind==2}}">
 			<view class="h_19 fl">温馨提示：</view>
 			<view class="h_20 fl" style="color:#909090">请按照约定时间入职</view>
 			<view class="w-clear"></view>
 		</view>
-		<view class="h_18" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{(idn==2||idn==3)&&ind==3}}">
+		<view class="h_18 mar-top" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{(idn==2||idn==3)&&ind==3}}">
 			<view class="h_19 fl">原因：</view>
 			<view class="h_20 fl">{{idn==2?(item.ctrlMemberCompanies.whyStatus==1?'时间原因':'其他原因'):(item.ctrlMemberCompanies.auditType1==1?'时间原因':'其他原因')}}</view>
 			<view class="w-clear"></view>
@@ -85,9 +85,9 @@
 			<view class="w-clear"></view>
 		</view>
 		<!-- 投递列表显示 -->
-		<view class="j_01" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{idn==1}}">
+		<view class="j_01 mar-top" bindtap="conpanyIn" data-id="{{item.companyId}}" wx:if="{{idn==1}}">
 			<view class="j_02 fl">
-				<image src="{{item.companyLogo}}"></image>
+				<image src="{{item.companyLogo?item.companyLogo:'../img/f023.png'}}"></image>
 			</view>
 			<view class="j_03 fl">{{item.companyName}}</view>
 			<view class="w-clear"></view>

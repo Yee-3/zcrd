@@ -137,8 +137,8 @@ Page({
       method: 'POST',
       success(res) {
         if (res.data.rdata == true) {
-          wx.switchTab({
-            url: '../m-shouye/m-shouye',
+          wx.navigateTo({
+            url: '../l-remenzhiwei/l-remenzhiwei',
           })
 
         } else {

@@ -90,7 +90,7 @@
 				<view class="fl h_16">
 					<view class="h_17">{{item.name?item.name:''}}</view>
 					<view class="h_18">
-						<p>{{item.workTimeName?item.workTimeName:''}}</p><span wx:if="{{item.workTimeName}}">|</span>
+						<p>{{item.age?item.age:''}}</p><span wx:if="{{item.age}}">|</span>
 						<p>{{item.school?item.school:''}}</p><span wx:if="{{item.school}}">|</span>
 						<p>{{item.address?item.address:''}}</p>
 						<!-- <span>|</span> -->
