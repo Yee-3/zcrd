@@ -6,8 +6,10 @@
 		</view>
 		<view class="q_06">
 			<view class="s_03">
-				<p>{{detCon.ctrlResumeDTO.age?detCon.ctrlResumeDTO.age+'岁':''}}</p><span wx:if="{{detCon.ctrlResumeDTO.schoolName}}">|</span>
-				<p>{{detCon.ctrlResumeDTO.schoolName?detCon.ctrlResumeDTO.schoolName:''}}</p><span wx:if="{{detCon.ctrlResumeDTO.worktypeName}}">|</span>
+				<p>{{detCon.ctrlResumeDTO.age?detCon.ctrlResumeDTO.age+'岁':''}}</p><span
+					wx:if="{{detCon.ctrlResumeDTO.schoolName}}">|</span>
+				<p>{{detCon.ctrlResumeDTO.schoolName?detCon.ctrlResumeDTO.schoolName:''}}</p><span
+					wx:if="{{detCon.ctrlResumeDTO.worktypeName}}">|</span>
 				<p>{{detCon.ctrlResumeDTO.worktypeName?detCon.ctrlResumeDTO.worktypeName:''}}</p>
 			</view>
 			<!-- <view class="s_04">手机号码：{{detCon.ctrlResumeDTO.phone}}</view> -->
@@ -15,7 +17,9 @@
 		</view>
 	</view>
 	<view class="fr q_09">
-		<image src="{{detCon.ctrlResumeDTO.url?detCon.ctrlResumeDTO.url:(detCon.ctrlResumeDTO.sex==0?'../img/f004.png':'../img/f051.png')}}"></image>
+		<image
+			src="{{detCon.ctrlResumeDTO.url?detCon.ctrlResumeDTO.url:(detCon.ctrlResumeDTO.sex==0?'../img/f004.png':'../img/f051.png')}}">
+		</image>
 	</view>
 </view>
 
@@ -156,7 +160,8 @@
 		<!-- <view class="mar_bot"> -->
 		<scroll-view scroll-y="true" style="height:{{ height+'rpx'}}" bindscrolltolower="scrll">
 			<!-- 需补充职位id -->
-			<view class="{{itIndex==index?'e_03_1':'e_03'}}" wx:for="{{positList}}" data-id="{{item.id}}" data-index="{{index}}" data-comId="{{item.companyId}}" bindtap="choice">
+			<view class="{{itIndex==index?'e_03_1':'e_03'}}" wx:for="{{positList}}" data-id="{{item.id}}"
+				data-index="{{index}}" data-comId="{{item.companyId}}" bindtap="choice">
 				<view class="{{itIndex==index?'xuanOn':'e_04'}}">{{item.title}}</view>
 				<view class="{{itIndex==index?'d_10_1':'d_10'}}">
 					<p>{{item.schoolRecord}}</p><span>|</span>
@@ -171,7 +176,19 @@
 		</view>
 	</view>
 </view>
-<date-picker id="time" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
+
+<view class="mask" wx:if="{{isTshi}}"> 
+	<view class="mask-cont">
+		<view class="cont-title">温馨提示</view>
+		<view class="cont-body">请跳转至精准简历页面查看</view>
+		<view class="cont-bott" bindtap="tiTap">确认</view>
+	</view>
+</view>
+
+
+
+<date-picker id="time" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}"
+	bindsureclick="datePickerOnSureClick" />
 <view class="f_08" wx:if="{{isTwo}}">
 	<view class="f_07">
 		<view class="f_14">
@@ -185,4 +202,5 @@
 		</view>
 	</view>
 </view>
-<toggle id="tog" bind:confirm="zhuConfirm" title="注册提示" confirmText="注册" cancelText="取消" bind:cancel="zhuCancel" content="{{content}}"></toggle>
+<toggle id="tog" bind:confirm="zhuConfirm" title="注册提示" confirmText="注册" cancelText="取消" bind:cancel="zhuCancel"
+	content="{{content}}"></toggle>

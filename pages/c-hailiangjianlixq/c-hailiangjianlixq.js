@@ -34,7 +34,8 @@ Page({
     isZhuce: '',
     isType: '',
     content: '您还未注册企业信息，请注册企业信息！',
-    kefuPhone: {}
+    kefuPhone: {},
+    isTshi:false
   },
 
   /**
@@ -192,6 +193,11 @@ Page({
       isF: !f
     })
   },
+  tiTap(){
+    this.setData({
+      isTshi:!this.data.isTshi
+    })
+  },
   change1: function (e) {
     var x = this.data.isX
     this.setData({
@@ -298,9 +304,11 @@ Page({
         })
       } else {
         if (that.data.isHz) {
-          var mask = that.data.isMask
+          // var mask = that.data.isMask
+          var mask = that.data.isTshi
           that.setData({
-            isMask: !mask,
+            isTshi:!mask,
+            // isMask: !mask,
             currentPage: 1,
             itIndex: 'X'
           })

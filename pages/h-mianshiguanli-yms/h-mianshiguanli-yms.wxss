@@ -120,10 +120,13 @@ page {
   border-radius: 10rpx;
   margin-top: 20rpx;
   overflow: hidden;
+  position: relative;
 }
-.h_11 .h_12:last-child{
+
+.h_11 .h_12:last-child {
   margin-bottom: 100rpx;
 }
+
 .h_13 {
   height: 90rpx;
   padding: 20rpx 20rpx 0 20rpx;
@@ -195,6 +198,7 @@ page {
   font-size: 24rpx;
   color: #666;
 }
+
 .h_23 text {
   font-size: 24rpx;
   color: #666;
@@ -243,7 +247,11 @@ page {
   margin-top: 20rpx;
   overflow: hidden;
 }
-.h2_22{ margin-left: 130rpx; margin-top: 16rpx;}
+
+.h2_22 {
+  margin-left: 130rpx;
+  margin-top: 16rpx;
+}
 
 .h_26 {
   background: #e6f3ff;
@@ -286,15 +294,42 @@ page {
 .on .h_08 {
   color: #0286ff;
 }
+
 .two_t {
   width: 630rpx;
   height: 95rpx;
   margin: 0 auto;
 }
-.h2_26{ border: 1rpx solid #ff4949; margin-top: 80rpx; width: 140rpx; height: 60rpx; font-size: 28rpx; color: #ff4949; line-height: 60rpx; text-align: center; }
-.h2_23{ padding-bottom: 10rpx;}
-.h2_23 p{ font-size: 24rpx; color: #333;}
-.h2_23 span{ font-size: 24rpx; color: #666;}
+
+.h2_26 {
+  border: 1rpx solid #ff4949;
+  margin-top: 80rpx;
+  width: 140rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #ff4949;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  border-radius: 10rpx;
+}
+
+.h2_23 {
+  padding-bottom: 10rpx;
+}
+
+.h2_23 p {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.h2_23 span {
+  font-size: 24rpx;
+  color: #666;
+}
+
 .two_t_2 ul {
   width: 630rpx;
   height: 66rpx;
@@ -304,18 +339,19 @@ page {
   float: left;
   width: 33.33333%;
 }
-  
 
-.del_mask{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height:100%;
-	background: rgba(0, 0, 0, 0.5);
-	z-index: 99;
+
+.del_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
-.del{
+
+.del {
   width: 650rpx;
   height: 360rpx;
   position: fixed;
@@ -325,35 +361,84 @@ page {
   background: #fff;
   border-radius: 15rpx;
 }
-.del .title{
+
+.del .title {
   font-size: 27rpx;
   text-align: center;
   margin-top: 60rpx;
   line-height: 200rpx;
 }
-.de_bot{
+
+.de_bot {
   position: relative;
   height: 100rpx;
   bottom: 0;
 }
-.de_bot button{
+
+.de_bot button {
   min-width: 260rpx;
   min-height: 46rpx;
 }
-button::after{
-  border:none
+
+button::after {
+  border: none
 }
-.del_cancle{
+
+.del_cancle {
   background: #cecece;
   color: #fff;
   position: absolute;
   left: 40rpx;
   bottom: 35rpx;
 }
-.del_confirm{
+
+.del_confirm {
   background: #0286ff;
   color: #fff;
   position: absolute;
   right: 40rpx;
   bottom: 35rpx;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.mask-cont{
+  position: fixed;
+  top: 50%;
+  z-index: 999;
+  background: #fff;
+  left: 60rpx;
+  right: 60rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  transform: translateY(-50%);
+  
+}
+.cont-title{
+  margin: 45rpx 0;
+  font-size: 30rpx;
+}
+.cont-body{
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+
+}
+.cont-bott{
+  width: 240rpx;
+  height: 74rpx;
+  background: #0286ff;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 74rpx;
+  border-radius: 40rpx;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
 }

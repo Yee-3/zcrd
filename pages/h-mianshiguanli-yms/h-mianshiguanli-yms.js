@@ -12,7 +12,7 @@ Page({
     app: getApp().globalData,
     companyId: '',
     msList: [],
-    datePickerValue: ['', '', '','',''],
+    datePickerValue: ['', '', '', '', ''],
     datePickerIsShow: false,
     date: '',
     currentPage: 1,
@@ -22,7 +22,8 @@ Page({
       contentrefresh: "正在加载...",
       contentnomore: "就这么多了~"
     },
-    id: ''
+    id: '',
+    tsShow: false
   },
 
   /**
@@ -41,13 +42,18 @@ Page({
       var status = i == 1 ? 'p' : i == 2 ? 'Y' : i == 3 ? 'N' : 'S'
     } else {
       var i = that.data.ind1
-      var status = i == 1 ? '1' : '2'
+      var status = i == 1 ? '1' ? i == 2 : '2' : '3'
     }
     var data = {
       companyId: that.data.companyId,
       status: status
     }
     this.reword(url, data)
+  },
+  tiTap() {
+    this.setData({
+      tsShow: !this.data.tsShow
+    })
   },
   reword(url, data) {
     var that = this
@@ -66,7 +72,7 @@ Page({
         })
         var arr = res.data.rdata
         arr.map(function (val, i) {
-          if(val.lastLogin){
+          if (val.lastLogin) {
             var date1 = Date.parse(new Date(val.lastLogin.replace(/\-/g, "/")))
             var date = Date.parse(new Date())
             var day = parseInt((date - date1) / 1000)
@@ -114,7 +120,7 @@ Page({
       success(res) {
         var arr = res.data.rdata
         arr.map(function (val, i) {
-          if(val.lastLogin){
+          if (val.lastLogin) {
             var date1 = Date.parse(new Date(val.lastLogin.replace(/\-/g, "/")))
             var date = Date.parse(new Date())
             var day = parseInt((date - date1) / 1000)
@@ -192,12 +198,10 @@ Page({
     var url = '/interviewManager/getSuccessList',
       //  var url = '/interviewManager/getInterviewList',
       that = this,
-      status = e.currentTarget.dataset.index == 1 ? 1 : e.currentTarget.dataset.index==2?2:3,
+      // status = e.currentTarget.dataset.index == 1 ? 1 : e.currentTarget.dataset.index == 2 ? 2 : 3,
       data = {
         companyId: that.data.companyId,
-        status: status
-        // status: '1'
-        // status: 'S'
+        status: e.currentTarget.dataset.index
       }
     this.reword(url, data)
   },
@@ -291,6 +295,7 @@ Page({
   // 离职
   quit(e) {
     var that = this
+    console.log(e)
     this.data.app.http({
       type: true,
       url: '/interviewManager/leavePosition',
@@ -301,7 +306,13 @@ Page({
       },
       success(res) {
         if (res.data.code == 200) {
-          that.onLoad()
+          var url = '/interviewManager/getSuccessList',
+            data = {
+              companyId: that.data.companyId,
+              status: e.currentTarget.dataset.index
+            }
+          that.reword(url, data)
+          that.tiTap()
         }
       }
     })
@@ -416,12 +427,9 @@ Page({
    */
   onShow: function () {
     wx.hideHomeButton({
-      success: function () {
-      },
-      fail: function () {
-      },
-      complete: function () {
-      },
+      success: function () {},
+      fail: function () {},
+      complete: function () {},
     });
   },
 

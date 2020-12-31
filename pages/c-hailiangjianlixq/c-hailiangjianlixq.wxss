@@ -336,9 +336,39 @@ page {
   border-radius: 50%;
 }
 
+.mask-cont{
+  position: fixed;
+  top: 50%;
+  z-index: 999;
+  background: #fff;
+  left: 60rpx;
+  right: 60rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  transform: translateY(-50%);
+  
+}
+.cont-title{
+  margin: 45rpx 0;
+  font-size: 30rpx;
+}
+.cont-body{
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
 
-
-
+}
+.cont-bott{
+  width: 240rpx;
+  height: 74rpx;
+  background: #0286ff;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 74rpx;
+  border-radius: 40rpx;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
 
 
 

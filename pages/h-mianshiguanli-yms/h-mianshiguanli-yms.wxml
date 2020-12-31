@@ -121,7 +121,7 @@
 				<text>{{item.whyStatus==1?'面试时间不合适':'其他原因'}}\n{{item.why?item.why:''}}</text>
 			</view>
 		</view>
-		<view class="h2_26 fr" data-id="{{item.memberCompanyId}}" bindtap="quit" wx:if="{{idn==3&&(ind1==2||ind1==3)}}">离职</view> 
+		<view class="h2_26 fr" data-id="{{item.memberCompanyId}}" bindtap="quit" data-index="{{ind1}}" wx:if="{{idn==3&&(ind1==2||ind1==3)}}">离职</view> 
 		<view class="h_26" wx:if="{{ind==3&&item.whyStatus==1}}" data-id="{{item.memberCompanyId}}" bindtap="invitTo">再邀请</view>
 		<view class="h_24" wx:if="{{ind==2||ind==4}}">
 			<ul>
@@ -135,5 +135,12 @@
 <date-picker id="time" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />
 <!-- end -->
 
+<view class="mask" wx:if="{{tsShow}}"> 
+	<view class="mask-cont">
+		<view class="cont-title">温馨提示</view>
+		<view class="cont-body">已提交离职申请，请等待后台审核。</view>
+		<view class="cont-bott" bindtap="tiTap">确认</view>
+	</view>
+</view>
 <!-- end -->
 <tabbars></tabbars>
