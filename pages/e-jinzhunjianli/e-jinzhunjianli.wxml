@@ -16,7 +16,7 @@
 			<image src="../img/yuan.jpg" wx:if="{{!item.read}}"></image>
 			</view>
 			<view class="e_06">
-				<view class="e_07 fl">{{item.serviceType=='2'?'成功面试':'成功入职'}}</view>
+				<view class="e_07 fl">{{item.serviceType=='1'?'成功面试':'成功入职'}}</view>
 				<view class="e_08 fr">{{item.hiring}}</view>
 			</view>
 		</view>

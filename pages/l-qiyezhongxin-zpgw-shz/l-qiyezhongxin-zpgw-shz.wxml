@@ -50,7 +50,7 @@
 		<view class="h_11">
 			<view class="fl h_12">{{item.title}}</view>
 			<view class="{{idn==1?'fl h_1333':idn==2?'fl h_13':'fl h_133'}}">{{idn==1?'已通过':idn==2?'审核中':'未通过'}}</view>
-			<view class="fr l_05" wx:if="{{idn==1}}">成功入职{{item.hiring?item.hiring:'0'}}人</view>
+			<view class="fr l_05" wx:if="{{idn==1}}">{{item.serviceType==1?'成功面试':'成功入职'}}{{item.hiring?item.hiring:'0'}}人</view>
 		</view>
 		<view class="h_14">
 			<view class="fl h_15">
