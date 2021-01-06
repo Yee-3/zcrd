@@ -6,8 +6,8 @@ Page({
    */
   data: {
     app: getApp().globalData,
-    company:{},
-    img:[],
+    company: {},
+    img: [],
     // 地图
     latitude: "",
     longitude: "",
@@ -25,6 +25,7 @@ Page({
       },
       clickable: true
     }],
+    address: ''
 
   },
 
@@ -34,7 +35,30 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var that = this
-     //获取当前的地理位置、速度
+    this.setData({
+      company: JSON.parse(options.company),
+      img:JSON.parse(options.company).office.split(','),
+      address:options.add,
+
+    })
+    // this.data.app.http({
+    //   url: '/index/ctrlCompany',
+    //   dengl: true,
+    //   method: 'POST',
+    //   data: {
+    //     id: options.id
+    //   },
+    //   success(res) {
+    //     console.log(res)
+    //     that.setData({
+    //       company: res.data.rdata,
+    //       img: res.data.rdata.office.split(',')
+    //     })
+    //     console.log(res.data.rdata.office.split(','))
+    //   }
+    // })
+
+    //获取当前的地理位置、速度
     // 获取当前位置地图
     wx.getLocation({
       type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
@@ -43,28 +67,12 @@ Page({
         that.setData({
           latitude: res.latitude,
           longitude: res.longitude,
- 
-        })
-      }
-    })
 
-    this.data.app.http({
-      url: '/index/ctrlCompany',
-      dengl: true,
-      method: 'POST',
-      data: {
-        id: options.id
-      },
-      success(res) {
-        console.log(res)
-        that.setData({
-          company:res.data.rdata,
-          img:res.data.rdata.office.split(',')
         })
-        console.log(res.data.rdata.office.split(','))
       }
     })
-  },
+  
+     },
   bindcontroltap(e) {
     var that = this;
     if (e.controlId == 1) {

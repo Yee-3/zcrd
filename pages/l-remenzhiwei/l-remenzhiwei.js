@@ -586,7 +586,7 @@ Page({
   },
   detail(e) {
     wx.navigateTo({
-      url: '../zc-zhiweixq/zc-zhiweixq?id=' + e.currentTarget.dataset.id,
+      url: '../zc-zhiweixq/zc-zhiweixq?id=' + e.currentTarget.dataset.id+'&add='+e.currentTarget.dataset.add,
     })
   },
   /**

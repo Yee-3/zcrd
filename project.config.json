@@ -84,6 +84,11 @@
           "pathName": "pages/p-qiyeduan/p-qiyeduan",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/m-shouye/m-shouye",
+          "pathName": "pages/m-shouye/m-shouye",
+          "scene": null
         }
       ]
     }

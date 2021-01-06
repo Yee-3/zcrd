@@ -154,6 +154,7 @@
   height: 160rpx;
   background: #fff;
   border-radius: 10rpx;
+  z-index: 9999;
 }
 
 .h_24 image {

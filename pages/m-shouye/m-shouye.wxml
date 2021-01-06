@@ -231,7 +231,7 @@
 	</view>
 
 	<view class="l_05">
-		<view class="h_10" bindtap="zhiDetail" data-id="{{item.id}}" wx:for="{{recomList}}">
+		<view class="h_10" bindtap="zhiDetail" data-add="{{item.address}}" data-id="{{item.id}}" wx:for="{{recomList}}">
 			<view class="h_11">
 				<view class="fl h_12">{{item.title}}</view>
 				<view class="fr h_13">{{item.moneyName}}</view>

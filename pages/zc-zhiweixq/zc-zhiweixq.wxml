@@ -27,7 +27,7 @@
 		</view>
 		<view class="w-clear"></view>
 	</view>
-	<view class="z_03" bindtap="detail" data-comId="{{detaCont.companyId}}">
+	<view class="z_03" bindtap="detail" data-comId="{{detaCont.companyId}}" data-add="{{address}}">
 		<view class="z_04 fl">
 			<image src="{{detaCont.companyLogo?detaCont.companyLogo:'../img/f023.png'}}"></image>
 		</view>
@@ -63,7 +63,7 @@
 		<view class="zc_14 fl"></view>
 	</view>
 	<view class="{{isShow?'hide zc_16':'show zc_16'}}">
-		<p class="content">{{detaCont.describe}}</p>
+		<p class="content">{{detaCont.describe?detaCont.describe:''}}</p>
 	</view>
 	<view class="zc_17" wx:if="{{isShow}}" bindtap="show">查看全部</view>
 </view>
@@ -75,7 +75,7 @@
 		<view class="zc_14 fl"></view>
 	</view>
 	<view class="zc_16">
-		<p>{{detaCont.requirements}}</p>
+		<p>{{detaCont.requirements?detaCont.requirements:''}}</p>
 	</view>
 </view>
 
@@ -83,9 +83,7 @@
 	<!-- <view class="h_23">
 		<image src="../img/f073.png"></image>
 	</view> -->
-	<view class="map_container ">
-		<map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap' show-location></map>
-	</view>
+	<!-- <view class="h_28">地址：{{detaCont.address}}</view> -->
 	<view class="h_24"  bindtap="onGuideTap" data-latitude='{{detaCont.latitude}}' data-longitude='{{detaCont.longitude}}' data-bankName='{{detaCont.address}}'>
 		<view class="h_27">
 			<view class="h_26 fl">
@@ -95,8 +93,12 @@
 				<p>办公地点</p>
 			</view>
 		</view>
-		<view class="h_28">地址：{{detaCont.address}}</view>
+		<view class="h_28">地址：{{address}}</view>
 	</view>
+	<view class="map_container ">
+		<map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap' show-location></map>
+	</view>
+	
 	<view class="h_30">
 		<image src="../img/f028.png"></image>
 	</view>

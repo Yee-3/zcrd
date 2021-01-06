@@ -32,7 +32,8 @@ Page({
     title: '',
     des: '',
     windowW: '',
-    windowH: ''
+    windowH: '',
+    address:''
   },
 
   /**
@@ -52,6 +53,9 @@ Page({
       topMargin = res.windowWidth * 0.8
       }
     })
+  this.setData({
+    address:options.add
+  })
     this.data.app.http({
       url: '/index/getPosition',
       dengl: true,
@@ -147,9 +151,20 @@ Page({
   },
 
   detail(e) {
-    wx.navigateTo({
-      url: '../za-xinzeng-qyzsxq/z-xinzeng-qyzsxq?id=' + e.currentTarget.dataset.comid,
+    this.data.app.http({
+      url: '/index/ctrlCompany',
+      dengl: true,
+      method: 'POST',
+      data: {
+        id: e.currentTarget.dataset.comid
+      },
+      success(res) {
+        wx.navigateTo({
+          url: '../za-xinzeng-qyzsxq/z-xinzeng-qyzsxq?id=' + e.currentTarget.dataset.comid+'&company='+ JSON.stringify(res.data.rdata)+'&add='+res.data.rdata.address,
+        })
+      }
     })
+   
   },
   tanchuang: function () {
     if (!this.data.isTou) {

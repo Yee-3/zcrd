@@ -62,9 +62,6 @@
 	</view>
 	<view class="h_22">
 		<!-- <view class="h_23"><image src="../img/f073.png"></image></view> -->
-		<view class="map_container ">
-			<map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap' show-location></map>
-		</view>
 		<view class="h_24"  bindtap="onGuideTap" data-latitude='{{detaCont.latitude}}' data-longitude='{{detaCont.longitude}}' data-bankName='{{detaCont.address}}'>
 			<view class="h_27">
 				<view class="h_26 fl">
@@ -74,8 +71,12 @@
 					<p>办公地点</p>
 				</view>
 			</view>
-			<view class="h_28">地址：{{company.address}}</view>
+			<view class="h_28">地址：{{address}}</view>
 		</view>
+		<view class="map_container ">
+			<map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap' show-location></map>
+		</view>
+		
 		<view class="h_30">
 			<image src="../img/f028.png"></image>
 		</view>

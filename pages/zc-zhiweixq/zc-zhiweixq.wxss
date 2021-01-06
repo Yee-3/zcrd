@@ -218,6 +218,7 @@
   height: 160rpx;
   background: #fff;
   border-radius: 10rpx;
+  z-index: 99999;
 }
 
 .h_24 image {
