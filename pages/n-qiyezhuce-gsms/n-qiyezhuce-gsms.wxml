@@ -4,7 +4,7 @@
 		<view class="n_04 fl"><p>公司描述</p><span>（最少二十字以上）</span></view>
 	</view>
 	<view class="n_05">
-		<textarea placeholder="请输入" value="{{val}}" data-value="{{value}}" bindinput="change"></textarea>
+		<textarea placeholder="请输入" value="{{val}}" data-value="{{value}}" maxlength="2000" bindinput="change"></textarea>
 	</view>
 </view>
 

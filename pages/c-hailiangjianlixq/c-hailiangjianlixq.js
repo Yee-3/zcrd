@@ -159,6 +159,7 @@ Page({
             val.valTime = startTime + '~' + endTime
           })
         }
+        
         if (arr3.length > 0) {
           arr3.map(function (val, i) {
             if (val.time) {

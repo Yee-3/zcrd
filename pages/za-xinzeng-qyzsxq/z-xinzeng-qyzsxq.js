@@ -36,27 +36,29 @@ Page({
     console.log(options)
     var that = this
     this.setData({
-      company: JSON.parse(options.company),
-      img:JSON.parse(options.company).office.split(','),
+      // company: JSON.parse(options.company),
+      // img:JSON.parse(options.company).office.split(','),
       address:options.add,
 
     })
-    // this.data.app.http({
-    //   url: '/index/ctrlCompany',
-    //   dengl: true,
-    //   method: 'POST',
-    //   data: {
-    //     id: options.id
-    //   },
-    //   success(res) {
-    //     console.log(res)
-    //     that.setData({
-    //       company: res.data.rdata,
-    //       img: res.data.rdata.office.split(',')
-    //     })
-    //     console.log(res.data.rdata.office.split(','))
-    //   }
-    // })
+    this.data.app.http({
+      url: '/index/ctrlCompany',
+      dengl: true,
+      method: 'POST',
+      data: {
+        id: options.id
+      },
+      success(res) {
+        console.log(res)
+        if ( res.data.rdata.companyLogo.indexOf('http')) {
+          res.data.rdata.companyLogo = that.data.app.baseUrl +  res.data.rdata.companyLogo
+       }
+        that.setData({
+          company: res.data.rdata,
+          img: res.data.rdata.office?res.data.rdata.office.split(','):''
+        })
+      }
+    })
 
     //获取当前的地理位置、速度
     // 获取当前位置地图

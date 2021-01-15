@@ -42,7 +42,8 @@ Page({
     id: '',
     posi_id: '',
     type_Id: '',
-    sxType: false
+    sxType: false,
+    noChange: false
   },
 
   /**
@@ -58,7 +59,7 @@ Page({
         sxType: true
       })
     }
-    console.log(options)
+    console.log(options, 222)
     // this.data.content=options
     if (options.type_id) {
       this.setData({
@@ -93,6 +94,7 @@ Page({
                     ind: i,
                     ind1: j,
                     ind_three: x,
+                    noChange: true
                   })
                   console.log(arr[i].treeDTOS[j].treeDTOS[x].id)
                 }
@@ -365,10 +367,19 @@ Page({
   },
   zhiwei() {
     // var that=this
-    var add = this.data.isAdd
-    this.setData({
-      isAdd: !add,
-    })
+    var add = this.data.isAdd,
+      noC = this.data.noChange
+    if (noC) {
+      wx.showToast({
+        title: '已选择，无法修改',
+        icon: 'none'
+      })
+    } else {
+      this.setData({
+        isAdd: !add,
+      })
+    }
+
   },
   weizhi() {
     wx.navigateTo({

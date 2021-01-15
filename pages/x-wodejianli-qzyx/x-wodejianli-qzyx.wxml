@@ -73,7 +73,7 @@
 		</view>
 	</view>
 	<view class="a_04">
-		<view class="a_02">您期望的工作地点（多选）</view>
+		<view class="a_02">您期望的工作地点</view>
 		<view class="a_06">
 			<view class="section">
 					<view class="picker" bindtap="dingwei">{{mapValue}}</view>

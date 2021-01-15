@@ -154,7 +154,7 @@ Component({
               load2: e.currentTarget.dataset.types,
             })
             city = this.data.locateCity;
-            location=this.data.location
+            location = this.data.location
             break;
           case 'new':
             //热门城市
@@ -164,8 +164,8 @@ Component({
               location: e.target.dataset.loca,
             })
             city = val;
-            location =that.data.location;
-              break;
+            location = that.data.location;
+            break;
           case 'list':
             //城市列表
             that.setData({
@@ -174,7 +174,7 @@ Component({
               location: e.target.dataset.loca,
             })
             city = val;
-            location =that.data.location;
+            location = that.data.location;
             break;
         }
         if (city) {
@@ -199,14 +199,14 @@ Component({
         cityListId: Item //滚动条to指定view
       })
     },
-   
+
     //调用定位
     getLocate() {
       let that = this;
       new qqmap().getLocateInfo().then(function (val) { //这个方法在另一个文件里，下面有贴出代码
         var x = val.address_component.city
-        var id = val.ad_info.adcode.substring(0,4)+'00',
-        location = val.location
+        var id = val.ad_info.adcode.substring(0, 4) + '00',
+          location = val.location
         that.setData({
           location: val.location
         })
@@ -220,7 +220,7 @@ Component({
         wx.setStorageSync('locatecity', {
           city: val,
           time: new Date().getTime(),
-          countryId:id,
+          countryId: id,
           location: location.lng + ',' + location.lat
         });
       });
@@ -237,25 +237,46 @@ Component({
     if (!cityOrTime.time || (time - cityOrTime.time > 1800000)) { //每隔30分钟请求一次定位
       this.getLocate();
     } else { //如果未满30分钟，那么直接从本地缓存里取值
-      var arr=cityOrTime.location.split(',')
+      var arr = cityOrTime.location.split(',')
       that.setData({
         locateCity: cityOrTime.city,
-        loacteId:cityOrTime.countryId,
-        location:{lat:arr[1],lng:arr[0]}
+        loacteId: cityOrTime.countryId,
+        location: {
+          lat: arr[1],
+          lng: arr[0]
+        }
       })
     }
-    var list= wx.getStorageSync('list')
-    if(list){
+    var list = wx.getStorageSync('list')
+    if (list) {
       this.setData({
-        citylist:list.citylist,
-        newcity:list.newcity,
-        locate:list.locate
+        citylist: list.citylist,
+        newcity: list.newcity,
+        locate: list.locate
       })
-    }else{
+    } else {
       new qqmap().getCity().then(function (val) {
         var name = that.data.locateCity
+        // console.log(val)
         var city = val.result[1]
         var city_coun = val.result[0]
+        var gaoxin = {
+          fullname: '高新区',
+          id: '370171',
+          location: {
+            lat: '36.674589',
+            lng: '117.132195'
+          },
+          name: '高新',
+          pinyin: [{
+              0: 'gao'
+            },
+            {
+              1: 'xin'
+            }
+          ]
+        }
+        val.result[2].push(gaoxin)
         var city_qu = val.result[2]
         var cityList = []
         var citys = []
@@ -273,10 +294,12 @@ Component({
           var num = city[i].id.substring(0, 2)
           if (num != 11 && num != 12 && num != 31 && num != 50 && num != 71 && num != 81 && num != 82) {
             cityList.push(city[i])
+
           } else {
             qita.push(city[i])
           }
         }
+        // console.log(cityList)
         // 遍历出来结构
         var letter = []
         for (var i = 0; i < cityList.length; i++) {
@@ -334,10 +357,10 @@ Component({
             }
           }
         }
-        wx.setStorageSync('list',{
-          citylist:citys,
-          newcity:hot,
-          locate:locate
+        wx.setStorageSync('list', {
+          citylist: citys,
+          newcity: hot,
+          locate: locate
         })
         that.setData({
           citylist: citys,
@@ -346,7 +369,7 @@ Component({
         })
       })
     }
-   
+
     // 判断是否执行
     if (!this.data.showMap) {
       this.setData({

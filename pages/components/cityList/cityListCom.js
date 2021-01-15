@@ -193,7 +193,7 @@ Component({
       })
     }
     var list= wx.getStorageSync('list')
-    if(list){
+    if(!list){
       this.setData({
         citylist:list.citylist,
         newcity:list.newcity,
@@ -204,6 +204,23 @@ Component({
         var name = that.data.locateCity
         var city = val.result[1]
         var city_coun = val.result[0]
+        var gaoxin = {
+          fullname: '高新区',
+          id: '370171',
+          location: {
+            lat: '36.674589',
+            lng: '117.132195'
+          },
+          name: '高新',
+          pinyin: [{
+              0: 'gao'
+            },
+            {
+              1: 'xin'
+            }
+          ]
+        }
+        val.result[2].push(gaoxin)
         var city_qu = val.result[2]
         var cityList = []
         var citys = []

@@ -106,7 +106,8 @@
 
 			<view class="w-clear"></view>
 		</view>
-		<view class="s_16">{{item.time[0]}}~{{item.time[1]}}</view>
+
+		<view class="s_16">{{item.valTime}}</view>
 		<view class="s_03">
 			<p>{{item.recordName}}</p><span>|</span>
 			<p>{{item.professional}}</p>

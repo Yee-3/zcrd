@@ -88,6 +88,7 @@
         {
           "name": "pages/m-shouye/m-shouye",
           "pathName": "pages/m-shouye/m-shouye",
+          "query": "",
           "scene": null
         }
       ]
