@@ -25,6 +25,7 @@ Page({
     this.zhuce = this.selectComponent("#zhuce");
     const app = getApp().globalData
     var that = this
+    
     this.setData({
       users:wx.getStorageSync('users')
     })
@@ -35,6 +36,9 @@ Page({
       data: {},
       success(res) {
         if (res.data.rdata.ctrlCompany) {
+          if (res.data.rdata.ctrlCompany.companyLogo.indexOf('http')==-1) {
+            res.data.rdata.ctrlCompany.companyLogo = that.data.app.baseUrl + res.data.rdata.ctrlCompany.companyLogo
+         }
           that.setData({
             user: res.data.rdata.ctrlCompany
           })

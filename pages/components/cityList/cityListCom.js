@@ -193,7 +193,7 @@ Component({
       })
     }
     var list= wx.getStorageSync('list')
-    if(!list){
+    if(list){
       this.setData({
         citylist:list.citylist,
         newcity:list.newcity,

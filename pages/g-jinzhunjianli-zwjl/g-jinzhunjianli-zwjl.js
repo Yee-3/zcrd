@@ -31,14 +31,14 @@ Page({
       })
     }
     this.load()
-    },
+  },
   detail(e) {
     wx.navigateTo({
       url: '../f-jinzhunjianlixq/f-jinzhunjianlixq?id=' + e.currentTarget.dataset.id + '&positId=' + this.data.titleCon.id + '&pushId=' + e.currentTarget.dataset.pushid,
     })
   },
-  load(){
-    var that=this
+  load() {
+    var that = this
     wx.showNavigationBarLoading()
     this.data.app.http({
       type: true,
@@ -59,6 +59,11 @@ Page({
             var day = parseInt((date - date1) / 1000)
             var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
             val.timeVal = value
+            if (val.resumeData.ctrlWorkDTOS.length > 0) {
+              val.resumeData.ctrlWorkDTOS.map(function (item, index) {
+                item.timeVal = that.monthDayDiff(item.startTime, item.endTime)
+              })
+            }
           })
         }
 
@@ -89,7 +94,40 @@ Page({
       }
 
     })
- 
+
+  },
+  monthDayDiff(str, end) {
+    // this指针
+    let _this = this;
+    let flag = [1, 3, 5, 7, 8, 10, 12, 4, 6, 9, 11, 2];
+    var start = new Date(str.replace(/-/g,'/'));
+    var end = new Date(end.replace(/-/g,'/'));
+    var year = end.getFullYear() - start.getFullYear();
+    var month = end.getMonth() - start.getMonth();
+    var day = end.getDate() - start.getDate();
+    if (month < 0) {
+      year--;
+      month = end.getMonth() + (12 - start.getMonth());
+    }
+    if (day < 0) {
+      month--;
+      let index = flag.findIndex((temp) => {
+        return temp === start.getMonth() + 1
+      });
+      let monthLength;
+      if (index <= 6) {
+        monthLength = 31;
+      } else if (index > 6 && index <= 10) {
+        monthLength = 30;
+      } else {
+        monthLength = 28;
+      }
+      day = end.getDate() + (monthLength - start.getDate());
+
+    }
+    month = day > 15 ? month + 1 : month
+    var result = year==0?`${month}个月`:month==0?`${year}年`:`${year}年${month}个月`;
+    return result
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -152,28 +190,18 @@ Page({
         positionId: this.data.id
       },
       success(res) {
-
         var arr = res.data.rdata
         var myDate = new Date()
-
         if (arr.length > 0) {
           arr.map(function (val, i) {
-            var arrs = val.resumeData.ctrlWorkDTOS
-            if (arrs.length > 0) {
-              arrs.map(function (vals, is) {
-                var date1 = vals.startTime.substring(0, 10)
-                var date = vals.endTime.substring(0, 10)
-                let start = new Date(date1.replace(/\-/g, "/"));
-                let end = new Date(date.replace(/\-/g, "/"));
-                let startYear = start.getFullYear();
-                let startMonth = start.getMonth();
-                let endYear = end.getFullYear();
-                let endMonth = end.getMonth();
-                let monthCount = (endYear - startYear) * 12 + endMonth - startMonth;
-                var val = (monthCount / 12).toString().split(".")
-                var value = (val[0] == 0 ? '' : val[0] + '年') + (val[1] ? val[1] + '个月' : '')
-                vals.timeVal = value
-
+            var date1 = Date.parse(new Date(val.lastLogin))
+            var date = Date.parse(new Date())
+            var day = parseInt((date - date1) / 1000)
+            var value = day < 60 ? '刚刚' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前' : parseInt(day / 60 / 60 / 24 / 30) + '月前'
+            val.timeVal = value
+            if (val.resumeData.ctrlWorkDTOS.length > 0) {
+              val.resumeData.ctrlWorkDTOS.map(function (item, index) {
+                item.timeVal = that.monthDayDiff(item.startTime, item.endTime)
               })
             }
           })

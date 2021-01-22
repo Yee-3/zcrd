@@ -36,7 +36,9 @@ Component({
   methods: {
     toggle(e) {
       this.setData({
-        ind: e.currentTarget.dataset['index']
+        ind: e.currentTarget.dataset['index'],
+        ind1:'x',
+        ind2:'x'
       })
       var two = this.data.isTwo
       this.setData({
@@ -45,7 +47,8 @@ Component({
     },
     toggle1(e) {
       this.setData({
-        ind1: e.currentTarget.dataset['index']
+        ind1: e.currentTarget.dataset['index'],
+        ind2:'x'
       })
     },
     toggle2(e) {

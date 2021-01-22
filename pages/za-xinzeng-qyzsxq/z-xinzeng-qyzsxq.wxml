@@ -43,7 +43,7 @@
 	<view class="z_09">
 		<ul>
 			<li wx:for="{{img}}">
-				<image src="{{item}}"></image>
+				<image src="{{item.url}}"></image>
 			</li>
 		
 			<view class="w-clear"></view>

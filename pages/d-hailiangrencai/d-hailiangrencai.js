@@ -27,7 +27,7 @@ Page({
     morType: false,
     zwType: false,
     url: '',
-    maxHeight:''
+    maxHeight: ''
   },
 
   /**
@@ -100,6 +100,7 @@ Page({
       }
     })
   },
+
   reword(data) {
     var that = this
     wx.showNavigationBarLoading()
@@ -121,6 +122,11 @@ Page({
             var day = parseInt((date - date1) / 1000)
             var value = day < 60 ? '刚刚活跃' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前活跃' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前活跃' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前活跃' : parseInt(day / 60 / 60 / 24 / 30) + '月前活跃'
             val.timeVal = value
+          }
+          if (val.ctrlWorkDTOS.length > 0) {
+            val.ctrlWorkDTOS.map(function (item, index) {
+              item.timeVal = that.monthDayDiff(item.startTime, item.endTime)
+            })
           }
         })
         // 回到顶部
@@ -185,6 +191,11 @@ Page({
             var value = day < 60 ? '刚刚活跃' : day >= 60 && (parseInt(day / 60) < 60) ? parseInt(day / 60) + '分钟前活跃' : parseInt(day / 60) > 60 && (parseInt(day / 60 / 60) < 24) ? parseInt(day / 60 / 60) + '小时前活跃' : parseInt(day / 60 / 60) >= 24 && (parseInt(day / 60 / 60 / 24) < 30) ? parseInt(day / 60 / 60 / 24) + '天前活跃' : parseInt(day / 60 / 60 / 24 / 30) + '月前活跃'
             val.timeVal = value
           }
+          if (val.ctrlWorkDTOS.length > 0) {
+            val.ctrlWorkDTOS.map(function (item, index) {
+              item.timeVal = that.monthDayDiff(item.startTime, item.endTime)
+            })
+          }
         })
         that.setData({
           recomList: that.data.recomList.concat(res.data.rdata)
@@ -207,6 +218,39 @@ Page({
         wx.hideNavigationBarLoading()
       }
     })
+  },
+  monthDayDiff(str, end) {
+    // this指针
+    let _this = this;
+    let flag = [1, 3, 5, 7, 8, 10, 12, 4, 6, 9, 11, 2];
+    var start = new Date(str.replace(/-/g, '/'));
+    var end = new Date(end.replace(/-/g, '/'));
+    var year = end.getFullYear() - start.getFullYear();
+    var month = end.getMonth() - start.getMonth();
+    var day = end.getDate() - start.getDate();
+    if (month < 0) {
+      year--;
+      month = end.getMonth() + (12 - start.getMonth());
+    }
+    if (day < 0) {
+      month--;
+      let index = flag.findIndex((temp) => {
+        return temp === start.getMonth() + 1
+      });
+      let monthLength;
+      if (index <= 6) {
+        monthLength = 31;
+      } else if (index > 6 && index <= 10) {
+        monthLength = 30;
+      } else {
+        monthLength = 28;
+      }
+      day = end.getDate() + (monthLength - start.getDate());
+
+    }
+    month = day > 15 ? month + 1 : month
+    var result = year == 0 ? `${month}个月` : month == 0 ? `${year}年` : `${year}年${month}个月`;
+    return result
   },
   toggleZong(e) {
     if (this.zhiwei.data.isAdd) {
@@ -245,23 +289,17 @@ Page({
       value: this.zonghe.data.value,
       currentPage: 1,
     })
-    if (this.data.zwType) {
+    if (this.data.zwType||this.data.morType) {
       var data = {
         limit: 10,
         page: this.data.currentPage,
-        position: this.zhiwei.data.id,
-        sort: this.zonghe.data.ind
-      }
-    } else if (this.data.morType) {
-      var data = {
-        limit: 10,
-        page: this.data.currentPage,
+        position: this.zhiwei.data.id?this.zhiwei.data.id:'',
         school: this.more.data.ind7 ? this.more.data.ind7 : '',
         workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
         money: this.more.data.ind5 ? this.more.data.ind5 : '',
         sort: this.zonghe.data.ind
       }
-    } else {
+    }  else {
       var data = {
         limit: 10,
         page: this.data.currentPage,
@@ -269,6 +307,7 @@ Page({
       }
 
     }
+   
     this.toggleZong()
     this.reword(data)
 
@@ -372,7 +411,8 @@ Page({
       var data = {
         limit: 10,
         page: this.data.currentPage,
-        sort: 1
+        sort: 1,
+        position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
       }
       this.reword(data)
       this.setData({
@@ -386,22 +426,15 @@ Page({
       currentPage: 1,
       zwType: true,
     })
-    if (this.data.morType) {
-      this.more.setData({
-        ind5: '',
-        ind6: '',
-        ind7: '',
-      })
-      this.setData({
-        morType: false
-      })
-    }
     var that = this,
       data = {
         limit: 10,
         page: this.data.currentPage,
         position: this.zhiwei.data.id,
-        sort: this.zonghe.data.ind
+        sort: this.zonghe.data.ind,
+        school: this.more.data.ind7 ? this.more.data.ind7 : '',
+        workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+        money: this.more.data.ind5 ? this.more.data.ind5 : '',
       }
     this.toggleZhi()
     this.reword(data)
@@ -444,17 +477,17 @@ Page({
       currentPage: 1,
       morType: true,
     })
-    if (this.data.zwType) {
-      this.zhiwei.setData({
-        isTwo: false,
-        ind1: 'x',
-        ind2: 'x',
-        ind: 'x',
-      })
-      this.setData({
-        zwType: false
-      })
-    }
+    // if (this.data.zwType) {
+    //   this.zhiwei.setData({
+    //     isTwo: false,
+    //     ind1: 'x',
+    //     ind2: 'x',
+    //     ind: 'x',
+    //   })
+    //   this.setData({
+    //     zwType: false
+    //   })
+    // }
 
     this.toggleMor()
     var data = {
@@ -463,7 +496,8 @@ Page({
       school: this.more.data.ind7 ? this.more.data.ind7 : '',
       workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
       money: this.more.data.ind5 ? this.more.data.ind5 : '',
-      sort: this.zonghe.data.ind
+      sort: this.zonghe.data.ind,
+      position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
     }
     this.reword(data)
   },
@@ -512,34 +546,44 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    if (this.data.zwType) {
-      var data = {
-        limit: 10,
-        page: this.data.currentPage + 1,
-        position: this.zhiwei.data.id,
-        sort: this.zonghe.data.ind
-      }
-      // this.toggleZhi()
-      this.jiazai(data)
-    } else if (this.data.morType) {
-      var data = {
-        limit: 10,
-        page: this.data.currentPage + 1,
-        school: this.more.data.ind7 ? this.more.data.ind7 : '',
-        workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
-        money: this.more.data.ind5 ? this.more.data.ind5 : '',
-        sort: this.zonghe.data.ind
-      }
-      this.jiazai(data)
-    } else {
-      var that = this,
-        data = {
-          limit: 10,
-          page: that.data.currentPage + 1,
-          sort: this.zonghe.data.ind
-        }
-      this.jiazai(data)
+    // if (this.data.zwType) {
+    //   var data = {
+    //     limit: 10,
+    //     page: this.data.currentPage + 1,
+    //     position: this.zhiwei.data.id,
+    //     sort: this.zonghe.data.ind
+    //   }
+    //   // this.toggleZhi()
+    //   this.jiazai(data)
+    // } else if (this.data.morType) {
+    //   var data = {
+    //     limit: 10,
+    //     page: this.data.currentPage + 1,
+    //     school: this.more.data.ind7 ? this.more.data.ind7 : '',
+    //     workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+    //     money: this.more.data.ind5 ? this.more.data.ind5 : '',
+    //     sort: this.zonghe.data.ind
+    //   }
+    //   this.jiazai(data)
+    // } else {
+    //   var that = this,
+    //     data = {
+    //       limit: 10,
+    //       page: that.data.currentPage + 1,
+    //       sort: this.zonghe.data.ind
+    //     }
+    //   this.jiazai(data)
+    // }
+    var data = {
+      limit: 10,
+      page: this.data.currentPage + 1,
+      school: this.more.data.ind7 ? this.more.data.ind7 : '',
+      workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+      money: this.more.data.ind5 ? this.more.data.ind5 : '',
+      sort: this.zonghe.data.ind,
+      position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
     }
+    this.jiazai(data)
   },
 
   /**

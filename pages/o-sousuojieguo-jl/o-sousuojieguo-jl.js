@@ -595,7 +595,7 @@ Page({
 						if (val.welfareName.length > 5) {
 							val.welfareName.splice(5)
 						}
-						if (val.companyLogo.indexOf('http')) {
+						if (val.companyLogo.indexOf('http')==-1) {
 							val.companyLogo = that.data.app.baseUrl + val.companyLogo
 						}
 					})
@@ -653,7 +653,7 @@ Page({
 						if (val.welfareName.length > 5) {
 							val.welfareName.splice(5)
 						}
-						if (val.companyLogo.indexOf('http')) {
+						if (val.companyLogo.indexOf('http')==-1) {
 							val.companyLogo = that.data.app.baseUrl + val.companyLogo
 						}
 					})

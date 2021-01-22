@@ -69,7 +69,7 @@ Page({
       success(res) {
         var des = res.data.rdata[0].cityName + '|' + res.data.rdata[0].schoolRecordName + '|' + res.data.rdata[0].workExperienceName
         console.log(res.data.rdata)
-        if ( res.data.rdata[0].companyLogo.indexOf('http')) {
+        if ( res.data.rdata[0].companyLogo.indexOf('http')==-1) {
            res.data.rdata[0].companyLogo = that.data.app.baseUrl +  res.data.rdata[0].companyLogo
         }
         that.setData({

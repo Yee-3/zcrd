@@ -38,7 +38,7 @@ Page({
     this.setData({
       // company: JSON.parse(options.company),
       // img:JSON.parse(options.company).office.split(','),
-      address:options.add,
+      address: options.add,
 
     })
     this.data.app.http({
@@ -50,12 +50,23 @@ Page({
       },
       success(res) {
         console.log(res)
-        if ( res.data.rdata.companyLogo.indexOf('http')) {
-          res.data.rdata.companyLogo = that.data.app.baseUrl +  res.data.rdata.companyLogo
-       }
+        if (res.data.rdata.companyLogo.indexOf('http') == -1) {
+          res.data.rdata.companyLogo = that.data.app.baseUrl + res.data.rdata.companyLogo
+        }
+        res.data.rdata.office = res.data.rdata.office ? res.data.rdata.office.split(',') : ''
+        var list=[]
+        if (res.data.rdata.office) {
+          res.data.rdata.office.map(function (val, i) {
+            if (val.indexOf('http') == -1) {
+             var obj={}
+              obj.url= that.data.app.baseUrl + val
+              list.push(obj)
+            }
+          })
+        }
         that.setData({
           company: res.data.rdata,
-          img: res.data.rdata.office?res.data.rdata.office.split(','):''
+          img: list
         })
       }
     })
@@ -73,8 +84,8 @@ Page({
         })
       }
     })
-  
-     },
+
+  },
   bindcontroltap(e) {
     var that = this;
     if (e.controlId == 1) {
