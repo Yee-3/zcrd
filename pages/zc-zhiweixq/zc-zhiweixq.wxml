@@ -11,7 +11,7 @@
 			<view class="fl zc_08">
 				<image src="../img/f074.png"></image>
 			</view>
-			<view class="fl zc_09">{{detaCont.cityName}}-{{detaCont.districtName}}</view>
+			<view class="fl zc_09">{{detaCont.cityName?detaCont.cityName:''}}<text wx:if="{{detaCont.cityName&&detaCont.districtName}}">-</text>{{detaCont.districtName?detaCont.districtName:''}}</view>
 		</view>
 		<view class="fl zc_07">
 			<view class="fl zc_08">

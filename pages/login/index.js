@@ -70,7 +70,6 @@ Page({
         var code = res.code
         wx.getUserInfo({
           success: function (res) {
-            console.log(res)           
             if (code) {
               _this.setData({
                 nickName: res.userInfo.nickName,

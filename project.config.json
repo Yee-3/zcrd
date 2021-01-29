@@ -61,51 +61,14 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "pages/login/index",
-          "pathName": "pages/login/index",
+          "name": "pages/l-remenzhiwei/l-remenzhiwei",
+          "pathName": "pages/l-remenzhiwei/l-remenzhiwei",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/p-qiyeduan/p-qiyeduan",
-          "pathName": "pages/p-qiyeduan/p-qiyeduan",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/m-shouye/m-shouye",
-          "pathName": "pages/m-shouye/m-shouye",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/p-qiyeduan/p-qiyeduan",
-          "pathName": "pages/p-qiyeduan/p-qiyeduan",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/m-shouye/m-shouye",
-          "pathName": "pages/m-shouye/m-shouye",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/e-jinzhunjianli/e-jinzhunjianli",
-          "pathName": "pages/e-jinzhunjianli/e-jinzhunjianli",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/k-qiyezhongxin/k-qiyezhongxin",
-          "pathName": "pages/k-qiyezhongxin/k-qiyezhongxin",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/m-shouye/m-shouye",
-          "pathName": "pages/m-shouye/m-shouye",
+          "name": "pages/l-remenzhiwei/l-remenzhiwei",
+          "pathName": "pages/l-remenzhiwei/l-remenzhiwei",
           "query": "",
           "scene": null
         }

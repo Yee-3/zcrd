@@ -53,7 +53,7 @@
 
 		<view class="h_14" bindtap="conpanyIn" data-id="{{item.companyId}}">
 			<view class="fl h_15">
-				<p>{{item.cityName}}{{item.districtName}}</p><span>|</span>
+				<p>{{item.cityName?item.cityName:''}}{{item.districtName?item.districtName:''}}</p><span>|</span>
 				<p>{{item.workExperienceName}}</p><span>|</span>
 				<p>{{item.schoolRecordName}}</p>
 			</view>

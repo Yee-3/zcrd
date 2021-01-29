@@ -57,6 +57,10 @@ Page({
   },
   reword(url, data) {
     var that = this
+    this.setData({
+      msList:[]
+    })
+    console.log(this.data.msList,2222)
     wx.showNavigationBarLoading()
     this.data.app.http({
       type: true,
@@ -83,6 +87,8 @@ Page({
         that.setData({
           msList: res.data.rdata
         })
+    console.log(that.data.msList,9999)
+
         if (res.data.rdata.length < 10) {
           that.setData({
             loadingType: 2
@@ -167,7 +173,7 @@ Page({
   },
   toggleMin(e) {
     this.setData({
-      ind: e.currentTarget.dataset.index
+      ind: e.currentTarget.dataset.index,
     })
     var x = this.data.idn,
       i = e.currentTarget.dataset.index,

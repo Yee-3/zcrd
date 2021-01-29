@@ -350,6 +350,8 @@ Page({
         positionId: id,
       }
     this.reword(data)
+    console.log(this.data.gsCom,this.data.moCom,this.data.zwCom,this.data.zhCom)
+
   },
   zCancel() {
     this.position()

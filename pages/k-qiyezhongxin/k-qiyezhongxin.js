@@ -12,9 +12,9 @@ Page({
     content: '是否切换为求职身份',
     com_type: '',
     com_cont: '',
-    isZhuce:'',
-    zhuContent:'请先注册企业信息',
-    users:{}
+    isZhuce: '',
+    zhuContent: '请先注册企业信息',
+    users: {}
   },
 
   /**
@@ -25,9 +25,9 @@ Page({
     this.zhuce = this.selectComponent("#zhuce");
     const app = getApp().globalData
     var that = this
-    
+
     this.setData({
-      users:wx.getStorageSync('users')
+      users: wx.getStorageSync('users')
     })
     app.http({
       type: true,
@@ -36,22 +36,22 @@ Page({
       data: {},
       success(res) {
         if (res.data.rdata.ctrlCompany) {
-          if (res.data.rdata.ctrlCompany.companyLogo.indexOf('http')==-1) {
+          if (res.data.rdata.ctrlCompany.companyLogo.indexOf('http') == -1) {
             res.data.rdata.ctrlCompany.companyLogo = that.data.app.baseUrl + res.data.rdata.ctrlCompany.companyLogo
-         }
+          }
           that.setData({
             user: res.data.rdata.ctrlCompany
           })
-          var type=res.data.rdata.ctrlCompany.audit
+          var type = res.data.rdata.ctrlCompany.audit
           that.setData({
-            com_cont:type=='0'?'审核中':type=='1'?'已认证':'认证失败',
-            com_type:type,
-            isZhuce:true
+            com_cont: type == '0' ? '审核中' : type == '1' ? '已认证' : '认证失败',
+            com_type: type,
+            isZhuce: true
           })
-        }else{
+        } else {
           that.setData({
-            com_cont:'未认证',
-            isZhuce:false
+            com_cont: '未认证',
+            isZhuce: false
           })
         }
         if (res.data.rdata.ctrlMemberinfo) {
@@ -72,38 +72,40 @@ Page({
     })
 
   },
-  // auth(){
-  //   if(this.data.com_type==0){
-  //     wx.showToast({
-  //       title: '信息审核中！',
-  //       icon:"none"
-  //     })
-  //   }else{
-  //     wx.navigateTo({
-  //       url: '../m-qiyezhuce/m-qiyezhuce?id=1',
-  //     })
-  //   }
-  // },
+  auth() {
+    if (this.data.com_type == 0) {
+      wx.showToast({
+        title: '信息审核中！',
+        icon: "none"
+      })
+    } else if (this.data.com_type == 2) {
+      wx.navigateTo({
+        url: '../m-qiyezhuce/m-qiyezhuce?id=1',
+      })
+    } else {
+      return
+    }
+  },
   gangwei(e) {
-    var that=this
-    if(this.data.isZhuce){
-      if(that.data.com_type!=1){
-        var type=that.data.com_type
-        var title=type==0?'企业信息审核中':'企业认证失败'
+    var that = this
+    if (this.data.isZhuce) {
+      if (that.data.com_type != 1) {
+        var type = that.data.com_type
+        var title = type == 0 ? '企业信息审核中' : '企业认证失败'
         wx.showToast({
           title: title,
-          icon:"none"
+          icon: "none"
         })
-      }else{
+      } else {
         wx.navigateTo({
           url: '../l-qiyezhongxin-zpgw-shz/l-qiyezhongxin-zpgw-shz?id=' + e.currentTarget.dataset.id,
         })
-  
+
       }
-    }else{
+    } else {
       this.zhuce.show()
     }
-  
+
   },
   zhuCancel() {
     this.zhuce.show()
@@ -184,12 +186,9 @@ Page({
    */
   onShow: function () {
     wx.hideHomeButton({
-      success: function () {
-      },
-      fail: function () {
-      },
-      complete: function () {
-      },
+      success: function () {},
+      fail: function () {},
+      complete: function () {},
     });
 
   },
