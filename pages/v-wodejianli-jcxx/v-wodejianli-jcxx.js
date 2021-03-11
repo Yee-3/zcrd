@@ -426,7 +426,7 @@ Page({
 			sizeType: ['original', 'compressed'],
 			sourceType: ['album', 'camera'],
 			success(res) {
-				var webUrl = 'https://zcrdhr.com/'
+				var webUrl = 'https://admin.zhimianyingcai.com/'
 				var baseUrl = 'https://zhimianyingcai.com'
 				wx.uploadFile({
 					url: baseUrl + '/Other/upload',

@@ -205,7 +205,7 @@ Page({
           imgbox[picid] = tempFilePaths[0];
         }
         // console.log(imgbox)
-        var webUrl = 'https://zcrdhr.com/'
+        var webUrl = 'https://admin.zhimianyingcai.com/'
         var baseUrl = 'https://zhimianyingcai.com'
         // tempFilePath可以作为img标签的src属性显示图片
         imgbox.map(function (val, i) {
@@ -342,7 +342,7 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
-        var webUrl = 'https://zcrdhr.com/'
+        var webUrl = 'https://admin.zhimianyingcai.com/'
         var baseUrl = 'https://zhimianyingcai.com'
         wx.uploadFile({
           url: baseUrl + '/Other/upload',
@@ -379,7 +379,7 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         console.log(res)
-        var webUrl = 'https://zcrdhr.com/'
+        var webUrl = 'https://admin.zhimianyingcai.com/'
         var baseUrl = 'https://zhimianyingcai.com'
         wx.uploadFile({
           url: baseUrl + '/Other/upload',

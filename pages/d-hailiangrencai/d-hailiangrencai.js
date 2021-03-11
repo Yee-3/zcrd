@@ -289,17 +289,17 @@ Page({
       value: this.zonghe.data.value,
       currentPage: 1,
     })
-    if (this.data.zwType||this.data.morType) {
+    if (this.data.zwType || this.data.morType) {
       var data = {
         limit: 10,
         page: this.data.currentPage,
-        position: this.zhiwei.data.id?this.zhiwei.data.id:'',
+        position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
         school: this.more.data.ind7 ? this.more.data.ind7 : '',
         workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
         money: this.more.data.ind5 ? this.more.data.ind5 : '',
         sort: this.zonghe.data.ind
       }
-    }  else {
+    } else {
       var data = {
         limit: 10,
         page: this.data.currentPage,
@@ -307,7 +307,7 @@ Page({
       }
 
     }
-   
+
     this.toggleZong()
     this.reword(data)
 
@@ -406,19 +406,26 @@ Page({
     this.setData({
       currentPage: 1,
     })
-
-    if (this.data.morType) {
-      var data = {
-        limit: 10,
-        page: this.data.currentPage,
-        sort: 1,
-        position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
+    if(this.data.morType){
+      if (this.data.zwType) {
+        var data = {
+          limit: 10,
+          page: this.data.currentPage,
+          sort: 1,
+          position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
+        }
+      } else {
+        var data = {
+          limit: 10,
+          page: this.data.currentPage,
+          sort: 1,
+        }
       }
       this.reword(data)
-      this.setData({
-        zwType: false
-      })
     }
+    this.setData({
+      morType: false
+    })
   },
   // 职位筛选
   tog() {
@@ -477,27 +484,26 @@ Page({
       currentPage: 1,
       morType: true,
     })
-    // if (this.data.zwType) {
-    //   this.zhiwei.setData({
-    //     isTwo: false,
-    //     ind1: 'x',
-    //     ind2: 'x',
-    //     ind: 'x',
-    //   })
-    //   this.setData({
-    //     zwType: false
-    //   })
-    // }
-
     this.toggleMor()
-    var data = {
-      limit: 10,
-      page: this.data.currentPage,
-      school: this.more.data.ind7 ? this.more.data.ind7 : '',
-      workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
-      money: this.more.data.ind5 ? this.more.data.ind5 : '',
-      sort: this.zonghe.data.ind,
-      position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
+    if(this.data.zwType){
+      var data = {
+        limit: 10,
+        page: this.data.currentPage,
+        school: this.more.data.ind7 ? this.more.data.ind7 : '',
+        workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+        money: this.more.data.ind5 ? this.more.data.ind5 : '',
+        sort: this.zonghe.data.ind,
+        position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
+      }
+    }else{
+      var data = {
+        limit: 10,
+        page: this.data.currentPage,
+        school: this.more.data.ind7 ? this.more.data.ind7 : '',
+        workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+        money: this.more.data.ind5 ? this.more.data.ind5 : '',
+        sort: this.zonghe.data.ind,
+      }
     }
     this.reword(data)
   },
@@ -546,44 +552,35 @@ Page({
    */
   onReachBottom: function () {
     var that = this
-    // if (this.data.zwType) {
-    //   var data = {
-    //     limit: 10,
-    //     page: this.data.currentPage + 1,
-    //     position: this.zhiwei.data.id,
-    //     sort: this.zonghe.data.ind
-    //   }
-    //   // this.toggleZhi()
-    //   this.jiazai(data)
-    // } else if (this.data.morType) {
-    //   var data = {
-    //     limit: 10,
-    //     page: this.data.currentPage + 1,
-    //     school: this.more.data.ind7 ? this.more.data.ind7 : '',
-    //     workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
-    //     money: this.more.data.ind5 ? this.more.data.ind5 : '',
-    //     sort: this.zonghe.data.ind
-    //   }
-    //   this.jiazai(data)
-    // } else {
-    //   var that = this,
-    //     data = {
-    //       limit: 10,
-    //       page: that.data.currentPage + 1,
-    //       sort: this.zonghe.data.ind
-    //     }
-    //   this.jiazai(data)
-    // }
-    var data = {
-      limit: 10,
-      page: this.data.currentPage + 1,
-      school: this.more.data.ind7 ? this.more.data.ind7 : '',
-      workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
-      money: this.more.data.ind5 ? this.more.data.ind5 : '',
-      sort: this.zonghe.data.ind,
-      position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
+    if (this.data.zwType) {
+      var data = {
+        limit: 10,
+        page: this.data.currentPage + 1,
+        school: this.more.data.ind7 ? this.more.data.ind7 : '',
+        workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+        money: this.more.data.ind5 ? this.more.data.ind5 : '',
+        sort: this.zonghe.data.ind,
+        position: this.zhiwei.data.id ? this.zhiwei.data.id : '',
+      }
+    } else if (this.data.morType) {
+      var data = {
+        limit: 10,
+        page: this.data.currentPage + 1,
+        school: this.more.data.ind7 ? this.more.data.ind7 : '',
+        workTime: this.more.data.ind6 ? this.more.data.ind6 : '',
+        money: this.more.data.ind5 ? this.more.data.ind5 : '',
+        sort: this.zonghe.data.ind
+      }
+    } else {
+      var that = this,
+        data = {
+          limit: 10,
+          page: that.data.currentPage + 1,
+          sort: this.zonghe.data.ind
+        }
     }
-    this.jiazai(data)
+      this.jiazai(data)
+
   },
 
   /**

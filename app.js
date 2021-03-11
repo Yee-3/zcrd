@@ -39,7 +39,7 @@ App({
 
   globalData: {
     userInfo: null,
-    baseUrl: 'https://zcrdhr.com',
+    baseUrl: 'https://admin.zhimianyingcai.com',
     http(obj) {
       // console.log(webUrl)
       // var webUrl='http://192.168.100.182:8089'

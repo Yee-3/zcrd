@@ -71,6 +71,17 @@
           "pathName": "pages/l-remenzhiwei/l-remenzhiwei",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/d-hailiangrencai/d-hailiangrencai",
+          "pathName": "pages/d-hailiangrencai/d-hailiangrencai",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/k-qiyezhongxin/k-qiyezhongxin",
+          "pathName": "pages/k-qiyezhongxin/k-qiyezhongxin",
+          "scene": null
         }
       ]
     }
