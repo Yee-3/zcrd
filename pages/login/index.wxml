@@ -5,9 +5,11 @@
 	</view>
 	<view class='content'>
 		<view>申请获取以下权限</view>
-		<text>获得你的公开信息(昵称，头像、地区等)</text>
+		<text style="color:#333">获得你的公开信息(昵称，头像、地区等) </text>
+		<text>你的信息将用于个人信息展示和搜索当前城市相关职位</text>
+	
 	</view>
-	<button class='bottom' type='primary' open-type="getUserInfo" withCredentials="true" lang="zh_CN" bindgetuserinfo="getPerson">
+	<button class='bottom' type='primary'  withCredentials="true" lang="zh_CN" bindtap="getPerson">
 		授权登录
 	</button>
 	<!-- <button class="phone" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">

@@ -58,11 +58,14 @@ Page({
         if (res.data.rdata.office) {
           res.data.rdata.office.map(function (val, i) {
             if (val.indexOf('http') == -1) {
-             var obj={}
-              obj.url= that.data.app.baseUrl + val
-              list.push(obj)
+            //  var obj={}
+             list.push(that.data.app.baseUrl + val)
+              // console.log(obj)
+            }else{
+              list.push(val)
             }
           })
+          console.log(list)
         }
         that.setData({
           company: res.data.rdata,

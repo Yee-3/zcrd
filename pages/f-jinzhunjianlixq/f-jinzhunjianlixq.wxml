@@ -134,17 +134,17 @@
 	</view>
 </view>
 
-
+<!-- 
 <view class="f_01" wx:if="{{isHz}}">
 	<ul>
 		<li bindtap="jujue">不合适</li>
 		<li bindtap="confirm">邀面试</li>
 	</ul>
-</view>
-
-<view class="f_01" wx:if="{{!isHz}}">
+</view> -->
+<!-- wx:if="{{!isHz}}" 控制下面是否显示 -->
+<!-- <view class="f_01"   wx:if="{{!isHz}}" >
 	<view class="s_24" bindtap="confirm">邀请面试</view>
-</view>
+</view> -->
 <!-- 邀请面试-职位弹框 -->
 
 <date-picker id="time" value="{{datePickerValue}}" isShow="{{datePickerIsShow}}" bindsureclick="datePickerOnSureClick" />

@@ -21,25 +21,28 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "bundle": false,
+    "enableEngineNative": false,
     "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "useApiHostProcess": true
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.14.4",
+  "libVersion": "2.21.1",
   "appid": "wx4e6c0fd45e00eba3",
   "projectname": "%E4%B8%AD%E6%89%8D%E7%91%9E%E8%BE%BE%EF%BC%88%E6%B1%82%E8%81%8C%E7%AB%AF%EF%BC%89",
   "debugOptions": {
@@ -79,8 +82,8 @@
           "scene": null
         },
         {
-          "name": "pages/k-qiyezhongxin/k-qiyezhongxin",
-          "pathName": "pages/k-qiyezhongxin/k-qiyezhongxin",
+          "name": "pages/m-shouye/m-shouye",
+          "pathName": "pages/m-shouye/m-shouye",
           "scene": null
         }
       ]

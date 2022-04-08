@@ -23,7 +23,9 @@ Page({
       contentnomore: "就这么多了~"
     },
     id: '',
-    tsShow: false
+    tsShow: false,
+    endTime:'',
+    startTime :''
   },
 
   /**
@@ -60,7 +62,6 @@ Page({
     this.setData({
       msList:[]
     })
-    console.log(this.data.msList,2222)
     wx.showNavigationBarLoading()
     this.data.app.http({
       type: true,
@@ -87,7 +88,6 @@ Page({
         that.setData({
           msList: res.data.rdata
         })
-    console.log(that.data.msList,9999)
 
         if (res.data.rdata.length < 10) {
           that.setData({
@@ -151,6 +151,7 @@ Page({
       }
     })
   },
+
   toggleTitle(e) {
     this.setData({
       idn: e.currentTarget.dataset.index,
@@ -264,6 +265,7 @@ Page({
   },
   refuse(e) {
     var that = this
+    console.log('子元素')
     // 未面试
     if (this.data.idn == 1) {
       var url = this.data.ind == 2 ? '/interviewManager/interviewfailed' : '/interviewManager/interviewPassFail'
@@ -301,7 +303,6 @@ Page({
   // 离职
   quit(e) {
     var that = this
-    console.log(e)
     this.data.app.http({
       type: true,
       url: '/interviewManager/leavePosition',
@@ -394,12 +395,26 @@ Page({
   onReady: function () {
 
   },
+  detail(e){
+     wx.navigateTo({
+       url: '../f-jinzhunjianlixq/f-jinzhunjianlixq?id='+e.currentTarget.dataset.jlid,
+     })
+  },
   dele(e) {
+    console.log('长按')
     var del = this.data.isDel
     this.setData({
       isDel: !del,
       id: e.currentTarget.dataset.id
     })
+  },
+  bindStar(e){
+    console.log(e)
+    this.startTime = e.timeStamp;
+  },
+  bindEnd(e){
+    console.log(e,333)
+    this.endTime = e.timeStamp
   },
   del_cancle() {
     var del = this.data.isDel

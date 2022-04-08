@@ -33,7 +33,7 @@ Page({
     des: '',
     windowW: '',
     windowH: '',
-    address:''
+    address: ''
   },
 
   /**
@@ -44,18 +44,21 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         console.log(res)
-      that.setData({
-       //设置宽高为屏幕宽，高为屏幕高的80%，因为文档比例为5:4
-       windowW: res.windowWidth,
-       windowH: res.windowWidth * 0.8
-      })
-      leftMargin = res.windowWidth
-      topMargin = res.windowWidth * 0.8
+        that.setData({
+          //设置宽高为屏幕宽，高为屏幕高的80%，因为文档比例为5:4
+          windowW: res.windowWidth,
+          windowH: res.windowWidth * 0.8
+        })
+        leftMargin = res.windowWidth
+        topMargin = res.windowWidth * 0.8
       }
     })
-  this.setData({
-    address:options.add
-  })
+
+
+
+    this.setData({
+      address: options.add
+    })
     this.data.app.http({
       url: '/index/getPosition',
       dengl: true,
@@ -69,9 +72,16 @@ Page({
       success(res) {
         var des = res.data.rdata[0].cityName + '|' + res.data.rdata[0].schoolRecordName + '|' + res.data.rdata[0].workExperienceName
         console.log(res.data.rdata)
-        if ( res.data.rdata[0].companyLogo.indexOf('http')==-1) {
-           res.data.rdata[0].companyLogo = that.data.app.baseUrl +  res.data.rdata[0].companyLogo
+        if (res.data.rdata[0].companyLogo.indexOf('http') == -1) {
+          res.data.rdata[0].companyLogo = that.data.app.baseUrl + res.data.rdata[0].companyLogo
         }
+        // var str = res.data.rdata[0].requirements
+        // var reg = /([^、。]+)[、\s]+([^、。]*)/g;
+        // while (reg.exec(str)) {
+        //   console.log(str)
+        //   console.log(RegExp.$1 + "、 " + RegExp.$2);
+        // }
+
         that.setData({
           detaCont: res.data.rdata[0],
           isTou: res.data.rdata[0].signUp,
@@ -81,7 +91,7 @@ Page({
         canvas = wx.createCanvasContext('canvas')
         that.addImage()
         // this.tempFilePath()
-    
+
 
       }
     })
@@ -103,24 +113,24 @@ Page({
 
   },
   //画背景图
- addImage: function () {
-  var context = wx.createContext();
-  var that = this;
-  var path = "../img/f021.png";
-  //将模板图片绘制到canvas,在开发工具中drawImage()函数有问题，不显示图片
-  //不知道是什么原因，手机环境能正常显示
-  canvas.drawImage(path, 0, 0, this.data.windowW, this.data.windowH);
-  this.addTitle()
-  this.addDesc()
-  canvas.draw()
+  addImage: function () {
+    var context = wx.createContext();
+    var that = this;
+    var path = "../img/f021.png";
+    //将模板图片绘制到canvas,在开发工具中drawImage()函数有问题，不显示图片
+    //不知道是什么原因，手机环境能正常显示
+    canvas.drawImage(path, 0, 0, this.data.windowW, this.data.windowH);
+    this.addTitle()
+    this.addDesc()
+    canvas.draw()
   },
-  addTitle(){
+  addTitle() {
     // 职位
     canvas.setFillStyle('#fff') //文字颜色：默认黑色
     canvas.setFontSize(19) //设置字体大小，默认10
-    canvas.fillText(this.data.title,leftMargin * 0.2, topMargin * 0.4) //绘制文本
+    canvas.fillText(this.data.title, leftMargin * 0.2, topMargin * 0.4) //绘制文本
   },
-  addDesc(){
+  addDesc() {
     canvas.font = 'normal bold 20px sans-serif';
     canvas.setFillStyle('#fff') //文字颜色：默认黑色
     canvas.setFontSize(14) //设置字体大小，默认10
@@ -160,11 +170,11 @@ Page({
       },
       success(res) {
         wx.navigateTo({
-          url: '../za-xinzeng-qyzsxq/z-xinzeng-qyzsxq?id=' + e.currentTarget.dataset.comid+'&company='+ JSON.stringify(res.data.rdata)+'&add='+res.data.rdata.address,
+          url: '../za-xinzeng-qyzsxq/z-xinzeng-qyzsxq?id=' + e.currentTarget.dataset.comid + '&company=' + JSON.stringify(res.data.rdata) + '&add=' + res.data.rdata.address,
         })
       }
     })
-   
+
   },
   tanchuang: function () {
     if (!this.data.isTou) {
@@ -283,10 +293,10 @@ Page({
    */
   onShareAppMessage: function (res) {
     var that = this,
-    company=this.data.detaCont.companyName
+      company = this.data.detaCont.companyName
     return {
       // desc: this.data.des,
-      title: company+'正在招聘'+this.data.detaCont.title,
+      title: company + '正在招聘' + this.data.detaCont.title,
 
       imageUrl: '../img/share.jpg',
       // 可以更换分享的图片

@@ -1,0 +1,66 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/l-remenzhiwei/l-remenzhiwei",
+          "pathName": "pages/l-remenzhiwei/l-remenzhiwei",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/l-remenzhiwei/l-remenzhiwei",
+          "pathName": "pages/l-remenzhiwei/l-remenzhiwei",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/d-hailiangrencai/d-hailiangrencai",
+          "pathName": "pages/d-hailiangrencai/d-hailiangrencai",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/m-shouye/m-shouye",
+          "pathName": "pages/m-shouye/m-shouye",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/p-qiyeduan/p-qiyeduan",
+          "pathName": "pages/p-qiyeduan/p-qiyeduan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/index",
+          "pathName": "pages/login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/h-mianshiguanli-yms/h-mianshiguanli-yms",
+          "pathName": "pages/h-mianshiguanli-yms/h-mianshiguanli-yms",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/h-mianshiguanli-yms/h-mianshiguanli-yms",
+          "pathName": "pages/h-mianshiguanli-yms/h-mianshiguanli-yms",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

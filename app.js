@@ -42,7 +42,7 @@ App({
     baseUrl: 'https://admin.zhimianyingcai.com',
     http(obj) {
       // console.log(webUrl)
-      // var webUrl='http://192.168.100.182:8089'
+      // var webUrl='http://192.168.100.196:8089'
       var webUrl = 'https://zhimianyingcai.com'
       if (obj.dengl) {
         if (obj.type) {
@@ -56,7 +56,7 @@ App({
             header: {
               'content-type': obj.header ? 'application/json' : 'application/x-www-form-urlencoded',
               // 'maijiToken': 'abc494548414c8d8abc14541abc84cc1',
-              'Authorization': wx.getStorageSync('Authorization')
+              'Authorization':wx.getStorageSync('Authorization')
             },
             success: function (res) {
               if (res.data.code == 401) {

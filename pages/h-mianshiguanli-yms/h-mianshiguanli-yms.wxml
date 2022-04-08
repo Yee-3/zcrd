@@ -81,7 +81,7 @@
 </view>
 <!-- 面试进程 -->
 <view class="h_11">
-	<view class="h_12" style="{{ind==2||ind==4||ind==3?'padding-bottom:0rpx;':''}}" data-id="{{item.memberCompanyId}}" bindlongtap="dele" wx:for="{{msList}}">
+	<view class="h_12" style="{{ind==2||ind==4||ind==3?'padding-bottom:0rpx;':''}}" data-jlId="{{item.id}}" data-id="{{item.memberCompanyId}}" bindtap="detail" wx:for="{{msList}}">
 		<view class="h_13">
 			<view class="fl h_14">
 				<view class="fl h_15">
@@ -121,12 +121,14 @@
 				<text>{{item.whyStatus==1?'面试时间不合适':'其他原因'}}\n{{item.why?item.why:''}}</text>
 			</view>
 		</view>
-		<view class="h2_26 fr" data-id="{{item.memberCompanyId}}" bindtap="quit" data-index="{{ind1}}" wx:if="{{idn==3&&(ind1==2||ind1==3)}}">离职</view> 
-		<view class="h_26" wx:if="{{ind==3&&item.whyStatus==1}}" data-id="{{item.memberCompanyId}}" bindtap="invitTo">再邀请</view>
+		
+		<view class="h2_26 fr" data-id="{{item.memberCompanyId}}" wx:if="{{idn==3&&(ind1==2||ind1==3)}}" catchtap="quit" data-index="{{ind1}}" >离职</view> 
+		
+		<view class="h_26"  data-id="{{item.memberCompanyId}}" wx:if="{{ind==3&&item.whyStatus==1}}" catchtap="invitTo">再邀请</view>
 		<view class="h_24" wx:if="{{ind==2||ind==4}}">
 			<ul>
-				<li bindtap="refuse" data-id="{{item.memberCompanyId}}">{{idn==1&&ind==2?'未面试':idn==1&&ind==4?'不合适':'未入职'}}</li>
-				<li bindtap="invit" data-id="{{item.memberCompanyId}}">{{idn==1&&ind==2?'已面试':idn==1&&ind==4?'邀入职':'已入职'}}</li>
+				<li catchtap="refuse" data-id="{{item.memberCompanyId}}">{{idn==1&&ind==2?'未面试':idn==1&&ind==4?'不合适':'未入职'}}</li>
+				<li catchtap="invit" data-id="{{item.memberCompanyId}}">{{idn==1&&ind==2?'已面试':idn==1&&ind==4?'邀入职':'已入职'}}</li>
 			</ul>
 		</view>
 	</view>

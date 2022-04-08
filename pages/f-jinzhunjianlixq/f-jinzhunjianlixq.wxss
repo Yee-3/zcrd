@@ -280,8 +280,8 @@
 
 .f_01 ul li {
   display: block;
-  float: left;
-  width: 335rpx;
+  /* float: left; */
+  width: 95%;
   height: 90rpx;
   text-align: center;
   color: #fff;
@@ -290,13 +290,14 @@
   background: #0286ff;
   margin-left: 20rpx;
   border-radius: 15rpx;
+  margin: 0 auto;
 }
 
-.f_01 ul li:first-child {
+/* .f_01 ul li:first-child {
   margin-left: 0;
   background: #e5e5e5;
   color: #505050;
-}
+} */
 
 .hide {
   display: -webkit-box;

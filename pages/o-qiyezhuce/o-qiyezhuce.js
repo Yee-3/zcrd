@@ -185,6 +185,7 @@ Page({
     var _this = this
     var imgbox = this.data.imgbox
     var picid = e.currentTarget.dataset.pic
+    console.log(e)
     var n = 9
     if (9 > imgbox.length > 0) {
       n = 9 - imgbox.length;
